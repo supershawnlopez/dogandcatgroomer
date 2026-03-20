@@ -7,6 +7,7 @@
 <meta name="description" content="Contact Dog & Cat Groomer for professional pet grooming in Arizona. Send us a message and we will respond quickly.">
 <link rel="canonical" href="https://www.dogandcatgroomer.com/contact.html">
 <link rel="stylesheet" href="style.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -23,7 +24,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
-      <li><a href="contact.html" class="nav-cta-btn">Book Now / Reservar</a></li>
+      <li><a href="contact.html" class="nav-cta-btn">Book Now</a></li>
     </ul>
   </div>
 </nav>
@@ -38,7 +39,7 @@
   </div>
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
-    <p class="page-hero-eyebrow">Get In Touch · Cont&aacute;ctanos</p>
+    <p class="page-hero-eyebrow">Get In Touch</p>
     <h1 class="page-hero-title">Let&apos;s talk about<br>your pet.</h1>
   </div>
 </div>
@@ -50,7 +51,7 @@
 
       <!-- LEFT: INFO -->
       <div class="contact-info-v2 reveal-left">
-        <span class="section-eyebrow">Contact Info · Informaci&oacute;n</span>
+        <span class="section-eyebrow">Contact Info</span>
         <h2 class="section-title" style="font-size:2.2rem; margin-bottom:2.5rem;">We&apos;d love to<br>hear from you.</h2>
 
         <div class="contact-item-v2">
@@ -79,8 +80,7 @@
 
         <div style="background:var(--gold-light); border-left:3px solid var(--gold); padding:1.2rem 1.5rem; margin-top:2rem;">
           <p style="font-size:0.82rem; color:var(--warm-dark); line-height:1.7;">
-            <strong style="color:var(--charcoal)">Walk-ins welcome</strong> for nail trims &amp; gland expression.<br>
-            <span style="font-style:italic; color:var(--gray)">Se aceptan llegadas sin cita para corte de u&ntilde;as.</span>
+            <strong style="color:var(--charcoal)">Walk-ins welcome</strong> for nail trims &amp; gland expression.
           </p>
         </div>
       </div>
@@ -88,7 +88,6 @@
       <!-- RIGHT: FORM -->
       <div class="form-v2 reveal-right">
         <div class="form-v2-title">Send us a message</div>
-        <div class="form-v2-title-es">Env&iacute;anos un mensaje</div>
 
         <form
           name="contact"
@@ -103,11 +102,11 @@
 
           <div class="form-row-v2">
             <div class="form-field">
-              <label for="name">Your Name / Tu Nombre *</label>
+              <label for="name">Your Name *</label>
               <input type="text" id="name" name="name" placeholder="Full name" required>
             </div>
             <div class="form-field">
-              <label for="phone">Phone / Tel&eacute;fono *</label>
+              <label for="phone">Phone *</label>
               <input type="tel" id="phone" name="phone" placeholder="(602) 000-0000" required>
             </div>
           </div>
@@ -118,22 +117,22 @@
           </div>
 
           <div class="form-field">
-            <label>Type of Pet / Tipo de Mascota *</label>
+            <label>Type of Pet *</label>
             <div class="pet-options">
-              <button type="button" class="pet-option" onclick="selectPet(this,'Dog')">Dog / Perro</button>
-              <button type="button" class="pet-option" onclick="selectPet(this,'Cat')">Cat / Gato</button>
-              <button type="button" class="pet-option" onclick="selectPet(this,'Both')">Both / Los dos</button>
+              <button type="button" class="pet-option" onclick="selectPet(this,'Dog')">Dog</button>
+              <button type="button" class="pet-option" onclick="selectPet(this,'Cat')">Cat</button>
+              <button type="button" class="pet-option" onclick="selectPet(this,'Both')">Both</button>
             </div>
             <input type="hidden" id="petType" name="pet_type">
           </div>
 
           <div class="form-field">
-            <label for="pet_name">Pet Name / Nombre de la Mascota</label>
+            <label for="pet_name">Pet Name</label>
             <input type="text" id="pet_name" name="pet_name" placeholder="What's their name?">
           </div>
 
           <div class="form-field">
-            <label for="service">Service / Servicio</label>
+            <label for="service">Service</label>
             <select id="service" name="service">
               <option value="" disabled selected>Select a service</option>
               <option>Full Groom / Grooming Completo</option>
@@ -149,12 +148,12 @@
           </div>
 
           <div class="form-field">
-            <label for="message">Message / Mensaje</label>
+            <label for="message">Message</label>
             <textarea id="message" name="message" placeholder="Tell us about your pet or ask us anything..."></textarea>
           </div>
 
           <button type="submit" class="form-submit-v2">
-            Send Message / Enviar Mensaje &rarr;
+            Send Message &rarr;
           </button>
           <p class="form-note-v2">We typically respond within a few hours. / Generalmente respondemos en pocas horas.</p>
         </form>
@@ -164,8 +163,7 @@
             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
           </svg>
           <h3>Message sent!</h3>
-          <p>Thank you! We&apos;ll be in touch soon.<br>
-          <span style="font-style:italic; color:#aaa">&iexcl;Gracias! Nos pondremos en contacto pronto.</span></p>
+          <p>Thank you! We&apos;ll be in touch soon.</p>
         </div>
       </div>
 
@@ -178,7 +176,7 @@
   <div class="footer-grid">
     <div>
       <div class="footer-brand-name">Dog &amp; Cat Groomer</div>
-      <div class="footer-brand-tag">Professional Pet Grooming · Arizona</div>
+      <div class="footer-brand-tag">Professional Pet Grooming</div>
       <p class="footer-brand-desc">Caring, professional grooming for dogs and cats throughout the Phoenix metro area.</p>
     </div>
     <div>
