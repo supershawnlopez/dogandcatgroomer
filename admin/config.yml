@@ -1,0 +1,39 @@
+backend:
+  name: github
+  repo: supershawnlopez/dogandcatgroomer
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "content/home.json"
+        fields:
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Subtitle (English)", name: "hero_subtitle_en", widget: "text" }
+          - { label: "Hero Subtitle (Spanish)", name: "hero_subtitle_es", widget: "text" }
+          - { label: "About Title", name: "about_title", widget: "string" }
+          - { label: "About Body (English)", name: "about_body_en", widget: "text" }
+          - { label: "About Body (Spanish)", name: "about_body_es", widget: "text" }
+          - { label: "Instagram Handle", name: "instagram_handle", widget: "string" }
+          - { label: "Phone Number", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+
+      - label: "Services Page"
+        name: "services"
+        file: "content/services.json"
+        fields:
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "Icon (emoji)", name: "icon", widget: "string" }
+              - { label: "Name (English)", name: "name_en", widget: "string" }
+              - { label: "Name (Spanish)", name: "name_es", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Price", name: "price", widget: "string", default: "Call for pricing" }
