@@ -36,8 +36,8 @@ a { text-decoration: none; color: inherit; }
 /* ── SCROLL ANIMATIONS ───────────────────────────── */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 .reveal.visible {
   opacity: 1;
@@ -45,8 +45,8 @@ a { text-decoration: none; color: inherit; }
 }
 .reveal-left {
   opacity: 0;
-  transform: translateX(-50px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .reveal-left.visible {
   opacity: 1;
@@ -54,8 +54,8 @@ a { text-decoration: none; color: inherit; }
 }
 .reveal-right {
   opacity: 0;
-  transform: translateX(50px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .reveal-right.visible {
   opacity: 1;
@@ -144,6 +144,24 @@ a { text-decoration: none; color: inherit; }
   background: var(--gold) !important;
   border-color: var(--gold) !important;
   color: var(--charcoal) !important;
+}
+
+.lang-toggle {
+  background: transparent;
+  color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 0.35rem 0.7rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.lang-toggle:hover {
+  color: var(--gold);
+  border-color: var(--gold);
 }
 
 .nav-toggle {

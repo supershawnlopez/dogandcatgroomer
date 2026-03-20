@@ -29,6 +29,7 @@
       <li><a href="services.html">Services</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="contact.html" class="nav-cta-btn">Book Now</a></li>
+      <li><button class="lang-toggle" onclick="toggleLang()" id="langBtn">ES</button></li>
     </ul>
   </div>
 </nav>
@@ -45,17 +46,17 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Professional Pet Grooming · Arizona</p>
-    <h1 class="hero-title">
+    <h1 class="hero-title" id="hero-title">
       Every pet deserves<br>
       to feel <em>beautiful.</em>
     </h1>
-    <p class="hero-subtitle">
+    <p class="hero-subtitle" id="hero-sub">
       Caring, experienced grooming for dogs and cats.
       We treat every pet like family.
     </p>
     <div class="hero-actions">
-      <a href="contact.html" class="btn btn-gold">Book an Appointment</a>
-      <a href="services.html" class="btn btn-outline-white">View Services</a>
+      <a href="contact.html" class="btn btn-gold" id="book-btn">Book an Appointment</a>
+      <a href="services.html" class="btn btn-outline-white" id="view-btn">View Services</a>
     </div>
   </div>
   <div class="hero-scroll">
@@ -100,9 +101,9 @@
       </div>
     </div>
     <div class="about-content-col reveal-right">
-      <span class="section-eyebrow">About Us</span>
-      <h2 class="section-title">Passionate about pets.<br>Professional in every detail.</h2>
-      <p class="about-body">
+      <span class="section-eyebrow" id="about-eyebrow">About Us</span>
+      <h2 class="section-title" id="about-title">Passionate about pets.<br>Professional in every detail.</h2>
+      <p class="about-body" id="about-body">
         We are dedicated to providing the highest quality grooming experience
         for your dogs and cats. Every appointment is handled with patience,
         care, and a genuine love for animals of all breeds and temperaments.
@@ -145,7 +146,7 @@
           </div>
         </div>
       </div>
-      <a href="contact.html" class="btn btn-dark">Get in Touch &rarr;</a>
+      <a href="contact.html" class="btn btn-dark" id="contact-btn">Get in Touch &rarr;</a>
     </div>
   </div>
 </section>
@@ -155,10 +156,10 @@
   <div class="section-inner">
     <div class="services-header">
       <div>
-        <span class="section-eyebrow">What We Offer</span>
-        <h2 class="section-title section-title-white reveal">Grooming services<br>for every pet.</h2>
+        <span class="section-eyebrow" id="services-eyebrow">What We Offer</span>
+        <h2 class="section-title section-title-white reveal" id="services-title">Grooming services<br>for every pet.</h2>
       </div>
-      <a href="services.html" class="btn btn-outline-white reveal">See All Services &rarr;</a>
+      <a href="services.html" class="btn btn-outline-white reveal" id="all-services-btn">See All Services &rarr;</a>
     </div>
 
     <div class="services-grid-v2">
@@ -236,8 +237,8 @@
 <!-- INSTAGRAM -->
 <section class="instagram-section">
   <div class="reveal">
-    <span class="section-eyebrow">Follow Along on Instagram</span>
-    <h2 class="section-title">See our work.</h2>
+    <span class="section-eyebrow" id="insta-eyebrow">Follow Along on Instagram</span>
+    <h2 class="section-title" id="insta-title">See our work.</h2>
     <a href="https://instagram.com" target="_blank" class="instagram-handle">@dogandcatgroomer</a>
   </div>
   <div class="behold-container reveal">
@@ -260,9 +261,9 @@
     <div class="area-image-overlay"></div>
   </div>
   <div class="area-content reveal-right">
-    <span class="section-eyebrow">Where We Serve</span>
-    <h2 class="section-title">Proudly serving<br>the Phoenix area.</h2>
-    <p class="section-sub">We serve clients throughout the greater Phoenix metropolitan area. Contact us to confirm availability in your neighborhood.</p>
+    <span class="section-eyebrow" id="area-eyebrow">Where We Serve</span>
+    <h2 class="section-title" id="area-title">Proudly serving<br>the Phoenix area.</h2>
+    <p class="section-sub"><span id="area-sub">We serve clients throughout the greater Phoenix metropolitan area. Contact us to confirm availability in your neighborhood.</span></p>
     <div class="area-tags-v2">
       <span class="area-tag-v2">Phoenix</span>
       <span class="area-tag-v2">Scottsdale</span>
@@ -288,8 +289,8 @@
   <div class="cta-banner-overlay"></div>
   <div class="cta-banner-content reveal">
     <span class="cta-eyebrow">Ready to Book? · &iquest;Lista para Reservar?</span>
-    <h2 class="cta-title">Your pet is in<br><em>good hands.</em></h2>
-    <p class="cta-sub">Contact us today and we&apos;ll take care of everything.</p>
+    <h2 class="cta-title" id="cta-title">Your pet is in<br><em>good hands.</em></h2>
+    <p class="cta-sub"><span id="cta-sub">Contact us today and we'll take care of everything.</span></p>
     <a href="contact.html" class="btn btn-gold" style="font-size:0.8rem; padding:1.1rem 2.8rem;">
       Get in Touch
     </a>
@@ -366,11 +367,100 @@ const observer = new IntersectionObserver((entries) => {
       entry.target.classList.add('visible');
     }
   });
-}, { threshold: 0.15 });
+}, { threshold: 0.05 });
 
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
   observer.observe(el);
 });
 </script>
+
+<script>
+const translations = {
+  en: {
+    'hero-title': 'Every pet deserves<br>to feel <em>beautiful.</em>',
+    'hero-sub': 'Caring, experienced grooming for dogs and cats. We treat every pet like family.',
+    'about-eyebrow': 'About Us',
+    'about-title': 'Passionate about pets.<br>Professional in every detail.',
+    'about-body': 'We are dedicated to providing the highest quality grooming experience for your dogs and cats. Every appointment is handled with patience, care, and a genuine love for animals of all breeds and temperaments.',
+    'services-eyebrow': 'What We Offer',
+    'services-title': 'Grooming services<br>for every pet.',
+    'services-sub': "<span id="services-sub">From a simple bath to a full groom &mdash; we've got your pet covered.</span>",
+    'area-eyebrow': 'Where We Serve',
+    'area-title': 'Proudly serving<br>the Phoenix area.',
+    'area-sub': '<span id="area-sub">We serve clients throughout the greater Phoenix metropolitan area. Contact us to confirm availability in your neighborhood.</span>',
+    'cta-eyebrow': 'Ready to Book?',
+    'cta-title': 'Your pet is in<br><em>good hands.</em>',
+    'cta-sub': "Contact us today and we'll take care of everything.",
+    'book-btn': 'Book an Appointment',
+    'view-btn': 'View Services',
+    'contact-btn': 'Get in Touch &rarr;',
+    'all-services-btn': 'See All Services &rarr;',
+    'insta-eyebrow': 'Follow Along on Instagram',
+    'insta-title': 'See our work.',
+  },
+  es: {
+    'hero-title': 'Cada mascota merece<br>sentirse <em>hermosa.</em>',
+    'hero-sub': 'Grooming profesional para perros y gatos. Tratamos a cada mascota como familia.',
+    'about-eyebrow': 'Sobre Nosotros',
+    'about-title': 'Apasionados por las mascotas.<br>Profesionales en cada detalle.',
+    'about-body': 'Nos dedicamos a brindar la mejor experiencia de grooming para tus perros y gatos. Cada cita se maneja con paciencia, cuidado y amor genuino por los animales.',
+    'services-eyebrow': 'Lo Que Ofrecemos',
+    'services-title': 'Servicios de grooming<br>para cada mascota.',
+    'services-sub': 'Desde un ba&ntilde;o sencillo hasta un grooming completo &mdash; te tenemos cubierto.',
+    'area-eyebrow': 'D&oacute;nde Servimos',
+    'area-title': 'Sirviendo con orgullo<br>el &aacute;rea de Phoenix.',
+    'area-sub': 'Servimos a clientes en toda el &aacute;rea metropolitana de Phoenix. Cont&aacute;ctanos para confirmar disponibilidad en tu zona.',
+    'cta-eyebrow': '&iquest;Lista para Reservar?',
+    'cta-title': 'Tu mascota est&aacute; en<br><em>buenas manos.</em>',
+    'cta-sub': 'Cont&aacute;ctanos hoy y nosotros nos encargamos de todo.',
+    'book-btn': 'Reservar una Cita',
+    'view-btn': 'Ver Servicios',
+    'contact-btn': 'Cont&aacute;ctanos &rarr;',
+    'all-services-btn': 'Ver Todos los Servicios &rarr;',
+    'insta-eyebrow': 'S&iacute;guenos en Instagram',
+    'insta-title': 'Mira nuestro trabajo.',
+  }
+};
+
+let currentLang = localStorage.getItem('lang') || 'en';
+
+function applyLang(lang) {
+  const t = translations[lang];
+  const set = (id, html) => { const el = document.getElementById(id); if(el) el.innerHTML = html; };
+  set('hero-title', t['hero-title']);
+  set('hero-sub', t['hero-sub']);
+  set('about-eyebrow', t['about-eyebrow']);
+  set('about-title', t['about-title']);
+  set('about-body', t['about-body']);
+  set('services-eyebrow', t['services-eyebrow']);
+  set('services-title', t['services-title']);
+  set('services-sub', t['services-sub']);
+  set('area-eyebrow', t['area-eyebrow']);
+  set('area-title', t['area-title']);
+  set('area-sub', t['area-sub']);
+  set('cta-eyebrow', t['cta-eyebrow']);
+  set('cta-title', t['cta-title']);
+  set('cta-sub', t['cta-sub']);
+  set('book-btn', t['book-btn']);
+  set('view-btn', t['view-btn']);
+  set('contact-btn', t['contact-btn']);
+  set('all-services-btn', t['all-services-btn']);
+  set('insta-eyebrow', t['insta-eyebrow']);
+  set('insta-title', t['insta-title']);
+  document.getElementById('langBtn').textContent = lang === 'en' ? 'ES' : 'EN';
+  localStorage.setItem('lang', lang);
+  currentLang = lang;
+}
+
+function toggleLang() {
+  applyLang(currentLang === 'en' ? 'es' : 'en');
+}
+
+// Apply on load
+document.addEventListener('DOMContentLoaded', () => {
+  if(currentLang === 'es') applyLang('es');
+});
+</script>
+
 </body>
 </html>

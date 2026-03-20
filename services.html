@@ -25,6 +25,7 @@
       <li><a href="services.html" class="active">Services</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="contact.html" class="nav-cta-btn">Book Now</a></li>
+      <li><button class="lang-toggle" onclick="toggleLang()" id="langBtn">ES</button></li>
     </ul>
   </div>
 </nav>
@@ -108,7 +109,7 @@
 
     <div class="service-row-v2 reveal">
       <img class="service-row-img"
-        src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&q=75&fit=crop&crop=bottom"
+        src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=200&q=75&fit=crop"
         alt="Flea bath" loading="lazy">
       <div>
         <div class="service-row-name">Flea Bath &amp; Medicated Washes</div>
@@ -169,7 +170,7 @@
 
     <div class="service-row-v2 reveal">
       <img class="service-row-img"
-        src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=200&q=75&fit=crop&crop=top"
+        src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&q=75&fit=crop&crop=faces"
         alt="Monthly program" loading="lazy">
       <div>
         <div class="service-row-name">Monthly Grooming Program</div>
@@ -180,7 +181,7 @@
 
     <div class="service-row-v2 reveal">
       <img class="service-row-img"
-        src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=200&q=75&fit=crop&crop=top"
+        src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=200&q=75&fit=crop"
         alt="Weekly program" loading="lazy">
       <div>
         <div class="service-row-name">Weekly Maintenance Program</div>
@@ -252,9 +253,23 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add('visible');
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.05 });
 
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+</script>
+
+<script>
+let currentLang = localStorage.getItem('lang') || 'en';
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'es' : 'en';
+  localStorage.setItem('lang', currentLang);
+  document.getElementById('langBtn').textContent = currentLang === 'en' ? 'ES' : 'EN';
+  // Reload to apply - full translation handled by page reload
+  location.reload();
+}
+document.addEventListener('DOMContentLoaded', () => {
+  if(currentLang === 'es') document.getElementById('langBtn').textContent = 'EN';
+});
 </script>
 </body>
 </html>
