@@ -11,7 +11,6 @@
 <link rel="canonical" href="https://www.dogandcatgroomer.com">
 <link rel="stylesheet" href="style.css">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script src="/cms-loader.js"></script>
 </head>
 <body>
 
@@ -340,6 +339,7 @@
   </div>
 </footer>
 
+<script src="/cms-loader.js"></script>
 <script>
 // Nav scroll effect
 window.addEventListener('scroll', () => {
@@ -385,7 +385,7 @@ const translations = {
     'about-body': 'We are dedicated to providing the highest quality grooming experience for your dogs and cats. Every appointment is handled with patience, care, and a genuine love for animals of all breeds and temperaments.',
     'services-eyebrow': 'What We Offer',
     'services-title': 'Grooming services<br>for every pet.',
-    'services-sub': "<span id="services-sub">From a simple bath to a full groom &mdash; we've got your pet covered.</span>",
+    'services-sub': 'From a simple bath to a full groom &mdash; we\'ve got your pet covered.',
     'area-eyebrow': 'Where We Serve',
     'area-title': 'Proudly serving<br>the Phoenix area.',
     'area-sub': '<span id="area-sub">We serve clients throughout the greater Phoenix metropolitan area. Contact us to confirm availability in your neighborhood.</span>',
@@ -457,8 +457,76 @@ function toggleLang() {
   applyLang(currentLang === 'en' ? 'es' : 'en');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  loadHome();
+// Load CMS content immediately
+window.addEventListener('load', async () => {
+  console.log('CMS Loader: starting...');
+  try {
+    const res = await fetch('/content/home.json?v=' + Date.now());
+    const data = await res.json();
+    console.log('CMS Loader: data loaded', data.hero_title);
+    
+    const set = (id, html) => {
+      const el = document.getElementById(id);
+      if (el && html) { el.innerHTML = html; console.log('CMS set:', id); }
+      else console.log('CMS missing element:', id);
+    };
+
+    set('hero-title', data.hero_title);
+    set('hero-sub', data.hero_subtitle);
+    set('about-title', data.about_title);
+    set('about-body', data.about_body);
+    set('about-quote', data.about_quote);
+    set('area-title', data.area_title);
+    set('area-sub', data.area_subtitle);
+    set('cta-title', data.cta_title);
+    set('cta-sub', data.cta_subtitle);
+
+    // Phone, email, instagram
+    document.querySelectorAll('.site-phone').forEach(el => {
+      el.textContent = data.phone;
+      el.href = 'tel:' + data.phone.replace(/\D/g,'');
+    });
+    document.querySelectorAll('.site-email').forEach(el => {
+      el.textContent = data.email;
+      el.href = 'mailto:' + data.email;
+    });
+    document.querySelectorAll('.site-instagram').forEach(el => {
+      el.textContent = data.instagram_handle;
+      el.href = data.instagram_url;
+    });
+
+    // Area cities
+    if (data.area_cities) {
+      const container = document.getElementById('area-cities');
+      if (container) {
+        container.innerHTML = data.area_cities
+          .map(c => '<span class="area-tag-v2">' + c + '</span>')
+          .join('');
+      }
+    }
+
+    // Services grid
+    if (data.services_preview) {
+      const grid = document.getElementById('services-grid');
+      if (grid) {
+        grid.innerHTML = data.services_preview.map(s => `
+          <div class="service-card-v2 visible">
+            <img class="service-card-img"
+              src="https://images.unsplash.com/${s.image}?w=600&q=75&fit=crop"
+              alt="${s.name}" loading="lazy">
+            <div class="service-num">${s.num}</div>
+            <div class="service-name-v2">${s.name}</div>
+            <p class="service-desc-v2">${s.description}</p>
+          </div>
+        `).join('');
+      }
+    }
+
+    console.log('CMS Loader: complete');
+  } catch(e) {
+    console.log('CMS Loader error:', e);
+  }
+  
   if(currentLang === 'es') applyLang('es');
 });
 </script>
