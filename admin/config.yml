@@ -6,9 +6,10 @@ media_folder: "images"
 public_folder: "/images"
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: "site"
+    label: "Site Content"
     files:
+
       - label: "Home Page"
         name: "home"
         file: "content/home.json"
@@ -17,6 +18,69 @@ collections:
           - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
           - { label: "About Title", name: "about_title", widget: "string" }
           - { label: "About Body", name: "about_body", widget: "text" }
-          - { label: "Instagram Handle", name: "instagram_handle", widget: "string" }
+          - { label: "About Quote", name: "about_quote", widget: "string" }
           - { label: "Phone Number", name: "phone", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
+          - { label: "Instagram Handle", name: "instagram_handle", widget: "string" }
+          - { label: "Instagram URL", name: "instagram_url", widget: "string" }
+          - { label: "Area Title", name: "area_title", widget: "string" }
+          - { label: "Area Subtitle", name: "area_subtitle", widget: "text" }
+          - { label: "CTA Title", name: "cta_title", widget: "string" }
+          - { label: "CTA Subtitle", name: "cta_subtitle", widget: "string" }
+          - label: "Service Area Cities"
+            name: "area_cities"
+            widget: "list"
+            field: { label: "City", name: "city", widget: "string" }
+          - label: "Services Preview"
+            name: "services_preview"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "num", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Photo ID", name: "image", widget: "string" }
+
+      - label: "Services Page"
+        name: "services"
+        file: "content/services.json"
+        fields:
+          - { label: "Page Title", name: "page_title", widget: "string" }
+          - { label: "Pricing Note", name: "pricing_note", widget: "text" }
+          - label: "Dog Services"
+            name: "dog_services"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Price", name: "price", widget: "string" }
+              - { label: "Photo ID", name: "image", widget: "string" }
+          - label: "Cat Services"
+            name: "cat_services"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Price", name: "price", widget: "string" }
+              - { label: "Photo ID", name: "image", widget: "string" }
+          - label: "Programs"
+            name: "programs"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Price", name: "price", widget: "string" }
+              - { label: "Photo ID", name: "image", widget: "string" }
+
+      - label: "Contact Page"
+        name: "contact"
+        file: "content/contact.json"
+        fields:
+          - { label: "Page Title", name: "page_title", widget: "string" }
+          - { label: "Phone Number", name: "phone", widget: "string" }
+          - { label: "Phone Note", name: "phone_note", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Email Note", name: "email_note", widget: "string" }
+          - { label: "Service Area", name: "service_area", widget: "string" }
+          - { label: "Service Area Note", name: "service_area_note", widget: "string" }
+          - { label: "Instagram Handle", name: "instagram", widget: "string" }
+          - { label: "Walk-ins Note", name: "walkins_note", widget: "text" }
