@@ -20,7 +20,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 17px; }
 
 body {
   font-family: 'Jost', sans-serif;
@@ -412,7 +412,7 @@ a { text-decoration: none; color: inherit; }
 
 .stat-number {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   font-weight: 300;
   color: var(--gold);
   line-height: 1;
@@ -445,7 +445,7 @@ section { padding: 7rem 3rem; }
 
 .section-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
   font-weight: 300;
   color: var(--charcoal);
   line-height: 1.15;
@@ -457,7 +457,7 @@ section { padding: 7rem 3rem; }
 }
 
 .section-sub {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--gray);
   line-height: 1.8;
   font-weight: 300;
@@ -533,7 +533,7 @@ section { padding: 7rem 3rem; }
 }
 
 .about-body {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--gray);
   line-height: 1.9;
   font-weight: 300;
@@ -658,7 +658,7 @@ section { padding: 7rem 3rem; }
 
 .service-name-v2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 400;
   color: white;
   line-height: 1.2;
@@ -674,7 +674,7 @@ section { padding: 7rem 3rem; }
 }
 
 .service-desc-v2 {
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   color: rgba(255,255,255,0.45);
   line-height: 1.7;
   font-weight: 300;
@@ -895,7 +895,7 @@ section { padding: 7rem 3rem; }
 
 .contact-item-value {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: var(--charcoal);
 }
 
@@ -1074,7 +1074,7 @@ section { padding: 7rem 3rem; }
 }
 
 .footer-brand-desc {
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   color: rgba(255,255,255,0.3);
   line-height: 1.8;
   font-weight: 300;
@@ -1096,7 +1096,7 @@ section { padding: 7rem 3rem; }
 }
 
 .footer-links-v2 a {
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   color: rgba(255,255,255,0.35);
   transition: color 0.2s;
   font-weight: 300;
@@ -1225,7 +1225,7 @@ section { padding: 7rem 3rem; }
 
 .service-row-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: var(--charcoal);
   margin-bottom: 2px;
 }
@@ -1238,7 +1238,7 @@ section { padding: 7rem 3rem; }
 }
 
 .service-row-desc {
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   color: var(--gray);
   line-height: 1.6;
   font-weight: 300;
@@ -1287,7 +1287,7 @@ section { padding: 7rem 3rem; }
   .nav-toggle { display: flex; }
 
   .hero-content { padding: 0 1.5rem; }
-  .hero-title { font-size: clamp(2.8rem, 10vw, 4.5rem); }
+  .hero-title { font-size: clamp(3.2rem, 11vw, 5rem); }
 
   .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
 
