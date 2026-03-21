@@ -1743,7 +1743,7 @@ body.nav-open {
 /* ── LOGO IMAGE ─────────────────────────────────── */
 .logo-img {
   height: auto;
-  width: calc(100vw - 90px);
+  width: calc(100vw - 120px);
   max-width: 500px;
   display: block;
   object-fit: contain;
@@ -1759,5 +1759,5 @@ body.nav-open {
 }
 
 @media (max-width: 768px) {
-  .logo-img { height: auto; width: calc(100vw - 80px); max-width: 100%; }
+  .logo-img { height: auto; width: calc(100vw - 110px); max-width: 100%; }
 }
