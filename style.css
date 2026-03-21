@@ -126,7 +126,7 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 90px;
 }
 
 .logo {
@@ -1240,7 +1240,7 @@ section { padding: 7rem 3rem; }
 
 .service-row-img {
   width: 80px;
-  height: 80px;
+  height: 90px;
   object-fit: cover;
   border-radius: 2px;
   filter: grayscale(20%);
@@ -1742,10 +1742,12 @@ body.nav-open {
 
 /* ── LOGO IMAGE ─────────────────────────────────── */
 .logo-img {
-  height: 44px;
+  height: 56px;
   width: auto;
+  max-width: calc(100vw - 120px);
   display: block;
   object-fit: contain;
+  object-position: left center;
 }
 
 .footer-logo-img {
@@ -1757,5 +1759,5 @@ body.nav-open {
 }
 
 @media (max-width: 768px) {
-  .logo-img { height: 36px; }
+  .logo-img { height: 52px; max-width: calc(100vw - 100px); }
 }
