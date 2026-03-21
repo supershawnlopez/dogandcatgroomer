@@ -20,6 +20,46 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ══════════════════════════════════════════════════
+   HORIZONTAL SCROLL FIX
+   iOS Safari ignores overflow-x:hidden on body.
+   Fix: use overflow:hidden on a wrapper div instead.
+   Also clip reveal animations that go off-screen.
+══════════════════════════════════════════════════ */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100vw;
+  position: relative;
+}
+
+/* Clip any element animating in from sides */
+.reveal-left,
+.reveal-right {
+  will-change: transform, opacity;
+}
+
+/* Wrapper clips everything */
+.site-wrapper {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+
+
+/* Fix sections that might overflow */
+section, .stats-bar, .about-section, .gallery-strip,
+.instagram-section, .service-area, .cta-banner,
+.footer-v2, .contact-split, .services-list-v2,
+.page-hero, .nav-overlay {
+  overflow-x: hidden;
+}
+
 html { scroll-behavior: smooth; font-size: 17px; }
 
 body {
@@ -27,7 +67,6 @@ body {
   background: var(--warm-white);
   color: var(--charcoal);
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 img { max-width: 100%; display: block; }
@@ -1699,4 +1738,24 @@ body.nav-open {
   .nav-overlay-links a {
     font-size: clamp(2.2rem, 10vw, 3.5rem);
   }
+}
+
+/* ── LOGO IMAGE ─────────────────────────────────── */
+.logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.footer-logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .logo-img { height: 36px; }
 }
