@@ -1,0 +1,83 @@
+{
+  "page_title": "What We Offer",
+  "page_eyebrow": "Services & Pricing",
+  "dog_services": [
+    {
+      "name": "All Inclusive Full Groom",
+      "description": "Bath, blow dry, full haircut, nail trim, ear cleaning, and finishing touches. Everything your pet needs in one visit.",
+      "price": "Call for pricing",
+      "image": "photo-1587300003388-59208cc962cb"
+    },
+    {
+      "name": "FFT — Mini Groom",
+      "description": "Face, feet, and tail trim. Quick tidy-up between full groom appointments.",
+      "price": "Call for pricing",
+      "image": "photo-1552053831-71594a27632d"
+    },
+    {
+      "name": "Bath & Brush",
+      "description": "Full shampoo, conditioner, blow dry, and thorough brush out. Great for maintenance between haircuts.",
+      "price": "Call for pricing",
+      "image": "photo-1596854407944-bf87f6fdd49e"
+    },
+    {
+      "name": "Deshed Treatment",
+      "description": "Specialized shampoo and treatment to dramatically reduce shedding.",
+      "price": "Call for pricing",
+      "image": "photo-1561037404-61cd46aa615b"
+    },
+    {
+      "name": "Nail Trim & Buffing",
+      "description": "Careful nail trimming and buffing. Walk-ins welcome for this service.",
+      "price": "Call for pricing",
+      "image": "photo-1601758124510-52d02ddb7cbd"
+    },
+    {
+      "name": "Flea Bath & Medicated Washes",
+      "description": "Specialized flea treatment baths and medicated washes for skin conditions.",
+      "price": "Call for pricing",
+      "image": "photo-1587300003388-59208cc962cb"
+    },
+    {
+      "name": "Puppy Groom",
+      "description": "A gentle, patient introduction to grooming for young puppies.",
+      "price": "Call for pricing",
+      "image": "photo-1552053831-71594a27632d"
+    },
+    {
+      "name": "Senior Comfort Groom",
+      "description": "Extra gentle grooming designed for senior dogs with special attention to comfort.",
+      "price": "Call for pricing",
+      "image": "photo-1518717758536-85ae29035b6d"
+    }
+  ],
+  "cat_services": [
+    {
+      "name": "Cat Full Groom",
+      "description": "Complete grooming for cats including bath, dry, trim, and nail clipping.",
+      "price": "Call for pricing",
+      "image": "photo-1574158622682-e40e69881006"
+    },
+    {
+      "name": "Cat Nail Trim",
+      "description": "Quick and stress-free nail trimming for cats. Walk-ins welcome.",
+      "price": "Call for pricing",
+      "image": "photo-1543466835-00a7907e9de1"
+    }
+  ],
+  "programs": [
+    {
+      "name": "Monthly Grooming Program",
+      "description": "Regular monthly appointments to keep your pet clean, healthy, and looking great all year.",
+      "price": "Call for pricing",
+      "image": "photo-1552053831-71594a27632d"
+    },
+    {
+      "name": "Weekly Maintenance Program",
+      "description": "Weekly appointments for pets that need more frequent grooming maintenance.",
+      "price": "Call for pricing",
+      "image": "photo-1518717758536-85ae29035b6d"
+    }
+  ],
+  "pricing_note": "Pricing varies by breed, size, and coat condition. Contact us for a personalized quote."
+}
