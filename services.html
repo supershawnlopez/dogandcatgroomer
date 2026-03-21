@@ -8,6 +8,7 @@
 <link rel="canonical" href="https://www.dogandcatgroomer.com/services.html">
 <link rel="stylesheet" href="style.css">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="/cms-loader.js"></script>
 </head>
 <body>
 
@@ -41,7 +42,7 @@
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
     <p class="page-hero-eyebrow">Services &amp; Pricing</p>
-    <h1 class="page-hero-title">What We Offer</h1>
+    <h1 class="page-hero-title" id="page-title">What We Offer</h1>
   </div>
 </div>
 
@@ -51,8 +52,7 @@
 
     <!-- DOG SERVICES -->
     <h2 class="service-category-title reveal">For Your Dog</h2>
-
-    <div class="service-row-v2 reveal">
+    <div id="dog-services"><div class="service-row-v2 reveal">
       <img class="service-row-img"
         src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&q=75&fit=crop"
         alt="Full groom" loading="lazy">
@@ -140,10 +140,10 @@
       <div class="service-row-price">Call for pricing</div>
     </div>
 
+    </div>
     <!-- CAT SERVICES -->
     <h2 class="service-category-title reveal" style="margin-top:4rem">For Your Cat</h2>
-
-    <div class="service-row-v2 reveal">
+    <div id="cat-services"><div class="service-row-v2 reveal">
       <img class="service-row-img"
         src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=200&q=75&fit=crop"
         alt="Cat full groom" loading="lazy">
@@ -165,10 +165,10 @@
       <div class="service-row-price">Call for pricing</div>
     </div>
 
+    </div>
     <!-- PROGRAMS -->
     <h2 class="service-category-title reveal" style="margin-top:4rem">Programs</h2>
-
-    <div class="service-row-v2 reveal">
+    <div id="programs"><div class="service-row-v2 reveal">
       <img class="service-row-img"
         src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=200&q=75&fit=crop"
         alt="Monthly program" loading="lazy">
@@ -190,7 +190,8 @@
       <div class="service-row-price">Call for pricing</div>
     </div>
 
-    <div class="services-note-v2 reveal">
+    </div>
+    <div class="services-note-v2 reveal" id="pricing-note">
       Pricing varies by breed, size, and coat condition. Contact us for a personalized quote.
     </div>
 
@@ -232,8 +233,8 @@
     <div>
       <div class="footer-col-title">Contact</div>
       <ul class="footer-links-v2">
-        <li><a href="tel:6026236955">(602) 623-6955</a></li>
-        <li><a href="mailto:eimy@dogandcatgroomer.com">eimy@dogandcatgroomer.com</a></li>
+        <li><a href="tel:6026236955" class="site-phone">(602) 623-6955</a></li>
+        <li><a href="mailto:eimy@dogandcatgroomer.com" class="site-email">eimy@dogandcatgroomer.com</a></li>
         <li><a href="https://instagram.com" target="_blank">@dogandcatgroomer</a></li>
       </ul>
     </div>
@@ -256,6 +257,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.05 });
 
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+loadServices();
 </script>
 
 <script>

@@ -11,6 +11,7 @@
 <link rel="canonical" href="https://www.dogandcatgroomer.com">
 <link rel="stylesheet" href="style.css">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="/cms-loader.js"></script>
 </head>
 <body>
 
@@ -96,7 +97,7 @@
         alt="Professional cat grooming"
         loading="lazy">
       <div class="about-image-overlay">
-        <p class="about-image-quote">"Every pet that walks through our door gets treated with love and care."</p>
+        <p class="about-image-quote" id="about-quote">"Every pet that walks through our door gets treated with love and care."</p>
         <span class="about-image-author">Dog &amp; Cat Groomer Team</span>
       </div>
     </div>
@@ -162,7 +163,7 @@
       <a href="services.html" class="btn btn-outline-white reveal" id="all-services-btn">See All Services &rarr;</a>
     </div>
 
-    <div class="services-grid-v2">
+    <div class="services-grid-v2" id="services-grid">
       <div class="service-card-v2 reveal">
         <img class="service-card-img"
           src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=75&fit=crop"
@@ -264,7 +265,7 @@
     <span class="section-eyebrow" id="area-eyebrow">Where We Serve</span>
     <h2 class="section-title" id="area-title">Proudly serving<br>the Phoenix area.</h2>
     <p class="section-sub"><span id="area-sub">We serve clients throughout the greater Phoenix metropolitan area. Contact us to confirm availability in your neighborhood.</span></p>
-    <div class="area-tags-v2">
+    <div class="area-tags-v2" id="area-cities">
       <span class="area-tag-v2">Phoenix</span>
       <span class="area-tag-v2">Scottsdale</span>
       <span class="area-tag-v2">Tempe</span>
@@ -326,9 +327,9 @@
     <div>
       <div class="footer-col-title">Contact</div>
       <ul class="footer-links-v2">
-        <li><a href="tel:6026236955">(602) 623-6955</a></li>
-        <li><a href="mailto:eimy@dogandcatgroomer.com">eimy@dogandcatgroomer.com</a></li>
-        <li><a href="https://instagram.com" target="_blank">@dogandcatgroomer</a></li>
+        <li><a href="tel:6026236955" class="site-phone">(602) 623-6955</a></li>
+        <li><a href="mailto:eimy@dogandcatgroomer.com" class="site-email">eimy@dogandcatgroomer.com</a></li>
+        <li><a href="https://instagram.com" target="_blank" class="site-instagram">@dogandcatgroomer</a></li>
         <li><span style="color:rgba(255,255,255,0.2)">Phoenix Metro Area, AZ</span></li>
       </ul>
     </div>
@@ -456,8 +457,8 @@ function toggleLang() {
   applyLang(currentLang === 'en' ? 'es' : 'en');
 }
 
-// Apply on load
 document.addEventListener('DOMContentLoaded', () => {
+  loadHome();
   if(currentLang === 'es') applyLang('es');
 });
 </script>

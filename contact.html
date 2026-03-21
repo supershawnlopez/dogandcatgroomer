@@ -8,6 +8,7 @@
 <link rel="canonical" href="https://www.dogandcatgroomer.com/contact.html">
 <link rel="stylesheet" href="style.css">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="/cms-loader.js"></script>
 </head>
 <body>
 
@@ -40,7 +41,7 @@
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
     <p class="page-hero-eyebrow">Get In Touch</p>
-    <h1 class="page-hero-title">Let&apos;s talk about<br>your pet.</h1>
+    <h1 class="page-hero-title" id="page-title">Let's talk about<br>your pet.</h1>
   </div>
 </div>
 
@@ -56,31 +57,31 @@
 
         <div class="contact-item-v2">
           <div class="contact-item-label">Phone / Tel&eacute;fono</div>
-          <div class="contact-item-value"><a href="tel:6026236955">(602) 623-6955</a></div>
-          <div class="contact-item-sub">Call or text anytime</div>
+          <div class="contact-item-value"><a href="tel:6026236955" class="site-phone">(602) 623-6955</a></div>
+          <div class="contact-item-sub" id="phone-note">Call or text anytime</div>
         </div>
 
         <div class="contact-item-v2">
           <div class="contact-item-label">Email</div>
-          <div class="contact-item-value"><a href="mailto:eimy@dogandcatgroomer.com">eimy@dogandcatgroomer.com</a></div>
-          <div class="contact-item-sub">We respond within a few hours</div>
+          <div class="contact-item-value"><a href="mailto:eimy@dogandcatgroomer.com" class="site-email">eimy@dogandcatgroomer.com</a></div>
+          <div class="contact-item-sub" id="email-note">We respond within a few hours</div>
         </div>
 
         <div class="contact-item-v2">
           <div class="contact-item-label">Service Area / &Aacute;rea de Servicio</div>
-          <div class="contact-item-value">Phoenix Metro, Arizona</div>
-          <div class="contact-item-sub">Scottsdale, Tempe, Mesa, Chandler &amp; more</div>
+          <div class="contact-item-value" id="service-area">Phoenix Metro, Arizona</div>
+          <div class="contact-item-sub" id="service-area-note">Scottsdale, Tempe, Mesa, Chandler &amp; more</div>
         </div>
 
         <div class="contact-item-v2">
           <div class="contact-item-label">Instagram</div>
-          <div class="contact-item-value"><a href="https://instagram.com" target="_blank">@dogandcatgroomer</a></div>
+          <div class="contact-item-value"><a href="https://instagram.com" target="_blank" class="site-instagram">@dogandcatgroomer</a></div>
           <div class="contact-item-sub">Follow us for daily grooming photos</div>
         </div>
 
         <div style="background:var(--gold-light); border-left:3px solid var(--gold); padding:1.2rem 1.5rem; margin-top:2rem;">
           <p style="font-size:0.82rem; color:var(--warm-dark); line-height:1.7;">
-            <strong style="color:var(--charcoal)">Walk-ins welcome</strong> for nail trims &amp; gland expression.
+            <strong style="color:var(--charcoal)" id="walkins-note">Walk-ins welcome for nail trims &amp; gland expression.</strong>
           </p>
         </div>
       </div>
@@ -199,8 +200,8 @@
     <div>
       <div class="footer-col-title">Contact</div>
       <ul class="footer-links-v2">
-        <li><a href="tel:6026236955">(602) 623-6955</a></li>
-        <li><a href="mailto:eimy@dogandcatgroomer.com">eimy@dogandcatgroomer.com</a></li>
+        <li><a href="tel:6026236955" class="site-phone">(602) 623-6955</a></li>
+        <li><a href="mailto:eimy@dogandcatgroomer.com" class="site-email">eimy@dogandcatgroomer.com</a></li>
         <li><a href="https://instagram.com" target="_blank">@dogandcatgroomer</a></li>
       </ul>
     </div>
@@ -242,6 +243,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.05 });
 
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+loadContact();
 </script>
 </body>
 </html>
