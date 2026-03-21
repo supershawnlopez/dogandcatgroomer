@@ -214,6 +214,7 @@ a { text-decoration: none; color: inherit; }
   overflow: hidden;
   display: flex;
   align-items: center;
+  margin-top: -110px;
 }
 
 .hero-bg {
@@ -1379,7 +1380,7 @@ section { padding: 7rem 3rem; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
