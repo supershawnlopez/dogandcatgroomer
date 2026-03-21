@@ -1742,9 +1742,9 @@ body.nav-open {
 
 /* ── LOGO IMAGE ─────────────────────────────────── */
 .logo-img {
-  height: 56px;
-  width: auto;
-  max-width: calc(100vw - 120px);
+  height: auto;
+  width: calc(100vw - 90px);
+  max-width: 500px;
   display: block;
   object-fit: contain;
   object-position: left center;
@@ -1759,5 +1759,5 @@ body.nav-open {
 }
 
 @media (max-width: 768px) {
-  .logo-img { height: 52px; max-width: calc(100vw - 100px); }
+  .logo-img { height: auto; width: calc(100vw - 80px); max-width: 100%; }
 }
