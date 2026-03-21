@@ -92,6 +92,7 @@
   <div class="about-grid">
     <div class="about-image-col reveal-left">
       <img
+        id="about-img"
         src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=900&q=80&fit=crop&crop=center"
         alt="Professional cat grooming"
         loading="lazy">
@@ -282,6 +283,7 @@
 <div class="cta-banner">
   <div class="cta-banner-bg">
     <img
+      id="cta-img"
       src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=1800&q=80&fit=crop"
       alt="Happy groomed pet"
       loading="lazy">
@@ -457,20 +459,18 @@ function toggleLang() {
   applyLang(currentLang === 'en' ? 'es' : 'en');
 }
 
-// Load CMS content immediately
+// Load CMS content
 window.addEventListener('load', async () => {
-  console.log('CMS Loader: starting...');
   try {
     const res = await fetch('/content/home.json?v=' + Date.now());
     const data = await res.json();
-    console.log('CMS Loader: data loaded', data.hero_title);
-    
+
     const set = (id, html) => {
       const el = document.getElementById(id);
-      if (el && html) { el.innerHTML = html; console.log('CMS set:', id); }
-      else console.log('CMS missing element:', id);
+      if (el && html) el.innerHTML = html;
     };
 
+    // Text content
     set('hero-title', data.hero_title);
     set('hero-sub', data.hero_subtitle);
     set('about-title', data.about_title);
@@ -495,6 +495,24 @@ window.addEventListener('load', async () => {
       el.href = data.instagram_url;
     });
 
+    // Hero background photo
+    if (data.hero_image) {
+      const heroBg = document.getElementById('heroBg');
+      if (heroBg) heroBg.src = data.hero_image;
+    }
+
+    // About section photo
+    if (data.about_image) {
+      const aboutImg = document.getElementById('about-img');
+      if (aboutImg) aboutImg.src = data.about_image;
+    }
+
+    // CTA banner background photo
+    if (data.cta_image) {
+      const ctaImg = document.getElementById('cta-img');
+      if (ctaImg) ctaImg.src = data.cta_image;
+    }
+
     // Area cities
     if (data.area_cities) {
       const container = document.getElementById('area-cities');
@@ -505,28 +523,27 @@ window.addEventListener('load', async () => {
       }
     }
 
-    // Services grid
+    // Services grid — supports both uploaded images and Unsplash IDs
     if (data.services_preview) {
       const grid = document.getElementById('services-grid');
       if (grid) {
-        grid.innerHTML = data.services_preview.map(s => `
-          <div class="service-card-v2 visible">
-            <img class="service-card-img"
-              src="https://images.unsplash.com/${s.image}?w=600&q=75&fit=crop"
-              alt="${s.name}" loading="lazy">
-            <div class="service-num">${s.num}</div>
-            <div class="service-name-v2">${s.name}</div>
-            <p class="service-desc-v2">${s.description}</p>
-          </div>
-        `).join('');
+        grid.innerHTML = data.services_preview.map(s => {
+          const imgSrc = s.image && s.image.startsWith('/images/')
+            ? s.image
+            : 'https://images.unsplash.com/' + (s.image_id || s.image) + '?w=600&q=75&fit=crop';
+          return '<div class="service-card-v2 visible">' +
+            '<img class="service-card-img" src="' + imgSrc + '" alt="' + s.name + '" loading="lazy">' +
+            '<div class="service-num">' + s.num + '</div>' +
+            '<div class="service-name-v2">' + s.name + '</div>' +
+            '<p class="service-desc-v2">' + s.description + '</p>' +
+            '</div>';
+        }).join('');
       }
     }
 
-    console.log('CMS Loader: complete');
   } catch(e) {
-    console.log('CMS Loader error:', e);
+    console.log('CMS error:', e);
   }
-  
   if(currentLang === 'es') applyLang('es');
 });
 </script>
