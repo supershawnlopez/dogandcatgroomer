@@ -88,7 +88,7 @@
 
       <!-- RIGHT: FORM -->
       <div class="form-v2 reveal-right">
-        <div class="form-v2-title">Send us a message</div>
+        <div class="form-v2-title" id="form-title">Send us a message</div>
 
         <form
           name="contact"
@@ -103,11 +103,11 @@
 
           <div class="form-row-v2">
             <div class="form-field">
-              <label for="name">Your Name *</label>
+              <label for="name" id="name-label">Your Name *</label>
               <input type="text" id="name" name="name" placeholder="Full name" required>
             </div>
             <div class="form-field">
-              <label for="phone">Phone *</label>
+              <label for="phone" id="phone-label">Phone *</label>
               <input type="tel" id="phone" name="phone" placeholder="(602) 000-0000" required>
             </div>
           </div>
@@ -118,11 +118,11 @@
           </div>
 
           <div class="form-field">
-            <label>Type of Pet *</label>
+            <label id="pet-label">Type of Pet *</label>
             <div class="pet-options">
-              <button type="button" class="pet-option" onclick="selectPet(this,'Dog')">Dog</button>
-              <button type="button" class="pet-option" onclick="selectPet(this,'Cat')">Cat</button>
-              <button type="button" class="pet-option" onclick="selectPet(this,'Both')">Both</button>
+              <button type="button" class="pet-option" onclick="selectPet(this,'Dog')" id="pet-dog-btn">Dog</button>
+              <button type="button" class="pet-option" onclick="selectPet(this,'Cat')" id="pet-cat-btn">Cat</button>
+              <button type="button" class="pet-option" onclick="selectPet(this,'Both')" id="pet-both-btn">Both</button>
             </div>
             <input type="hidden" id="petType" name="pet_type">
           </div>
@@ -133,7 +133,7 @@
           </div>
 
           <div class="form-field">
-            <label for="service">Service</label>
+            <label for="service" id="service-label">Service</label>
             <select id="service" name="service">
               <option value="" disabled selected>Select a service</option>
               <option>Full Groom</option>
@@ -143,20 +143,20 @@
               <option>Deshed Treatment</option>
               <option>Puppy Groom</option>
               <option>Senior Comfort Groom</option>
-              <option>Monthly Program / Programa Mensual</option>
+              <option>Monthly Program</option>
               <option>Not sure yet</option>
             </select>
           </div>
 
           <div class="form-field">
-            <label for="message">Message</label>
+            <label for="message" id="message-label">Message</label>
             <textarea id="message" name="message" placeholder="Tell us about your pet or ask us anything..."></textarea>
           </div>
 
-          <button type="submit" class="form-submit-v2">
+          <button type="submit" class="form-submit-v2" id="submit-btn">
             Send Message &rarr;
           </button>
-          <p class="form-note-v2">We typically respond within a few hours.</p>
+          <p class="form-note-v2" id="form-note">We typically respond within a few hours.</p>
         </form>
 
         <div class="form-success-v2" id="formSuccess">
@@ -248,6 +248,76 @@ loadContact();
 <script src="/cms-loader.js"></script>
 <script>
 window.addEventListener("load", function() { loadContact(); });
+</script>
+
+
+<script>
+let currentLang = localStorage.getItem('lang') || 'en';
+
+const contactTranslations = {
+  en: {
+    'page-title': "Let's talk about<br>your pet.",
+    'intro-title': "We'd love to<br>hear from you.",
+    'form-title': 'Send us a message',
+    'submit-btn': 'Send Message &rarr;',
+    'name-label': 'Your Name *',
+    'phone-label': 'Phone *',
+    'pet-label': 'Type of Pet *',
+    'pet-dog': 'Dog',
+    'pet-cat': 'Cat',
+    'pet-both': 'Both',
+    'service-label': 'Service',
+    'message-label': 'Message',
+    'form-note': 'We typically respond within a few hours.'
+  },
+  es: {
+    'page-title': 'Hablemos de<br>tu mascota.',
+    'intro-title': 'Nos encantar&iacute;a<br>saber de ti.',
+    'form-title': 'Env&iacute;anos un mensaje',
+    'submit-btn': 'Enviar Mensaje &rarr;',
+    'name-label': 'Tu Nombre *',
+    'phone-label': 'Tel&eacute;fono *',
+    'pet-label': 'Tipo de Mascota *',
+    'pet-dog': 'Perro',
+    'pet-cat': 'Gato',
+    'pet-both': 'Los dos',
+    'service-label': 'Servicio',
+    'message-label': 'Mensaje',
+    'form-note': 'Generalmente respondemos en pocas horas.'
+  }
+};
+
+function applyContactLang(lang) {
+  const t = contactTranslations[lang];
+  const set = (id, html) => { const el = document.getElementById(id); if(el && html) el.innerHTML = html; };
+  const setText = (id, html) => { const el = document.getElementById(id); if(el && html) el.innerHTML = html; };
+  set('page-title', t['page-title']);
+  set('intro-title', t['intro-title']);
+  set('form-title', t['form-title']);
+  set('submit-btn', t['submit-btn']);
+  set('name-label', t['name-label']);
+  set('phone-label', t['phone-label']);
+  set('pet-label', t['pet-label']);
+  set('pet-dog-btn', t['pet-dog']);
+  set('pet-cat-btn', t['pet-cat']);
+  set('pet-both-btn', t['pet-both']);
+  set('service-label', t['service-label']);
+  set('message-label', t['message-label']);
+  set('form-note', t['form-note']);
+  const btn = document.getElementById('langBtn');
+  if(btn) btn.textContent = lang === 'en' ? 'ES' : 'EN';
+  localStorage.setItem('lang', lang);
+  currentLang = lang;
+}
+
+function toggleLang() {
+  applyContactLang(currentLang === 'en' ? 'es' : 'en');
+}
+
+window.addEventListener('load', function() {
+  loadContact();
+  if(currentLang === 'es') applyContactLang('es');
+});
 </script>
 </body>
 </html>

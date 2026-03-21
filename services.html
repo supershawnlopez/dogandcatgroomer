@@ -50,7 +50,7 @@
   <div class="section-inner">
 
     <!-- DOG SERVICES -->
-    <h2 class="service-category-title reveal">For Your Dog</h2>
+    <h2 class="service-category-title reveal" id="dog-heading">For Your Dog</h2>
     <div id="dog-services"><div class="service-row-v2 reveal">
       <img class="service-row-img"
         src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&q=75&fit=crop"
@@ -141,7 +141,7 @@
 
     </div>
     <!-- CAT SERVICES -->
-    <h2 class="service-category-title reveal" style="margin-top:4rem">For Your Cat</h2>
+    <h2 class="service-category-title reveal" id="cat-heading" style="margin-top:4rem">For Your Cat</h2>
     <div id="cat-services"><div class="service-row-v2 reveal">
       <img class="service-row-img"
         src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=200&q=75&fit=crop"
@@ -166,7 +166,7 @@
 
     </div>
     <!-- PROGRAMS -->
-    <h2 class="service-category-title reveal" style="margin-top:4rem">Programs</h2>
+    <h2 class="service-category-title reveal" id="programs-heading" style="margin-top:4rem">Programs</h2>
     <div id="programs"><div class="service-row-v2 reveal">
       <img class="service-row-img"
         src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=200&q=75&fit=crop"
@@ -259,22 +259,49 @@ document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => 
 loadServices();
 </script>
 
-<script>
-let currentLang = localStorage.getItem('lang') || 'en';
-function toggleLang() {
-  currentLang = currentLang === 'en' ? 'es' : 'en';
-  localStorage.setItem('lang', currentLang);
-  document.getElementById('langBtn').textContent = currentLang === 'en' ? 'ES' : 'EN';
-  // Reload to apply - full translation handled by page reload
-  location.reload();
-}
-document.addEventListener('DOMContentLoaded', () => {
-  if(currentLang === 'es') document.getElementById('langBtn').textContent = 'EN';
-});
-</script>
 <script src="/cms-loader.js"></script>
 <script>
-window.addEventListener("load", function() { loadServices(); });
+let currentLang = localStorage.getItem('lang') || 'en';
+
+const servicesTranslations = {
+  en: {
+    'page-title': 'What We Offer',
+    'dog-heading': 'For Your Dog',
+    'cat-heading': 'For Your Cat',
+    'programs-heading': 'Programs',
+    'book-btn': 'Get in Touch &rarr;'
+  },
+  es: {
+    'page-title': 'Lo Que Ofrecemos',
+    'dog-heading': 'Para Tu Perro',
+    'cat-heading': 'Para Tu Gato',
+    'programs-heading': 'Programas',
+    'book-btn': 'Cont&aacute;ctanos &rarr;'
+  }
+};
+
+function applyServicesLang(lang) {
+  const t = servicesTranslations[lang];
+  const set = (id, html) => { const el = document.getElementById(id); if(el && html) el.innerHTML = html; };
+  set('page-title', t['page-title']);
+  set('dog-heading', t['dog-heading']);
+  set('cat-heading', t['cat-heading']);
+  set('programs-heading', t['programs-heading']);
+  set('book-btn', t['book-btn']);
+  const btn = document.getElementById('langBtn');
+  if(btn) btn.textContent = lang === 'en' ? 'ES' : 'EN';
+  localStorage.setItem('lang', lang);
+  currentLang = lang;
+}
+
+function toggleLang() {
+  applyServicesLang(currentLang === 'en' ? 'es' : 'en');
+}
+
+window.addEventListener('load', function() {
+  loadServices();
+  if(currentLang === 'es') applyServicesLang('es');
+});
 </script>
 </body>
 </html>
