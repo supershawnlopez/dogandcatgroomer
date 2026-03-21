@@ -7,80 +7,267 @@ public_folder: "/images"
 
 collections:
   - name: "site"
-    label: "Site Content"
+    label: "Website Content"
     files:
 
       - label: "Home Page"
         name: "home"
         file: "content/home.json"
         fields:
-          - { label: "Hero Title", name: "hero_title", widget: "string" }
-          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
-          - { label: "About Title", name: "about_title", widget: "string" }
-          - { label: "About Body", name: "about_body", widget: "text" }
-          - { label: "About Quote", name: "about_quote", widget: "string" }
-          - { label: "Phone Number", name: "phone", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Instagram Handle", name: "instagram_handle", widget: "string" }
-          - { label: "Instagram URL", name: "instagram_url", widget: "string" }
-          - { label: "Area Title", name: "area_title", widget: "string" }
-          - { label: "Area Subtitle", name: "area_subtitle", widget: "text" }
-          - { label: "CTA Title", name: "cta_title", widget: "string" }
-          - { label: "CTA Subtitle", name: "cta_subtitle", widget: "string" }
-          - label: "Service Area Cities"
+
+          - label: "--- HERO SECTION (Top of Page) ---"
+            name: "hero_divider"
+            widget: "hidden"
+            default: ""
+
+          - label: "Main Headline"
+            name: "hero_title"
+            widget: "string"
+            hint: "The big text visitors see first. Example: Every pet deserves to feel beautiful."
+
+          - label: "Tagline Under Headline"
+            name: "hero_subtitle"
+            widget: "text"
+            hint: "One or two sentences under the main headline."
+
+          - label: "Hero Background Photo"
+            name: "hero_image"
+            widget: "image"
+            required: false
+            hint: "Upload a photo for the full-screen background. Best size: 1800x1200px. Dogs or cats only!"
+
+          - label: "--- ABOUT SECTION ---"
+            name: "about_divider"
+            widget: "hidden"
+            default: ""
+
+          - label: "About Section Title"
+            name: "about_title"
+            widget: "string"
+            hint: "Headline for the About Us section."
+
+          - label: "About Section Text"
+            name: "about_body"
+            widget: "text"
+            hint: "A few sentences describing your business."
+
+          - label: "Quote on Photo"
+            name: "about_quote"
+            widget: "string"
+            hint: "Short quote that appears on top of the about photo."
+
+          - label: "About Section Photo"
+            name: "about_image"
+            widget: "image"
+            required: false
+            hint: "Upload a photo for the About section. Best size: 900x700px."
+
+          - label: "--- CONTACT INFO ---"
+            name: "contact_divider"
+            widget: "hidden"
+            default: ""
+
+          - label: "Phone Number"
+            name: "phone"
+            widget: "string"
+            hint: "Example: (602) 623-6955"
+
+          - label: "Email Address"
+            name: "email"
+            widget: "string"
+            hint: "Example: eimy@dogandcatgroomer.com"
+
+          - label: "Instagram Username"
+            name: "instagram_handle"
+            widget: "string"
+            hint: "Include the @ symbol. Example: @dogandcatgroomer"
+
+          - label: "Instagram Profile Link"
+            name: "instagram_url"
+            widget: "string"
+            hint: "Full URL. Example: https://instagram.com/dogandcatgroomer"
+
+          - label: "--- SERVICE AREA ---"
+            name: "area_divider"
+            widget: "hidden"
+            default: ""
+
+          - label: "Service Area Headline"
+            name: "area_title"
+            widget: "string"
+            hint: "Example: Proudly serving the Phoenix area."
+
+          - label: "Service Area Description"
+            name: "area_subtitle"
+            widget: "text"
+            hint: "One or two sentences about where you serve."
+
+          - label: "Cities You Serve"
             name: "area_cities"
             widget: "list"
-            field: { label: "City", name: "city", widget: "string" }
-          - label: "Services Preview"
+            hint: "Add or remove cities. Each city gets its own tag on the site."
+            field: { label: "City Name", name: "city", widget: "string" }
+
+          - label: "--- BOTTOM BANNER ---"
+            name: "cta_divider"
+            widget: "hidden"
+            default: ""
+
+          - label: "Bottom Banner Headline"
+            name: "cta_title"
+            widget: "string"
+            hint: "Example: Your pet is in good hands."
+
+          - label: "Bottom Banner Text"
+            name: "cta_subtitle"
+            widget: "string"
+            hint: "One sentence under the banner headline."
+
+          - label: "Bottom Banner Background Photo"
+            name: "cta_image"
+            widget: "image"
+            required: false
+            hint: "Upload a photo for the bottom banner background. Best size: 1800x900px."
+
+          - label: "--- SERVICES ON HOME PAGE ---"
+            name: "services_divider"
+            widget: "hidden"
+            default: ""
+
+          - label: "Services Shown on Home Page"
             name: "services_preview"
             widget: "list"
+            hint: "These 6 services show on the home page. You can edit names, descriptions and photos."
             fields:
-              - { label: "Number", name: "num", widget: "string" }
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Photo ID", name: "image", widget: "string" }
+              - { label: "Number", name: "num", widget: "string", hint: "Example: 01" }
+              - { label: "Service Name", name: "name", widget: "string" }
+              - { label: "Short Description", name: "description", widget: "text" }
+              - label: "Service Photo"
+                name: "image"
+                widget: "image"
+                required: false
+                hint: "Upload a photo for this service card."
+              - { label: "Unsplash Photo ID (if no upload)", name: "image_id", widget: "string", required: false, hint: "Only needed if not uploading a photo above." }
 
       - label: "Services Page"
         name: "services"
         file: "content/services.json"
         fields:
-          - { label: "Page Title", name: "page_title", widget: "string" }
-          - { label: "Pricing Note", name: "pricing_note", widget: "text" }
-          - label: "Dog Services"
+
+          - label: "Page Headline"
+            name: "page_title"
+            widget: "string"
+            hint: "Big headline at top of services page."
+
+          - label: "Pricing Disclaimer"
+            name: "pricing_note"
+            widget: "text"
+            hint: "Note shown at the bottom of the services list about pricing."
+
+          - label: "--- DOG SERVICES ---"
+            name: "dog_divider"
+            widget: "hidden"
+            default: ""
+
+          - label: "Dog Services List"
             name: "dog_services"
             widget: "list"
+            hint: "Add, edit or remove dog grooming services."
             fields:
-              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Service Name", name: "name", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
-              - { label: "Price", name: "price", widget: "string" }
-              - { label: "Photo ID", name: "image", widget: "string" }
-          - label: "Cat Services"
+              - { label: "Price", name: "price", widget: "string", default: "Call for pricing" }
+              - label: "Service Photo"
+                name: "image"
+                widget: "image"
+                required: false
+                hint: "Small thumbnail photo for this service. Best size: 200x200px."
+
+          - label: "--- CAT SERVICES ---"
+            name: "cat_divider"
+            widget: "hidden"
+            default: ""
+
+          - label: "Cat Services List"
             name: "cat_services"
             widget: "list"
+            hint: "Add, edit or remove cat grooming services."
             fields:
-              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Service Name", name: "name", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
-              - { label: "Price", name: "price", widget: "string" }
-              - { label: "Photo ID", name: "image", widget: "string" }
-          - label: "Programs"
+              - { label: "Price", name: "price", widget: "string", default: "Call for pricing" }
+              - label: "Service Photo"
+                name: "image"
+                widget: "image"
+                required: false
+                hint: "Small thumbnail photo for this service."
+
+          - label: "--- PROGRAMS ---"
+            name: "programs_divider"
+            widget: "hidden"
+            default: ""
+
+          - label: "Monthly & Weekly Programs"
             name: "programs"
             widget: "list"
+            hint: "Add, edit or remove grooming programs."
             fields:
-              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Program Name", name: "name", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
-              - { label: "Price", name: "price", widget: "string" }
-              - { label: "Photo ID", name: "image", widget: "string" }
+              - { label: "Price", name: "price", widget: "string", default: "Call for pricing" }
+              - label: "Program Photo"
+                name: "image"
+                widget: "image"
+                required: false
 
       - label: "Contact Page"
         name: "contact"
         file: "content/contact.json"
         fields:
-          - { label: "Page Title", name: "page_title", widget: "string" }
-          - { label: "Phone Number", name: "phone", widget: "string" }
-          - { label: "Phone Note", name: "phone_note", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Email Note", name: "email_note", widget: "string" }
-          - { label: "Service Area", name: "service_area", widget: "string" }
-          - { label: "Service Area Note", name: "service_area_note", widget: "string" }
-          - { label: "Instagram Handle", name: "instagram", widget: "string" }
-          - { label: "Walk-ins Note", name: "walkins_note", widget: "text" }
+
+          - label: "Page Headline"
+            name: "page_title"
+            widget: "string"
+            hint: "Big headline at top of contact page."
+
+          - label: "Intro Title"
+            name: "intro_title"
+            widget: "string"
+            hint: "Smaller headline above the contact form."
+
+          - label: "Phone Number"
+            name: "phone"
+            widget: "string"
+
+          - label: "Phone Note"
+            name: "phone_note"
+            widget: "string"
+            hint: "Short note under phone number. Example: Call or text anytime"
+
+          - label: "Email Address"
+            name: "email"
+            widget: "string"
+
+          - label: "Email Note"
+            name: "email_note"
+            widget: "string"
+            hint: "Short note under email. Example: We respond within a few hours"
+
+          - label: "Service Area"
+            name: "service_area"
+            widget: "string"
+            hint: "Example: Phoenix Metro, Arizona"
+
+          - label: "Service Area Note"
+            name: "service_area_note"
+            widget: "string"
+            hint: "Cities listed under service area."
+
+          - label: "Instagram Username"
+            name: "instagram"
+            widget: "string"
+
+          - label: "Walk-ins Message"
+            name: "walkins_note"
+            widget: "text"
+            hint: "Message about walk-in availability shown on contact page."
