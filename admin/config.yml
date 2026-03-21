@@ -34,7 +34,7 @@ collections:
             name: "hero_image"
             widget: "image"
             required: false
-            hint: "Upload a photo for the full-screen background. Best size: 1800x1200px. Dogs or cats only!"
+            hint: "HERO PHOTO — This is the big full-screen photo behind your main headline. Best size: 1800x1200px."
 
           - label: "--- ABOUT SECTION ---"
             name: "about_divider"
@@ -60,7 +60,7 @@ collections:
             name: "about_image"
             widget: "image"
             required: false
-            hint: "Upload a photo for the About section. Best size: 900x700px."
+            hint: "ABOUT PHOTO — This is the large photo on the left side of the About Us section. Best size: 900x700px."
 
           - label: "--- CONTACT INFO ---"
             name: "contact_divider"
@@ -127,7 +127,7 @@ collections:
             name: "cta_image"
             widget: "image"
             required: false
-            hint: "Upload a photo for the bottom banner background. Best size: 1800x900px."
+            hint: "BOTTOM BANNER PHOTO — Background photo behind the bottom Call to Action section. Best size: 1800x900px."
 
           - label: "--- SERVICES ON HOME PAGE ---"
             name: "services_divider"
