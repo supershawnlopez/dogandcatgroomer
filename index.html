@@ -29,8 +29,8 @@
       <li><a href="services.html">Services</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="contact.html" class="nav-cta-btn">Book Now</a></li>
-      <li><button class="lang-toggle" onclick="toggleLang()" id="langBtn">ES</button></li>
     </ul>
+    <button class="lang-toggle" onclick="toggleLang()" id="langBtn">ES</button>
   </div>
 </nav>
 
@@ -429,7 +429,7 @@ let currentLang = localStorage.getItem('lang') || 'en';
 
 function applyLang(lang) {
   const t = translations[lang];
-  const set = (id, html) => { const el = document.getElementById(id); if(el) el.innerHTML = html; };
+  const set = (id, html) => { const el = document.getElementById(id); if(el && html) el.innerHTML = html; };
   set('hero-title', t['hero-title']);
   set('hero-sub', t['hero-sub']);
   set('about-eyebrow', t['about-eyebrow']);
@@ -456,7 +456,10 @@ function applyLang(lang) {
 }
 
 function toggleLang() {
-  applyLang(currentLang === 'en' ? 'es' : 'en');
+  const newLang = currentLang === 'en' ? 'es' : 'en';
+  localStorage.setItem('lang', newLang);
+  currentLang = newLang;
+  applyLang(newLang);
 }
 
 // Load CMS content

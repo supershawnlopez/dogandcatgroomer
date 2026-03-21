@@ -8,7 +8,6 @@
 <link rel="canonical" href="https://www.dogandcatgroomer.com/contact.html">
 <link rel="stylesheet" href="style.css">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script src="/cms-loader.js"></script>
 </head>
 <body>
 
@@ -27,6 +26,7 @@
       <li><a href="contact.html" class="active">Contact</a></li>
       <li><a href="contact.html" class="nav-cta-btn">Book Now</a></li>
     </ul>
+    <button class="lang-toggle" onclick="toggleLang()" id="langBtn">ES</button>
   </div>
 </nav>
 
@@ -136,15 +136,15 @@
             <label for="service">Service</label>
             <select id="service" name="service">
               <option value="" disabled selected>Select a service</option>
-              <option>Full Groom / Grooming Completo</option>
-              <option>Bath &amp; Brush / Ba&ntilde;o y Cepillado</option>
-              <option>Nail Trim / Corte de U&ntilde;as</option>
-              <option>Cat Grooming / Grooming para Gato</option>
+              <option>Full Groom</option>
+              <option>Bath &amp; Brush</option>
+              <option>Nail Trim &amp; Buffing</option>
+              <option>Cat Grooming</option>
               <option>Deshed Treatment</option>
-              <option>Puppy Groom / Grooming para Cachorro</option>
+              <option>Puppy Groom</option>
               <option>Senior Comfort Groom</option>
               <option>Monthly Program / Programa Mensual</option>
-              <option>Not sure / No estoy seguro</option>
+              <option>Not sure yet</option>
             </select>
           </div>
 
@@ -156,7 +156,7 @@
           <button type="submit" class="form-submit-v2">
             Send Message &rarr;
           </button>
-          <p class="form-note-v2">We typically respond within a few hours. / Generalmente respondemos en pocas horas.</p>
+          <p class="form-note-v2">We typically respond within a few hours.</p>
         </form>
 
         <div class="form-success-v2" id="formSuccess">
@@ -244,6 +244,10 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
 loadContact();
+</script>
+<script src="/cms-loader.js"></script>
+<script>
+window.addEventListener("load", function() { loadContact(); });
 </script>
 </body>
 </html>

@@ -164,6 +164,11 @@ a { text-decoration: none; color: inherit; }
   border-color: var(--gold);
 }
 
+/* ES button always visible in nav bar */
+.nav-inner .lang-toggle {
+  flex-shrink: 0;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
