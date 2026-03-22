@@ -214,7 +214,6 @@ a { text-decoration: none; color: inherit; }
   overflow: hidden;
   display: flex;
   align-items: center;
-  margin-top: -110px;
 }
 
 .hero-bg {
