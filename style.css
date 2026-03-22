@@ -948,7 +948,7 @@ section { padding: 7rem 3rem; }
 }
 
 .form-field {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-field label {
@@ -956,31 +956,33 @@ section { padding: 7rem 3rem; }
   font-size: 0.68rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--gray);
-  margin-bottom: 6px;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+  font-weight: 500;
 }
 
 .form-field input,
 .form-field select,
 .form-field textarea {
   width: 100%;
-  padding: 0.85rem 0;
-  border: none;
-  border-bottom: 1px solid var(--rule);
-  border-radius: 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(26,23,20,0.12);
+  border-radius: 4px;
   font-family: 'Jost', sans-serif;
   font-size: 0.95rem;
   color: var(--charcoal);
-  background: transparent;
+  background: white;
   outline: none;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
   appearance: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus {
   border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,169,110,0.12);
 }
 
 .form-field textarea {
@@ -1003,16 +1005,17 @@ section { padding: 7rem 3rem; }
 .pet-option {
   flex: 1;
   padding: 0.75rem;
-  border: 1px solid var(--rule);
-  background: transparent;
+  border: 1px solid rgba(26,23,20,0.15);
+  background: white;
   font-family: 'Jost', sans-serif;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
-  color: var(--gray);
+  color: var(--charcoal);
   cursor: pointer;
   text-align: center;
   transition: all 0.2s;
-  border-radius: 2px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
 .pet-option:hover { border-color: var(--gold); color: var(--charcoal); }
@@ -1020,9 +1023,10 @@ section { padding: 7rem 3rem; }
 
 .form-submit-v2 {
   width: 100%;
-  padding: 1.1rem;
+  padding: 1.2rem;
   background: var(--charcoal);
   color: white;
+  letter-spacing: 0.15em;
   border: none;
   font-family: 'Jost', sans-serif;
   font-size: 0.75rem;
@@ -1718,7 +1722,7 @@ body.nav-open {
 
 /* Right form panel */
 .contact-form-panel {
-  background: var(--cream);
+  background: #FAFAF8;
   padding: 6rem 4rem;
   display: flex;
   flex-direction: column;
