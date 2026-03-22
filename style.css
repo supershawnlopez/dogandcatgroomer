@@ -1376,13 +1376,17 @@ section { padding: 7rem 3rem; }
 
 /* Top bar */
 .nav-overlay-top {
+  position: absolute;
+  top: 1.5rem;
+  left: 8vw;
+  right: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1rem;
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
+  z-index: 10;
 }
 
 .nav-overlay.open .nav-overlay-top {
