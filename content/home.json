@@ -7,17 +7,24 @@
   "instagram_handle": "@dogandcatgroomer",
   "instagram_url": "https://instagram.com/dogandcatgroomer",
   "phone": "(602) 623-6955",
-  "email": "eimy@dogandcatgroomer.com",
   "area_title": "Proudly serving<br>the Phoenix area.",
   "area_subtitle": "We serve clients throughout the greater Phoenix metropolitan area. Contact us to confirm availability in your neighborhood.",
-  "area_cities": ["Phoenix", "Scottsdale", "Tempe", "Mesa", "Chandler", "Gilbert", "Glendale"],
+  "area_cities": [
+    "Phoenix",
+    "Scottsdale",
+    "Tempe",
+    "Mesa",
+    "Chandler",
+    "Gilbert",
+    "Glendale"
+  ],
   "cta_title": "Your pet is in<br><em>good hands.</em>",
   "cta_subtitle": "Contact us today and we'll take care of everything.",
   "services_preview": [
     {
       "num": "01",
       "name": "Full Groom",
-      "description": "Bath, dry, cut, nail trim, ear cleaning — everything your pet needs in one visit.",
+      "description": "Bath, dry, cut, nail trim, ear cleaning \u2014 everything your pet needs in one visit.",
       "image": "photo-1587300003388-59208cc962cb"
     },
     {
