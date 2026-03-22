@@ -1356,7 +1356,7 @@ section { padding: 7rem 3rem; }
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 8rem 8vw 3rem 8vw;
+  padding: 0 8vw 3rem 8vw;
   overflow: hidden;
 }
 
@@ -1436,7 +1436,7 @@ section { padding: 7rem 3rem; }
 /* Nav items */
 .nav-overlay-links {
   list-style: none;
-  margin: 0;
+  margin: 5rem 0 0 0;
   padding: 0;
 }
 
