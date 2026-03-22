@@ -1356,7 +1356,7 @@ section { padding: 7rem 3rem; }
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 6rem 8vw 3rem 8vw;
+  padding: 8rem 8vw 3rem 8vw;
   overflow: hidden;
 }
 
