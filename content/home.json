@@ -1,30 +1,12 @@
 {
-  "hero_title": "Every pet deserves to feel <em>beautiful.</em>",
-  "hero_subtitle": "Caring, experienced grooming for dogs and cats. We treat every pet like family.",
-  "about_title": "Passionate about pets.<br>Professional in every detail.",
-  "about_body": "We are dedicated to providing the highest quality grooming experience for your dogs and cats. Every appointment is handled with patience, care, and a genuine love for animals of all breeds and temperaments.",
-  "about_quote": "Every pet that walks through our door gets treated with love and care.",
-  "instagram_handle": "@dogandcatgroomer",
   "instagram_url": "https://instagram.com/dogandcatgroomer",
-  "phone": "(602) 623-6955",
   "area_title": "Proudly serving<br>the Phoenix area.",
-  "area_subtitle": "We serve clients throughout the greater Phoenix metropolitan area. Contact us to confirm availability in your neighborhood.",
-  "area_cities": [
-    "Phoenix",
-    "Scottsdale",
-    "Tempe",
-    "Mesa",
-    "Chandler",
-    "Gilbert",
-    "Glendale"
-  ],
-  "cta_title": "Your pet is in<br><em>good hands.</em>",
-  "cta_subtitle": "Contact us today and we'll take care of everything.",
+  "about_title": "Passionate about pets.<br>Professional in every detail.",
   "services_preview": [
     {
       "num": "01",
       "name": "Full Groom",
-      "description": "Bath, dry, cut, nail trim, ear cleaning \u2014 everything your pet needs in one visit.",
+      "description": "Bath, dry, cut, nail trim, ear cleaning — everything your pet needs in one visit.",
       "image": "photo-1587300003388-59208cc962cb"
     },
     {
@@ -57,5 +39,24 @@
       "description": "Specialized treatment to dramatically reduce shedding.",
       "image": "photo-1561037404-61cd46aa615b"
     }
-  ]
+  ],
+  "cta_subtitle": "Contact us today and we'll take care of everything.",
+  "about_image": "/images/untitled.jpeg",
+  "cta_title": "Your pet is in<br><em>good hands.</em>",
+  "about_quote": "Every pet that walks through our door gets treated with love and care.",
+  "area_subtitle": "We serve clients throughout the greater Phoenix metropolitan area. Contact us to confirm availability in your neighborhood.",
+  "phone": "(602) 623-6955",
+  "hero_title": "Every pet deserves to feel <em>beautiful.</em>",
+  "about_body": "We are dedicated to providing the highest quality grooming experience for your dogs and cats. Every appointment is handled with patience, care, and a genuine love for animals of all breeds and temperaments.",
+  "instagram_handle": "@dogandcatgroomer",
+  "area_cities": [
+    "Phoenix",
+    "Scottsdale",
+    "Tempe",
+    "Mesa",
+    "Chandler",
+    "Gilbert",
+    "Glendale"
+  ],
+  "hero_subtitle": "Caring, experienced grooming for dogs and cats. We treat every pet like family."
 }
