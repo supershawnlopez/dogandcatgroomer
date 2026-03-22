@@ -1620,6 +1620,14 @@ body.nav-open {
   background: radial-gradient(circle, rgba(201,169,110,0.06) 0%, transparent 70%);
 }
 
+.contact-panel-blurb {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 320px;
+}
+
 .contact-panel-eyebrow {
   font-size: 0.65rem;
   letter-spacing: 0.3em;
@@ -1694,14 +1702,15 @@ body.nav-open {
 }
 
 .contact-social-link {
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(255,255,255,0.12);
+  width: 58px;
+  height: 58px;
+  border: 1px solid rgba(255,255,255,0.15);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s;
+  text-decoration: none;
 }
 
 .contact-social-link:hover {
@@ -1710,8 +1719,8 @@ body.nav-open {
 }
 
 .contact-social-link svg {
-  width: 15px;
-  height: 15px;
+  width: 22px;
+  height: 22px;
   fill: rgba(255,255,255,0.5);
   transition: fill 0.3s;
 }
