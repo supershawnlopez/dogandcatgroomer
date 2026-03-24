@@ -129,11 +129,13 @@ async function loadServices() {
     return `
       <div class="service-row-v2 reveal">
         <img class="service-row-img" src="${imgSrc || 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&q=75&fit=crop'}" alt="${s.name}" loading="lazy">
-        <div>
-          <div class="service-row-name">${s.name}</div>
+        <div class="service-row-body">
+          <div class="service-row-top">
+            <div class="service-row-name">${s.name}</div>
+            <div class="service-row-price">${s.price}</div>
+          </div>
           <p class="service-row-desc">${s.description}</p>
         </div>
-        <div class="service-row-price">${s.price}</div>
       </div>
     `;
   };
