@@ -1285,15 +1285,17 @@ section { padding: 7rem 3rem; }
 /* ── SERVICES TABS — sticky ─────────────────────────── */
 .services-tabs-wrapper {
   position: sticky;
-  top: 0;
-  z-index: 100;
+  top: 90px;
+  z-index: 90;
   background: var(--warm-white);
   padding: 1rem 0;
-  margin: 0 -3rem 2rem -3rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
   border-bottom: 1px solid var(--rule);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  margin-bottom: 0;
+}
+
+.services-tabs-wrapper .section-inner {
+  padding: 0 3rem;
 }
 
 .services-tabs {
@@ -1471,9 +1473,11 @@ section { padding: 7rem 3rem; }
 /* ── MOBILE ──────────────────────────────────────────── */
 @media (max-width: 768px) {
   .services-tabs-wrapper {
-    margin: 0 -1.5rem 2rem -1.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    top: 80px;
+  }
+
+  .services-tabs-wrapper .section-inner {
+    padding: 0 1.5rem;
   }
 
   .services-tab {
@@ -1564,7 +1568,6 @@ section { padding: 7rem 3rem; }
 
   .page-hero-content { padding: 0 1.5rem; }
   .service-row-v2 { grid-template-columns: 60px 1fr; }
-  .service-row-price { display: none; }
 
   .cta-banner { padding: 7rem 1.5rem; }
 }

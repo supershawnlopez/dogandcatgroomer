@@ -68,25 +68,28 @@
 
 <!-- SERVICES LIST -->
 <section class="services-list-v2" aria-label="Services and Pricing">
-  <div class="section-inner">
 
-    <!-- TABS -->
-    <div class="services-tabs-wrapper">
-    <div class="services-tabs" role="tablist" aria-label="Service categories">
-      <button class="services-tab active" role="tab" aria-selected="true" aria-controls="panel-dogs" id="tab-dogs" onclick="switchTab('dogs')">
-        <span class="tab-icon" aria-hidden="true">🐶</span>
-        <span>Dogs</span>
-      </button>
-      <button class="services-tab" role="tab" aria-selected="false" aria-controls="panel-cats" id="tab-cats" onclick="switchTab('cats')">
-        <span class="tab-icon" aria-hidden="true">🐱</span>
-        <span>Cats</span>
-      </button>
-      <button class="services-tab" role="tab" aria-selected="false" aria-controls="panel-addons" id="tab-addons" onclick="switchTab('addons')">
-        <span class="tab-icon" aria-hidden="true">✨</span>
-        <span>Add-Ons</span>
-      </button>
+  <!-- STICKY TABS — outside section-inner so sticky works -->
+  <div class="services-tabs-wrapper">
+    <div class="section-inner">
+      <div class="services-tabs" role="tablist" aria-label="Service categories">
+        <button class="services-tab active" role="tab" aria-selected="true" aria-controls="panel-dogs" id="tab-dogs" onclick="switchTab('dogs')">
+          <span class="tab-icon" aria-hidden="true">🐶</span>
+          <span>Dogs</span>
+        </button>
+        <button class="services-tab" role="tab" aria-selected="false" aria-controls="panel-cats" id="tab-cats" onclick="switchTab('cats')">
+          <span class="tab-icon" aria-hidden="true">🐱</span>
+          <span>Cats</span>
+        </button>
+        <button class="services-tab" role="tab" aria-selected="false" aria-controls="panel-addons" id="tab-addons" onclick="switchTab('addons')">
+          <span class="tab-icon" aria-hidden="true">✨</span>
+          <span>Add-Ons</span>
+        </button>
+      </div>
     </div>
-    </div><!-- end sticky wrapper -->
+  </div><!-- end sticky wrapper -->
+
+  <div class="section-inner">
 
     <!-- DOG PANEL -->
     <div id="panel-dogs" role="tabpanel" aria-labelledby="tab-dogs" class="services-panel active">
@@ -114,6 +117,7 @@
     </div>
 
   </div>
+  </div><!-- end section-inner -->
 </section>
 
 <script>
