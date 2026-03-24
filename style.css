@@ -1309,6 +1309,11 @@ section { padding: 7rem 3rem; }
   flex-shrink: 0;
 }
 
+.service-category-heading .category-icon i {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
 .category-icon {
   font-size: 1.4rem;
 }
