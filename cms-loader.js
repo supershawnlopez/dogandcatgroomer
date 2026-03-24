@@ -128,7 +128,7 @@ async function loadServices() {
     const imgSrc = resolveImage(s, 200, 200);
     return `
       <div class="service-row-v2 reveal">
-        ${imgSrc ? `<img class="service-row-img" src="${imgSrc}" alt="${s.name}" loading="lazy">` : ''}
+        <img class="service-row-img" src="${imgSrc || 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&q=75&fit=crop'}" alt="${s.name}" loading="lazy">
         <div>
           <div class="service-row-name">${s.name}</div>
           <p class="service-row-desc">${s.description}</p>
