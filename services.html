@@ -67,162 +67,72 @@
 </div>
 
 <!-- SERVICES LIST -->
-<section class="services-list-v2">
+<section class="services-list-v2" aria-label="Services and Pricing">
   <div class="section-inner">
 
-    <!-- DOG SERVICES -->
-    <h2 class="service-category-title reveal" id="dog-heading">For Your Dog</h2>
-    <div id="dog-services"><div class="service-row-v2 reveal">
-      <img class="service-row-img"
-        src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&q=75&fit=crop"
-        alt="Full groom" loading="lazy">
-      <div>
-        <div class="service-row-name">All Inclusive Full Groom</div>
-        <p class="service-row-desc">Bath, blow dry, full haircut, nail trim, ear cleaning, and finishing touches. Everything your pet needs in one visit.</p>
-      </div>
-      <div class="service-row-price">Call for pricing</div>
+    <!-- TABS -->
+    <div class="services-tabs" role="tablist" aria-label="Service categories">
+      <button class="services-tab active" role="tab" aria-selected="true" aria-controls="panel-dogs" id="tab-dogs" onclick="switchTab('dogs')">
+        <span class="tab-icon" aria-hidden="true">🐶</span>
+        <span>Dogs</span>
+      </button>
+      <button class="services-tab" role="tab" aria-selected="false" aria-controls="panel-cats" id="tab-cats" onclick="switchTab('cats')">
+        <span class="tab-icon" aria-hidden="true">🐱</span>
+        <span>Cats</span>
+      </button>
+      <button class="services-tab" role="tab" aria-selected="false" aria-controls="panel-addons" id="tab-addons" onclick="switchTab('addons')">
+        <span class="tab-icon" aria-hidden="true">✨</span>
+        <span>Add-Ons</span>
+      </button>
     </div>
 
-    <div class="service-row-v2 reveal">
-      <img class="service-row-img"
-        src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=200&q=75&fit=crop"
-        alt="Mini groom" loading="lazy">
-      <div>
-        <div class="service-row-name">FFT &mdash; Mini Groom</div>
-        <p class="service-row-desc">Face, feet, and tail trim. Quick tidy-up between full groom appointments.</p>
-      </div>
-      <div class="service-row-price">Call for pricing</div>
+    <!-- DOG PANEL -->
+    <div id="panel-dogs" role="tabpanel" aria-labelledby="tab-dogs" class="services-panel active">
+      <div id="dog-services"></div>
     </div>
 
-    <div class="service-row-v2 reveal">
-      <img class="service-row-img"
-        src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=200&q=75&fit=crop"
-        alt="Bath and brush" loading="lazy">
-      <div>
-        <div class="service-row-name">Bath &amp; Brush</div>
-        <p class="service-row-desc">Full shampoo, conditioner, blow dry, and thorough brush out. Great for maintenance between haircuts.</p>
-      </div>
-      <div class="service-row-price">Call for pricing</div>
+    <!-- CAT PANEL -->
+    <div id="panel-cats" role="tabpanel" aria-labelledby="tab-cats" class="services-panel" hidden>
+      <div id="cat-services"></div>
     </div>
 
-    <div class="service-row-v2 reveal">
-      <img class="service-row-img"
-        src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=200&q=75&fit=crop"
-        alt="Deshed treatment" loading="lazy">
-      <div>
-        <div class="service-row-name">Deshed Treatment</div>
-        <p class="service-row-desc">Specialized shampoo and treatment to dramatically reduce shedding. Works great for heavy shedders.</p>
-      </div>
-      <div class="service-row-price">Call for pricing</div>
+    <!-- ADD-ONS PANEL -->
+    <div id="panel-addons" role="tabpanel" aria-labelledby="tab-addons" class="services-panel" hidden>
+      <div id="programs"></div>
     </div>
 
-    <div class="service-row-v2 reveal">
-      <img class="service-row-img"
-        src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=200&q=75&fit=crop"
-        alt="Nail trim" loading="lazy">
-      <div>
-        <div class="service-row-name">Nail Trim &amp; Buffing</div>
-        <p class="service-row-desc">Careful nail trimming and buffing. Walk-ins welcome for this service.</p>
-      </div>
-      <div class="service-row-price">Call for pricing</div>
-    </div>
+    <!-- PRICING NOTE -->
+    <p class="services-note-v2" id="pricing-note" aria-live="polite">Prices start at the amounts listed and may increase based on coat condition, temperament, or time required.</p>
 
-    <div class="service-row-v2 reveal">
-      <img class="service-row-img"
-        src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=200&q=75&fit=crop"
-        alt="Flea bath" loading="lazy">
-      <div>
-        <div class="service-row-name">Flea Bath &amp; Medicated Washes</div>
-        <p class="service-row-desc">Specialized flea treatment baths and medicated washes for skin conditions and sensitivities.</p>
-      </div>
-      <div class="service-row-price">Call for pricing</div>
-    </div>
-
-    <div class="service-row-v2 reveal">
-      <img class="service-row-img"
-        src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=200&q=75&fit=crop&crop=top"
-        alt="Puppy groom" loading="lazy">
-      <div>
-        <div class="service-row-name">Puppy Groom</div>
-        <p class="service-row-desc">A gentle, patient introduction to grooming for young puppies. We make it a positive, stress-free experience.</p>
-      </div>
-      <div class="service-row-price">Call for pricing</div>
-    </div>
-
-    <div class="service-row-v2 reveal">
-      <img class="service-row-img"
-        src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=200&q=75&fit=crop&crop=top"
-        alt="Senior groom" loading="lazy">
-      <div>
-        <div class="service-row-name">Senior Comfort Groom</div>
-        <p class="service-row-desc">Extra gentle grooming designed for senior dogs with special attention to comfort and stress reduction.</p>
-      </div>
-      <div class="service-row-price">Call for pricing</div>
-    </div>
-
-    </div>
-    <!-- CAT SERVICES -->
-    <h2 class="service-category-title reveal" id="cat-heading" style="margin-top:4rem">For Your Cat</h2>
-    <div id="cat-services"><div class="service-row-v2 reveal">
-      <img class="service-row-img"
-        src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=200&q=75&fit=crop"
-        alt="Cat full groom" loading="lazy">
-      <div>
-        <div class="service-row-name">Cat Full Groom</div>
-        <p class="service-row-desc">Complete grooming for cats including bath, dry, trim, and nail clipping. Handled with care and patience.</p>
-      </div>
-      <div class="service-row-price">Call for pricing</div>
-    </div>
-
-    <div class="service-row-v2 reveal">
-      <img class="service-row-img"
-        src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=200&q=75&fit=crop"
-        alt="Cat nail trim" loading="lazy">
-      <div>
-        <div class="service-row-name">Cat Nail Trim</div>
-        <p class="service-row-desc">Quick and stress-free nail trimming for cats. Walk-ins welcome.</p>
-      </div>
-      <div class="service-row-price">Call for pricing</div>
-    </div>
-
-    </div>
-    <!-- PROGRAMS -->
-    <h2 class="service-category-title reveal" id="programs-heading" style="margin-top:4rem">Programs</h2>
-    <div id="programs"><div class="service-row-v2 reveal">
-      <img class="service-row-img"
-        src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=200&q=75&fit=crop"
-        alt="Monthly program" loading="lazy">
-      <div>
-        <div class="service-row-name">Monthly Grooming Program</div>
-        <p class="service-row-desc">Regular monthly appointments to keep your pet clean, healthy, and looking great all year.</p>
-      </div>
-      <div class="service-row-price">Call for pricing</div>
-    </div>
-
-    <div class="service-row-v2 reveal">
-      <img class="service-row-img"
-        src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=200&q=75&fit=crop"
-        alt="Weekly program" loading="lazy">
-      <div>
-        <div class="service-row-name">Weekly Maintenance Program</div>
-        <p class="service-row-desc">Weekly appointments for pets that need more frequent grooming maintenance.</p>
-      </div>
-      <div class="service-row-price">Call for pricing</div>
-    </div>
-
-    </div>
-    <div class="services-note-v2 reveal" id="pricing-note">
-      Pricing varies by breed, size, and coat condition. Contact us for a personalized quote.
-    </div>
-
-    <div style="text-align:center; margin-top:3rem;" class="reveal">
-      <a href="contact.html" class="btn btn-dark" style="padding:1.1rem 3rem;">
-        Get in Touch &rarr;
-      </a>
+    <!-- CTA -->
+    <div class="services-cta-row">
+      <a href="contact.html" class="btn-primary" aria-label="Book a grooming appointment">Get In Touch &rarr;</a>
     </div>
 
   </div>
 </section>
+
+<script>
+function switchTab(tab) {
+  // Update tab buttons
+  document.querySelectorAll('.services-tab').forEach(btn => {
+    btn.classList.remove('active');
+    btn.setAttribute('aria-selected', 'false');
+  });
+  const activeBtn = document.getElementById('tab-' + tab);
+  activeBtn.classList.add('active');
+  activeBtn.setAttribute('aria-selected', 'true');
+
+  // Update panels
+  document.querySelectorAll('.services-panel').forEach(panel => {
+    panel.classList.remove('active');
+    panel.hidden = true;
+  });
+  const activePanel = document.getElementById('panel-' + tab);
+  activePanel.classList.add('active');
+  activePanel.hidden = false;
+}
+</script>
 
 <!-- FOOTER -->
 <footer class="footer-v2">
