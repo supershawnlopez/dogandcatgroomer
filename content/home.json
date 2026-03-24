@@ -1,54 +1,14 @@
 {
-  "instagram_url": "https://instagram.com/dogandcatgroomer",
-  "area_title": "Proudly serving<br>the Phoenix area.",
-  "about_title": "Passionate about pets.<br>Professional in every detail.",
-  "services_preview": [
-    {
-      "num": "01",
-      "name": "Full Groom",
-      "description": "Bath, dry, cut, nail trim, ear cleaning — everything your pet needs in one visit.",
-      "image": "photo-1587300003388-59208cc962cb"
-    },
-    {
-      "num": "02",
-      "name": "Bath & Brush",
-      "description": "Full bath, blow dry, and thorough brush out. Perfect for regular maintenance.",
-      "image": "photo-1596854407944-bf87f6fdd49e"
-    },
-    {
-      "num": "03",
-      "name": "Cat Grooming",
-      "description": "Specialized gentle grooming for cats of all breeds and temperaments.",
-      "image": "photo-1574158622682-e40e69881006"
-    },
-    {
-      "num": "04",
-      "name": "Nail Trim & Buffing",
-      "description": "Quick and stress-free nail trimming for dogs and cats. Walk-ins welcome.",
-      "image": "photo-1601758124510-52d02ddb7cbd"
-    },
-    {
-      "num": "05",
-      "name": "Puppy Groom",
-      "description": "Gentle first-time grooming experience designed for young puppies.",
-      "image": "photo-1552053831-71594a27632d"
-    },
-    {
-      "num": "06",
-      "name": "Deshed Treatment",
-      "description": "Specialized treatment to dramatically reduce shedding.",
-      "image": "photo-1561037404-61cd46aa615b"
-    }
-  ],
-  "cta_subtitle": "Contact us today and we'll take care of everything.",
-  "about_image": "/images/untitled.jpeg",
-  "cta_title": "Your pet is in<br><em>good hands.</em>",
-  "about_quote": "Every pet that walks through our door gets treated with love and care.",
-  "area_subtitle": "We serve clients throughout the greater Phoenix metropolitan area. Contact us to confirm availability in your neighborhood.",
-  "phone": "(602) 623-6955",
   "hero_title": "Every pet deserves to feel <em>beautiful.</em>",
+  "hero_subtitle": "Caring, experienced grooming for dogs and cats. We treat every pet like family.",
+  "about_title": "Passionate about pets.<br>Professional in every detail.",
   "about_body": "We are dedicated to providing the highest quality grooming experience for your dogs and cats. Every appointment is handled with patience, care, and a genuine love for animals of all breeds and temperaments.",
+  "about_quote": "Every pet that walks through our door gets treated with love and care.",
   "instagram_handle": "@dogandcatgroomer",
+  "instagram_url": "https://instagram.com/dogandcatgroomer",
+  "phone": "(602) 623-6955",
+  "area_title": "Proudly serving<br>the Phoenix area.",
+  "area_subtitle": "We serve clients throughout the greater Phoenix metropolitan area. Contact us to confirm availability in your neighborhood.",
   "area_cities": [
     "Phoenix",
     "Scottsdale",
@@ -58,5 +18,44 @@
     "Gilbert",
     "Glendale"
   ],
-  "hero_subtitle": "Caring, experienced grooming for dogs and cats. We treat every pet like family."
+  "cta_title": "Your pet is in<br><em>good hands.</em>",
+  "cta_subtitle": "Contact us today and we'll take care of everything.",
+  "services_preview": [
+    {
+      "num": "01",
+      "name": "Full Groom",
+      "description": "Bath, brush, haircut, nail trim, ear cleaning, anal gland expression, finishing fragrance & accessory.",
+      "image": "photo-1587300003388-59208cc962cb"
+    },
+    {
+      "num": "02",
+      "name": "Bath & Brush",
+      "description": "Full bath, blow dry, and thorough brush out. Available for all sizes.",
+      "image": "photo-1596854407944-bf87f6fdd49e"
+    },
+    {
+      "num": "03",
+      "name": "Cat Grooming",
+      "description": "Specialized gentle grooming for cats. Bath, brush, nail trim, ear cleaning and haircut available.",
+      "image": "photo-1574158622682-e40e69881006"
+    },
+    {
+      "num": "04",
+      "name": "Nail Trim",
+      "description": "Quick and stress-free nail trimming for dogs and cats.",
+      "image": "photo-1601758124510-52d02ddb7cbd"
+    },
+    {
+      "num": "05",
+      "name": "De-Shedding Treatment",
+      "description": "Specialized treatment to dramatically reduce shedding.",
+      "image": "photo-1552053831-71594a27632d"
+    },
+    {
+      "num": "06",
+      "name": "Add-On Services",
+      "description": "Teeth brushing, flea & tick treatment, hypoallergenic shampoo, whitening shampoo and more.",
+      "image": "photo-1561037404-61cd46aa615b"
+    }
+  ]
 }
