@@ -1374,8 +1374,8 @@ section { padding: 7rem 3rem; }
   white-space: nowrap;
   text-align: right;
   letter-spacing: 0.01em;
-  align-self: start;
-  padding-top: 0.2rem;
+  align-self: center;
+  margin-left: auto;
 }
 
 /* ── SERVICES CTA BANNER ─────────────────────────────── */
