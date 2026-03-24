@@ -97,15 +97,22 @@ async function loadHome() {
   if (data.services_preview) {
     const grid = document.getElementById('services-grid');
     if (grid) {
+      // Map service numbers to page anchors
+      const anchorMap = {
+        '01': 'dog-services', '02': 'dog-services',
+        '03': 'cat-services', '04': 'programs',
+        '05': 'dog-services', '06': 'dog-services'
+      };
       grid.innerHTML = data.services_preview.map(s => {
         const imgSrc = resolveImage(s, 600, 400);
+        const anchor = anchorMap[s.num] || 'dog-services';
         return `
-          <div class="service-card-v2 reveal">
+          <a href="services.html#${anchor}" class="service-card-v2 reveal" aria-label="View ${s.name} services">
             ${imgSrc ? `<img class="service-card-img" src="${imgSrc}" alt="${s.name}" loading="lazy">` : ''}
             <div class="service-num">${s.num}</div>
             <div class="service-name-v2">${s.name}</div>
             <p class="service-desc-v2">${s.description}</p>
-          </div>
+          </a>
         `;
       }).join('');
 
