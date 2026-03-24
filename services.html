@@ -68,79 +68,49 @@
 
 <!-- SERVICES LIST -->
 <section class="services-list-v2" aria-label="Services and Pricing">
-
-  <!-- STICKY TABS — outside section-inner so sticky works -->
-  <div class="services-tabs-wrapper">
-    <div class="section-inner">
-      <div class="services-tabs" role="tablist" aria-label="Service categories">
-        <button class="services-tab active" role="tab" aria-selected="true" aria-controls="panel-dogs" id="tab-dogs" onclick="switchTab('dogs')">
-          <span class="tab-icon" aria-hidden="true">🐶</span>
-          <span>Dogs</span>
-        </button>
-        <button class="services-tab" role="tab" aria-selected="false" aria-controls="panel-cats" id="tab-cats" onclick="switchTab('cats')">
-          <span class="tab-icon" aria-hidden="true">🐱</span>
-          <span>Cats</span>
-        </button>
-        <button class="services-tab" role="tab" aria-selected="false" aria-controls="panel-addons" id="tab-addons" onclick="switchTab('addons')">
-          <span class="tab-icon" aria-hidden="true">✨</span>
-          <span>Add-Ons</span>
-        </button>
-      </div>
-    </div>
-  </div><!-- end sticky wrapper -->
-
   <div class="section-inner">
 
-    <!-- DOG PANEL -->
-    <div id="panel-dogs" role="tabpanel" aria-labelledby="tab-dogs" class="services-panel active">
+    <!-- DOG SERVICES -->
+    <div class="service-category">
+      <h2 class="service-category-heading">
+        <span class="category-icon" aria-hidden="true">🐶</span>
+        For Your Dog
+      </h2>
       <div id="dog-services"></div>
     </div>
 
-    <!-- CAT PANEL -->
-    <div id="panel-cats" role="tabpanel" aria-labelledby="tab-cats" class="services-panel" hidden>
+    <!-- CAT SERVICES -->
+    <div class="service-category">
+      <h2 class="service-category-heading">
+        <span class="category-icon" aria-hidden="true">🐱</span>
+        For Your Cat
+      </h2>
       <div id="cat-services"></div>
     </div>
 
-    <!-- ADD-ONS PANEL -->
-    <div id="panel-addons" role="tabpanel" aria-labelledby="tab-addons" class="services-panel" hidden>
+    <!-- ADD-ONS -->
+    <div class="service-category">
+      <h2 class="service-category-heading">
+        <span class="category-icon" aria-hidden="true">✨</span>
+        Add-On Services
+      </h2>
       <div id="programs"></div>
     </div>
 
     <!-- PRICING NOTE -->
-    <p class="services-note-v2" id="pricing-note" aria-live="polite">Prices start at the amounts listed and may increase based on coat condition, temperament, or time required.</p>
+    <p class="services-note-v2" id="pricing-note">Prices start at the amounts listed and may increase based on coat condition, temperament, or time required.</p>
 
     <!-- CTA BANNER -->
     <div class="services-cta-banner">
-      <h3>Ready to book your pet's appointment?</h3>
-      <p>Every pet gets our full attention. Reach out and we'll take care of everything from there.</p>
+      <h3>Ready to book your pet&apos;s appointment?</h3>
+      <p>Every pet gets our full attention. Reach out and we&apos;ll take care of everything from there.</p>
       <a href="contact.html" class="btn-gold" aria-label="Contact us to book a grooming appointment">Book an Appointment &rarr;</a>
     </div>
 
   </div>
-  </div><!-- end section-inner -->
 </section>
 
-<script>
-function switchTab(tab) {
-  // Update tab buttons
-  document.querySelectorAll('.services-tab').forEach(btn => {
-    btn.classList.remove('active');
-    btn.setAttribute('aria-selected', 'false');
-  });
-  const activeBtn = document.getElementById('tab-' + tab);
-  activeBtn.classList.add('active');
-  activeBtn.setAttribute('aria-selected', 'true');
 
-  // Update panels
-  document.querySelectorAll('.services-panel').forEach(panel => {
-    panel.classList.remove('active');
-    panel.hidden = true;
-  });
-  const activePanel = document.getElementById('panel-' + tab);
-  activePanel.classList.add('active');
-  activePanel.hidden = false;
-}
-</script>
 
 <!-- FOOTER -->
 <footer class="footer-v2">

@@ -1282,103 +1282,59 @@ section { padding: 7rem 3rem; }
 }
 
 
-/* ── SERVICES TABS — sticky ─────────────────────────── */
-.services-tabs-wrapper {
-  position: sticky;
-  top: 90px;
-  z-index: 90;
-  background: var(--warm-white);
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--rule);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  margin-bottom: 0;
+/* ── SERVICE CATEGORIES ─────────────────────────────── */
+.service-category {
+  margin-bottom: 3.5rem;
 }
 
-.services-tabs-wrapper .section-inner {
-  padding: 0 3rem;
-}
-
-.services-tabs {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.services-tab {
+.service-category-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  font-weight: 500;
+  color: var(--gold);
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.75rem;
-  background: transparent;
-  border: 2px solid var(--rule);
-  border-radius: 50px;
-  font-family: 'Jost', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--gray);
-  cursor: pointer;
-  transition: all 0.25s ease;
-  min-height: 48px;
-  min-width: 100px;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1.5px solid var(--gold);
+  letter-spacing: 0.01em;
 }
 
-.services-tab:hover {
-  border-color: var(--charcoal);
-  color: var(--charcoal);
+.category-icon {
+  font-size: 1.4rem;
 }
 
-.services-tab.active {
-  background: var(--charcoal);
-  border-color: var(--charcoal);
-  color: white;
-}
-
-.services-tab:focus-visible {
-  outline: 3px solid var(--gold);
-  outline-offset: 3px;
-}
-
-.tab-icon { font-size: 1.1rem; }
-
-/* ── SERVICE PANELS ─────────────────────────────────── */
-.services-panel { animation: fadeIn 0.3s ease; }
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ── SERVICE ROWS ────────────────────────────────────── */
+/* ── SERVICE ROWS — restaurant menu style ────────────── */
 .service-row-v2 {
   display: grid;
-  grid-template-columns: 72px 1fr auto;
-  gap: 1.25rem;
+  grid-template-columns: 70px 1fr auto;
+  gap: 1.2rem;
   align-items: center;
-  padding: 1.4rem 0;
+  padding: 1.2rem 0;
   border-bottom: 1px solid var(--rule);
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, padding 0.2s ease;
 }
 
-.service-row-v2:last-child { border-bottom: none; }
+.service-row-v2:last-child {
+  border-bottom: none;
+}
 
 .service-row-v2:hover {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  margin-left: -0.75rem;
-  margin-right: -0.75rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  margin-left: -0.6rem;
+  margin-right: -0.6rem;
   background: var(--cream);
   border-radius: 8px;
 }
 
 .service-row-img {
-  width: 72px;
-  height: 72px;
+  width: 70px;
+  height: 70px;
   object-fit: cover;
   border-radius: 8px;
-  filter: grayscale(15%);
+  filter: grayscale(10%);
 }
 
 .service-row-name {
@@ -1391,27 +1347,26 @@ section { padding: 7rem 3rem; }
 }
 
 .service-row-desc {
-  font-size: 0.85rem;
+  font-size: 0.83rem;
   color: var(--gray);
   line-height: 1.6;
 }
 
+/* ── PRICE — plain text, right aligned, restaurant style */
 .service-row-price {
   font-family: 'Jost', sans-serif;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: white;
-  background: var(--charcoal);
-  padding: 0.45rem 0.85rem;
-  border-radius: 50px;
+  color: var(--charcoal);
   white-space: nowrap;
-  text-align: center;
-  min-width: 58px;
+  text-align: right;
+  letter-spacing: 0.01em;
+  /* No background, no border, no pill — just the number */
 }
 
 /* ── SERVICES CTA BANNER ─────────────────────────────── */
 .services-cta-banner {
-  margin-top: 3.5rem;
+  margin-top: 3rem;
   background: var(--charcoal);
   border-radius: 16px;
   padding: 3rem 2.5rem;
@@ -1430,7 +1385,7 @@ section { padding: 7rem 3rem; }
 
 .services-cta-banner h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
   font-weight: 400;
   color: white;
   margin-bottom: 0.75rem;
@@ -1438,18 +1393,18 @@ section { padding: 7rem 3rem; }
 }
 
 .services-cta-banner p {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.55);
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.5);
   margin-bottom: 2rem;
   line-height: 1.7;
 }
 
-.services-cta-banner .btn-gold {
+.btn-gold {
   display: inline-block;
   background: var(--gold);
   color: var(--charcoal);
   font-family: 'Jost', sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -1458,46 +1413,40 @@ section { padding: 7rem 3rem; }
   text-decoration: none;
   transition: background 0.3s, transform 0.2s;
   min-height: 48px;
+  display: inline-flex;
+  align-items: center;
 }
 
-.services-cta-banner .btn-gold:hover {
+.btn-gold:hover {
   background: #b8943f;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
-.services-cta-banner .btn-gold:focus-visible {
+.btn-gold:focus-visible {
   outline: 3px solid white;
   outline-offset: 3px;
 }
 
 /* ── MOBILE ──────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .services-tabs-wrapper {
-    top: 80px;
-  }
-
-  .services-tabs-wrapper .section-inner {
-    padding: 0 1.5rem;
-  }
-
-  .services-tab {
-    padding: 0.75rem 1.1rem;
-    font-size: 0.72rem;
-    min-width: 80px;
-  }
-
-  .tab-icon { display: none; }
-
   .service-row-v2 {
-    grid-template-columns: 60px 1fr;
-    gap: 1rem;
+    grid-template-columns: 60px 1fr auto;
+    gap: 0.9rem;
+    padding: 1rem 0;
+  }
+
+  .service-row-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .service-row-name {
+    font-size: 1.1rem;
   }
 
   .service-row-price {
-    grid-column: 2;
-    display: inline-block;
-    margin-top: 0.4rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-weight: 800;
   }
 
   .services-cta-banner {
