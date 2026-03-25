@@ -2504,41 +2504,14 @@ button.btn.btn-gold.booking-trigger {
   -webkit-appearance: none;
 }
 
-/* BOOKING SHEET PET OPTION STATE FIX */
-.booking-pet-option,
-.booking-sheet .booking-pet-option,
-.booking-pet-options .booking-pet-option {
-  background: transparent !important;
-  border: 1px solid var(--gold) !important;
-  color: var(--gold) !important;
-}
 
-.booking-pet-option.active,
-.booking-sheet .booking-pet-option.active,
-.booking-pet-options .booking-pet-option.active,
-.booking-pet-option[aria-pressed="true"],
-.booking-sheet .booking-pet-option[aria-pressed="true"],
-.booking-pet-options .booking-pet-option[aria-pressed="true"] {
-  background: var(--gold) !important;
-  border-color: var(--gold) !important;
-  color: var(--charcoal) !important;
+/* SERVICES CTA UPGRADE */
+.bottom-cta {
+  text-align: center;
+  margin: 2.5rem 0 3rem;
 }
-
-.booking-pet-option:hover,
-.booking-sheet .booking-pet-option:hover,
-.booking-pet-options .booking-pet-option:hover {
-  background: transparent !important;
-  border-color: var(--gold) !important;
-  color: var(--gold) !important;
-}
-
-.booking-pet-option.active:hover,
-.booking-sheet .booking-pet-option.active:hover,
-.booking-pet-options .booking-pet-option.active:hover,
-.booking-pet-option[aria-pressed="true"]:hover,
-.booking-sheet .booking-pet-option[aria-pressed="true"]:hover,
-.booking-pet-options .booking-pet-option[aria-pressed="true"]:hover {
-  background: var(--gold) !important;
-  border-color: var(--gold) !important;
-  color: var(--charcoal) !important;
+.service-cta-text {
+  margin-bottom: 0.8rem;
+  color: var(--muted-text);
+  font-size: 0.95rem;
 }
