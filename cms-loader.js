@@ -54,7 +54,7 @@ async function loadHome() {
   set('about-body', data.about_body);
   set('about-quote', data.about_quote);
   if (data.about_image) {
-    const img = document.getElementById('aboutImg');
+    const img = document.getElementById('about-img');
     if (img) img.src = data.about_image;
   }
 
@@ -68,7 +68,7 @@ async function loadHome() {
 
   // Instagram links
   if (data.instagram_url) {
-    document.querySelectorAll('.site-instagram-link').forEach(el => {
+    document.querySelectorAll('.site-instagram-link, .site-instagram').forEach(el => {
       el.href = data.instagram_url;
     });
   }
@@ -89,37 +89,32 @@ async function loadHome() {
   set('cta-title', data.cta_title);
   set('cta-sub', data.cta_subtitle);
   if (data.cta_image) {
-    const bg = document.getElementById('ctaBg');
+    const bg = document.getElementById('cta-img');
     if (bg) bg.src = data.cta_image;
   }
 
-  // Services preview grid
+  // Services preview carousel
   if (data.services_preview) {
     const grid = document.getElementById('services-grid');
     if (grid) {
-      // Map service numbers to page anchors
-      const anchorMap = {
-        '01': 'dog-services', '02': 'dog-services',
-        '03': 'cat-services', '04': 'programs',
-        '05': 'dog-services', '06': 'dog-services'
-      };
       grid.innerHTML = data.services_preview.map(s => {
-        const imgSrc = resolveImage(s, 600, 400);
-        const anchor = anchorMap[s.num] || 'dog-services';
+        const imgSrc = resolveImage(s, 900, 600);
         return `
-          <a href="services.html#${anchor}" class="service-card-v2 reveal" aria-label="View ${s.name} services">
+          <article class="service-card-v2 service-card-carousel">
             ${imgSrc ? `<img class="service-card-img" src="${imgSrc}" alt="${s.name}" loading="lazy">` : ''}
-            <div class="service-num">${s.num}</div>
-            <div class="service-name-v2">${s.name}</div>
-            <p class="service-desc-v2">${s.description}</p>
-          </a>
+            <div class="service-card-body">
+              <div class="service-num">${s.num}</div>
+              <div class="service-name-v2">${s.name}</div>
+              <p class="service-desc-v2">${s.description}</p>
+              <div class="service-card-actions">
+                <button type="button" class="btn btn-outline-gold service-learn-btn" data-service="${s.name.replace(/"/g, '&quot;')}">Learn More</button>
+                <a href="contact.html#booking-form" class="btn btn-gold service-book-btn">Book Now</a>
+              </div>
+            </div>
+          </article>
         `;
       }).join('');
-
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-      }, { threshold: 0.05 });
-      grid.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+      bindServiceLearnButtons();
     }
   }
 }
@@ -132,10 +127,8 @@ async function loadServices() {
   set('page-title', data.page_title);
 
   const buildRow = (s) => {
-    const imgSrc = resolveImage(s, 200, 200);
     return `
       <div class="service-row-v2 reveal">
-        <img class="service-row-img" src="${imgSrc || 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&q=75&fit=crop'}" alt="${s.name}" loading="lazy">
         <div class="service-row-body">
           <div class="service-row-top">
             <div class="service-row-name">${s.name}</div>
@@ -168,8 +161,6 @@ async function loadServices() {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.05 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-  scrollToHashTarget();
 }
 
 // ── CONTACT PAGE ───────────────────────────────────────
@@ -194,12 +185,76 @@ async function loadContact() {
 }
 
 
-function scrollToHashTarget() {
-  const hash = window.location.hash;
-  if (!hash) return;
-  const target = document.querySelector(hash);
-  if (!target) return;
-  setTimeout(() => {
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, 120);
+// ── HOMEPAGE SERVICE MODAL ─────────────────────────
+const serviceModalContent = {
+  "Full Groom": {
+    text: "Our complete grooming visit for pets who need the full refresh — coat, clean-up, finishing details, and a polished look.",
+    bestFor: "Regular maintenance, breed trims, and pets who need the full service experience.",
+    includes: ["Bath and dry", "Haircut or trim", "Nail trim", "Ear cleaning"]
+  },
+  "Bath & Brush": {
+    text: "A maintenance-focused appointment that gets pets fresh, clean, brushed out, and ready to go without a haircut.",
+    bestFor: "In-between full grooms, fresher coats, and pets who mainly need bathing and de-shedding support.",
+    includes: ["Bath", "Blow dry", "Brush out", "Light tidy-up as needed"]
+  },
+  "Cat Grooming": {
+    text: "Comfort-first grooming designed specifically for cats, with gentler pacing and cat-appropriate handling.",
+    bestFor: "Cats who need help with shedding, matting, nail care, or routine grooming upkeep.",
+    includes: ["Bath or brush service", "Nail trim", "Ear cleaning", "Haircut options when needed"]
+  },
+  "Nail Trim": {
+    text: "A quick, simple maintenance visit focused on safe, stress-light nail care for dogs and cats.",
+    bestFor: "Pets who only need a fast upkeep appointment between larger grooming visits.",
+    includes: ["Nail trim", "Quick paw check", "Fast in-and-out visit"]
+  },
+  "De-Shedding Treatment": {
+    text: "A coat-focused treatment designed to loosen and remove excess undercoat for a cleaner home and healthier-feeling coat.",
+    bestFor: "Heavy shedders, seasonal coat changes, and pets who need extra coat maintenance.",
+    includes: ["Specialized wash", "Coat-release treatment", "Extended brush-out", "Finishing blow dry"]
+  },
+  "Add-On Services": {
+    text: "Finishing details and helpful upgrades that can be added to a larger visit to personalize the appointment.",
+    bestFor: "Pet parents who want a little extra care or a more complete service outcome.",
+    includes: ["Teeth brushing", "Specialty shampoo", "Flea and tick treatment", "Other grooming extras"]
+  }
+};
+
+function openServiceModal(serviceName) {
+  const modal = document.getElementById('serviceModal');
+  if (!modal) return;
+  const info = serviceModalContent[serviceName] || {
+    text: "A client-favorite grooming service tailored for comfort, cleanliness, and polished results.",
+    bestFor: "Routine care and a more personalized grooming experience.",
+    includes: ["Service details", "Comfort-focused care", "Professional finishing"]
+  };
+  const title = document.getElementById('serviceModalTitle');
+  const text = document.getElementById('serviceModalText');
+  const bestFor = document.getElementById('serviceModalBestFor');
+  const includes = document.getElementById('serviceModalIncludes');
+  if (title) title.textContent = serviceName;
+  if (text) text.textContent = info.text;
+  if (bestFor) bestFor.textContent = info.bestFor;
+  if (includes) includes.innerHTML = info.includes.map(item => `<li>${item}</li>`).join('');
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
 }
+
+function closeServiceModal() {
+  const modal = document.getElementById('serviceModal');
+  if (!modal) return;
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+function bindServiceLearnButtons() {
+  document.querySelectorAll('.service-learn-btn').forEach(btn => {
+    btn.onclick = () => openServiceModal((btn.dataset.service || 'Service').replace('&amp;', '&'));
+  });
+  const closeBtn = document.getElementById('serviceModalClose');
+  if (closeBtn) closeBtn.onclick = closeServiceModal;
+  document.querySelectorAll('[data-close-modal]').forEach(el => { el.onclick = closeServiceModal; });
+}
+
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeServiceModal(); });
