@@ -2245,3 +2245,161 @@ body.nav-open {
     letter-spacing: 0.14em;
   }
 }
+
+
+/* ACTUAL FIX — booking sheet + homepage carousel */
+.services-carousel-shell {
+  margin-inline: calc(50% - 50vw);
+  padding-inline: max(0.85rem, env(safe-area-inset-left)) max(0.85rem, env(safe-area-inset-right));
+}
+.services-carousel {
+  padding-inline: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+.service-card-carousel {
+  min-width: clamp(264px, 72vw, 318px);
+  width: clamp(264px, 72vw, 318px);
+}
+.service-card-actions {
+  margin-top: 1.25rem;
+}
+.service-card-actions .btn,
+.service-modal-actions .btn {
+  min-height: 54px;
+  height: 54px;
+}
+.nav-cta-btn.booking-trigger,
+.nav-overlay-cta.booking-trigger {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+#contact-btn.booking-trigger {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.booking-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 1600;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .28s ease, visibility .28s ease;
+}
+.booking-sheet.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.booking-sheet-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(6px);
+}
+.booking-sheet-panel {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  width: min(720px, calc(100vw - 1rem));
+  max-height: min(86vh, 920px);
+  overflow: auto;
+  background: #111;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 28px 28px 0 0;
+  padding: 1.5rem 1.1rem 1.4rem;
+  box-shadow: 0 -22px 60px rgba(0,0,0,.35);
+  transition: transform .35s cubic-bezier(.22,1,.36,1);
+}
+.booking-sheet.open .booking-sheet-panel {
+  transform: translate(-50%, 0);
+}
+.booking-sheet-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.03);
+}
+.booking-sheet-close span {
+  position: absolute;
+  top: 21px;
+  left: 12px;
+  width: 20px;
+  height: 1.5px;
+  background: #fff;
+}
+.booking-sheet-close span:first-child { transform: rotate(45deg); }
+.booking-sheet-close span:last-child { transform: rotate(-45deg); }
+.booking-sheet-form {
+  margin-top: 1.2rem;
+}
+.booking-sheet .form-field input,
+.booking-sheet .form-field textarea,
+.booking-sheet .form-field select {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.12);
+  color: #fff;
+}
+.booking-sheet .form-field input::placeholder,
+.booking-sheet .form-field textarea::placeholder {
+  color: rgba(255,255,255,.45);
+}
+.booking-sheet .form-field label,
+.booking-sheet-sub,
+.booking-sheet .form-note-v2 {
+  color: rgba(255,255,255,.78);
+}
+.booking-sheet .form-note-v2 {
+  margin-top: .8rem;
+}
+.booking-sheet .pet-option {
+  border-color: rgba(255,255,255,.18);
+  color: rgba(255,255,255,.88);
+}
+.booking-sheet .pet-option.active {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: #141414;
+}
+.booking-sheet textarea {
+  min-height: 120px;
+}
+.service-modal-actions {
+  gap: .75rem;
+}
+.service-modal-actions #serviceModalBookBtn {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+@media (max-width: 760px) {
+  .service-card-carousel {
+    min-width: 74vw;
+    width: 74vw;
+  }
+  .service-card-actions {
+    gap: .65rem;
+  }
+  .service-modal-actions {
+    grid-template-columns: 1fr;
+  }
+  .service-modal-actions .btn {
+    width: 100%;
+  }
+  .booking-sheet-panel {
+    width: calc(100vw - .5rem);
+    padding: 1.35rem .95rem 1.2rem;
+  }
+  .booking-sheet-row {
+    grid-template-columns: 1fr;
+  }
+}

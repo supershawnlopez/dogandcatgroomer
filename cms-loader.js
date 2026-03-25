@@ -39,6 +39,7 @@ function resolveImage(item, w, h) {
 // ── HOME PAGE ──────────────────────────────────────────
 async function loadHome() {
   const data = await loadContent('home');
+  bindBookingButtons();
   if (!data) return;
 
   // Hero
@@ -108,13 +109,14 @@ async function loadHome() {
               <p class="service-desc-v2">${s.description}</p>
               <div class="service-card-actions">
                 <button type="button" class="btn btn-outline-gold service-learn-btn" data-service="${s.name.replace(/\"/g, '&quot;')}" onclick="openServiceModal(decodeURIComponent(this.dataset.service.replace(/&amp;/g, '&'))); return false;">Learn More</button>
-                <a href="${getBookingHref(s.name)}" class="btn btn-gold service-book-btn" data-service="${s.name.replace(/\"/g, '&quot;')}">Book Now</a>
+                <button type="button" class="btn btn-gold service-book-btn booking-trigger" data-service="${s.name.replace(/\"/g, '&quot;')}">Book Now</button>
               </div>
             </div>
           </article>
         `;
       }).join('');
       bindServiceLearnButtons();
+      bindBookingButtons();
       initServicesCarouselStatus();
     }
   }
@@ -206,7 +208,9 @@ function getBookingHref(serviceName) {
 function updateModalBookLink(serviceName) {
   const btn = document.getElementById('serviceModalBookBtn');
   if (!btn) return;
-  btn.setAttribute('href', getBookingHref(serviceName));
+  const normalized = normalizeServiceName(serviceName);
+  btn.dataset.service = normalized;
+  btn.dataset.pet = getPetForService(normalized);
 }
 
 function initServicesCarouselStatus() {
@@ -252,6 +256,73 @@ function initServicesCarouselStatus() {
   window.addEventListener('resize', onScroll);
   setTimeout(() => setActive(getClosestIndex()), 80);
 }
+
+
+
+function setBookingPet(petValue) {
+  const hidden = document.getElementById('bookingPetType');
+  if (hidden) hidden.value = petValue || '';
+  document.querySelectorAll('.booking-pet-option').forEach(btn => {
+    btn.classList.toggle('active', (btn.dataset.pet || '').toLowerCase() === (petValue || '').toLowerCase());
+  });
+}
+
+function openBookingSheet(serviceName = '', petType = '') {
+  const sheet = document.getElementById('bookingSheet');
+  if (!sheet) return;
+  const serviceSelect = document.getElementById('bookingService');
+  const normalizedService = normalizeServiceName(serviceName);
+  if (serviceSelect) {
+    if (normalizedService) {
+      const target = Array.from(serviceSelect.options).find(opt => opt.text.trim().toLowerCase() === normalizedService.trim().toLowerCase());
+      serviceSelect.value = target ? target.text : 'Not sure yet';
+    } else {
+      serviceSelect.value = 'Not sure yet';
+    }
+  }
+  setBookingPet(petType || getPetForService(normalizedService || 'dog'));
+  sheet.classList.add('open');
+  sheet.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeBookingSheet() {
+  const sheet = document.getElementById('bookingSheet');
+  if (!sheet) return;
+  sheet.classList.remove('open');
+  sheet.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+function bindBookingButtons() {
+  document.querySelectorAll('.booking-trigger').forEach(btn => {
+    btn.onclick = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const service = normalizeServiceName(btn.dataset.service || '');
+      const pet = btn.dataset.pet || getPetForService(service);
+      openBookingSheet(service, pet);
+    };
+  });
+
+  const modalBookBtn = document.getElementById('serviceModalBookBtn');
+  if (modalBookBtn) {
+    modalBookBtn.onclick = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const service = normalizeServiceName(modalBookBtn.dataset.service || modalBookBtn.dataset.bookingService || document.getElementById('serviceModalTitle')?.textContent || '');
+      openBookingSheet(service, getPetForService(service));
+    };
+  }
+
+  const close = document.getElementById('bookingSheetClose');
+  if (close) close.onclick = closeBookingSheet;
+  document.querySelectorAll('[data-close-booking]').forEach(el => el.onclick = closeBookingSheet);
+  document.querySelectorAll('.booking-pet-option').forEach(btn => {
+    btn.onclick = () => setBookingPet(btn.dataset.pet || '');
+  });
+}
+
 
 // ── HOMEPAGE SERVICE MODAL ─────────────────────────
 const serviceModalContent = {
@@ -330,4 +401,4 @@ function bindServiceLearnButtons() {
   document.querySelectorAll('[data-close-modal]').forEach(el => { el.onclick = closeServiceModal; });
 }
 
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeServiceModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeServiceModal(); closeBookingSheet(); } });
