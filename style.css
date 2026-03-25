@@ -183,15 +183,16 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: 0.15em !important;
   font-size: 0.72rem !important;
   font-weight: 600 !important;
+  text-transform: uppercase !important;
   white-space: nowrap;
-  transition: all 0.3s !important;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
 }
 
 .nav-cta-btn:hover {
-  background: var(--gold-dark) !important;
-  border-color: var(--gold-dark) !important;
-  color: var(--charcoal) !important;
-  transform: translateY(-1px);
+  background: transparent !important;
+  border-color: var(--gold) !important;
+  color: var(--gold) !important;
+  transform: none;
 }
 
 
@@ -1673,11 +1674,12 @@ a.service-card-v2:focus-visible {
 
 .nav-overlay-links a {
   display: block;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.8rem, 7vw, 5.5rem);
-  font-weight: 300;
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(1.2rem, 3.6vw, 1.8rem);
+  font-weight: 600;
+  text-transform: uppercase;
   color: rgba(255,255,255,0.85);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.18em;
   line-height: 1.15;
   transform: translateY(100%);
   transition: color 0.3s ease, transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
@@ -1732,7 +1734,9 @@ a.service-card-v2:focus-visible {
 }
 
 .nav-overlay-cta:hover {
-  background: var(--gold-dark);
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--gold);
 }
 
 /* Social icons in overlay */

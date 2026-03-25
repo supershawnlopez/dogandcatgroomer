@@ -192,54 +192,54 @@
     </div>
 
     <div class="services-grid-v2" id="services-grid">
-      <div class="service-card-v2 reveal">
+      <a href="services.html#full-groom" class="service-card-v2 reveal" aria-label="View Full Groom services">
         <img class="service-card-img"
           src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=75&fit=crop"
           alt="Full groom service" loading="lazy">
         <div class="service-num">01</div>
         <div class="service-name-v2">Full Groom</div>
         <p class="service-desc-v2">Bath, dry, cut, nail trim, ear cleaning — everything your pet needs in one visit.</p>
-      </div>
-      <div class="service-card-v2 reveal reveal-delay-1">
+      </a>
+      <a href="services.html#bath-brush" class="service-card-v2 reveal reveal-delay-1" aria-label="View Bath and Brush services">
         <img class="service-card-img"
           src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=600&q=75&fit=crop"
           alt="Bath and brush service" loading="lazy">
         <div class="service-num">02</div>
         <div class="service-name-v2">Bath &amp; Brush</div>
         <p class="service-desc-v2">Full bath, blow dry, and thorough brush out. Perfect for regular maintenance.</p>
-      </div>
-      <div class="service-card-v2 reveal reveal-delay-2">
+      </a>
+      <a href="services.html#cat-grooming" class="service-card-v2 reveal reveal-delay-2" aria-label="View Cat Grooming services">
         <img class="service-card-img"
           src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=600&q=75&fit=crop"
           alt="Cat grooming service" loading="lazy">
         <div class="service-num">03</div>
         <div class="service-name-v2">Cat Grooming</div>
         <p class="service-desc-v2">Specialized gentle grooming for cats of all breeds and temperaments.</p>
-      </div>
-      <div class="service-card-v2 reveal reveal-delay-1">
+      </a>
+      <a href="services.html#nail-trim" class="service-card-v2 reveal reveal-delay-1" aria-label="View Nail Trim services">
         <img class="service-card-img"
           src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=600&q=75&fit=crop"
           alt="Nail trim service" loading="lazy">
         <div class="service-num">04</div>
         <div class="service-name-v2">Nail Trim &amp; Buffing</div>
         <p class="service-desc-v2">Quick and stress-free nail trimming for dogs and cats. Walk-ins welcome.</p>
-      </div>
-      <div class="service-card-v2 reveal reveal-delay-2">
+      </a>
+      <a href="services.html#programs" class="service-card-v2 reveal reveal-delay-2" aria-label="View Add-On Services">
         <img class="service-card-img"
           src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=600&q=75&fit=crop"
-          alt="Puppy groom service" loading="lazy">
+          alt="Add-on services" loading="lazy">
         <div class="service-num">05</div>
-        <div class="service-name-v2">Puppy Groom</div>
-        <p class="service-desc-v2">Gentle first-time grooming experience designed for young puppies.</p>
-      </div>
-      <div class="service-card-v2 reveal reveal-delay-3">
+        <div class="service-name-v2">Add-On Services</div>
+        <p class="service-desc-v2">Helpful extras and finishing touches to round out your pet’s appointment.</p>
+      </a>
+      <a href="services.html#dog-services" class="service-card-v2 reveal reveal-delay-3" aria-label="View De-Shedding services">
         <img class="service-card-img"
           src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=600&q=75&fit=crop"
           alt="Deshed treatment" loading="lazy">
         <div class="service-num">06</div>
-        <div class="service-name-v2">Deshed Treatment</div>
+        <div class="service-name-v2">De-Shedding Treatment</div>
         <p class="service-desc-v2">Specialized treatment to dramatically reduce shedding.</p>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -331,7 +331,7 @@
 <footer class="footer-v2">
   <div class="footer-grid">
     <div>
-      <img src="/images/logo-dark.png" alt="Dog &amp; Cat Groomer" class="footer-logo-img">
+      <img src="/images/logo-light.png" alt="Dog &amp; Cat Groomer" class="footer-logo-img">
       <div class="footer-brand-tag">Professional Pet Grooming</div>
       <p class="footer-brand-desc">Caring, professional grooming for dogs and cats throughout the Phoenix metro area. Every pet treated like family.</p>
     </div>
@@ -471,16 +471,25 @@ window.addEventListener('load', async () => {
     if (data.services_preview) {
       const grid = document.getElementById('services-grid');
       if (grid) {
+        const anchorMap = {
+          '01': 'full-groom',
+          '02': 'bath-brush',
+          '03': 'cat-grooming',
+          '04': 'nail-trim',
+          '05': 'programs',
+          '06': 'dog-services'
+        };
         grid.innerHTML = data.services_preview.map(s => {
           const imgSrc = s.image && s.image.startsWith('/images/')
             ? s.image
             : 'https://images.unsplash.com/' + (s.image_id || s.image) + '?w=600&q=75&fit=crop';
-          return '<div class="service-card-v2 visible">' +
+          const anchor = anchorMap[s.num] || 'dog-services';
+          return '<a href="services.html#' + anchor + '" class="service-card-v2 visible" aria-label="View ' + s.name + ' services">' +
             '<img class="service-card-img" src="' + imgSrc + '" alt="' + s.name + '" loading="lazy">' +
             '<div class="service-num">' + s.num + '</div>' +
             '<div class="service-name-v2">' + s.name + '</div>' +
             '<p class="service-desc-v2">' + s.description + '</p>' +
-            '</div>';
+            '</a>';
         }).join('');
       }
     }
