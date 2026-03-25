@@ -2515,3 +2515,14 @@ button.btn.btn-gold.booking-trigger {
   color: var(--muted-text);
   font-size: 0.95rem;
 }
+
+
+/* FINAL SECTION SEPARATION (AUTO APPLIED) */
+.section-alt {
+  background: #f4f1eb;
+}
+
+.section-divider {
+  border-top: 1px solid rgba(0,0,0,0.06);
+  margin: 3rem 0;
+}
