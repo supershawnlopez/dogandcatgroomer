@@ -2527,47 +2527,108 @@ button.btn.btn-gold.booking-trigger {
   margin: 3rem 0;
 }
 
-/* FINAL BOOKING SHEET PET BUTTON FIX */
-.booking-pet-option,
-.booking-sheet .booking-pet-option,
-.booking-pet-options .booking-pet-option {
-  background: transparent !important;
+
+
+/* FINAL QA — NAV CONSISTENCY + SERVICES TRANSITIONS */
+.nav-cta-btn,
+.nav-overlay-cta {
+  font-family: 'Jost', sans-serif !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.16em !important;
+  font-weight: 600 !important;
   border: 1px solid var(--gold) !important;
-  color: var(--gold) !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
-.booking-pet-option span,
-.booking-sheet .booking-pet-option span,
-.booking-pet-options .booking-pet-option span {
-  color: inherit !important;
-}
-
-.booking-pet-option.active,
-.booking-sheet .booking-pet-option.active,
-.booking-pet-options .booking-pet-option.active,
-.booking-pet-option[aria-pressed="true"],
-.booking-sheet .booking-pet-option[aria-pressed="true"],
-.booking-pet-options .booking-pet-option[aria-pressed="true"] {
+.nav-cta-btn {
   background: var(--gold) !important;
-  border-color: var(--gold) !important;
   color: var(--charcoal) !important;
 }
 
-.booking-pet-option:hover,
-.booking-sheet .booking-pet-option:hover,
-.booking-pet-options .booking-pet-option:hover {
+.nav-cta-btn:hover {
   background: transparent !important;
-  border-color: var(--gold) !important;
   color: var(--gold) !important;
+  border-color: var(--gold) !important;
+  transform: none !important;
 }
 
-.booking-pet-option.active:hover,
-.booking-sheet .booking-pet-option.active:hover,
-.booking-pet-options .booking-pet-option.active:hover,
-.booking-pet-option[aria-pressed="true"]:hover,
-.booking-sheet .booking-pet-option[aria-pressed="true"]:hover,
-.booking-pet-options .booking-pet-option[aria-pressed="true"]:hover {
+.nav-overlay-links a {
+  font-family: 'Jost', sans-serif !important;
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.16em !important;
+  line-height: 1.15 !important;
+}
+
+.nav-overlay-cta {
   background: var(--gold) !important;
-  border-color: var(--gold) !important;
   color: var(--charcoal) !important;
+  border-radius: 999px !important;
+  padding: 1rem 2.3rem !important;
+}
+
+.nav-overlay-cta:hover {
+  background: transparent !important;
+  color: var(--gold) !important;
+  border-color: var(--gold) !important;
+}
+
+.nav-overlay-cta:focus,
+.nav-overlay-cta:focus-visible,
+.nav-cta-btn:focus,
+.nav-cta-btn:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* stronger section separation on services page */
+.section-alt {
+  background: #f1ede6 !important;
+  border-radius: 28px;
+  padding: 2.25rem 1.25rem 2.1rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0.25rem;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.03);
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,0.10), rgba(0,0,0,0));
+  margin: 2.7rem 0 1rem;
+}
+
+.section-divider-soft {
+  margin: 2.2rem 0 0.8rem;
+}
+
+.service-category.section-alt .service-category-heading,
+.service-category.section-alt .service-category-intro,
+.service-category.section-alt .service-item-title,
+.service-category.section-alt .service-item-desc,
+.service-category.section-alt .service-item-price {
+  position: relative;
+  z-index: 1;
+}
+
+.bottom-cta {
+  text-align: center;
+  margin: 2rem 0 0.35rem;
+}
+.service-cta-text {
+  margin: 0 0 0.85rem;
+  color: var(--muted-text);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+  .nav-overlay-links a {
+    font-size: 1.25rem !important;
+  }
+  .section-alt {
+    border-radius: 22px;
+    padding: 2rem 1rem 1.9rem;
+  }
 }
