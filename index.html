@@ -1,375 +1,337 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dog & Cat Groomer | Professional Pet Grooming in Arizona</title>
-<meta name="description" content="Professional dog and cat grooming services in Arizona. Caring, experienced grooming for dogs and cats. Serving the Phoenix metro area.">
-<meta property="og:title" content="Dog & Cat Groomer | Professional Pet Grooming">
-<meta property="og:description" content="Professional dog and cat grooming services in Arizona.">
-<meta property="og:url" content="https://www.dogandcatgroomer.com">
-<link rel="canonical" href="https://www.dogandcatgroomer.com">
-<link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/png" href="/images/logo-icon.png">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dog &amp; Cat Groomer | Professional Pet Grooming in Arizona</title>
+<meta content="Professional dog and cat grooming services in Arizona. Caring, experienced grooming for dogs and cats. Serving the Phoenix metro area." name="description"/>
+<meta content="Dog &amp; Cat Groomer | Professional Pet Grooming" property="og:title"/>
+<meta content="Professional dog and cat grooming services in Arizona." property="og:description"/>
+<meta content="https://www.dogandcatgroomer.com" property="og:url"/>
+<link href="https://www.dogandcatgroomer.com" rel="canonical"/>
+<link href="style.css" rel="stylesheet"/>
+<link href="/images/logo-icon.png" rel="icon" type="image/png"/>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-
 <!-- NAV -->
 <nav class="nav" id="mainNav">
-  <div class="nav-inner">
-    <a href="index.html" class="logo">
-      <img src="/images/logo-dark.png" alt="Dog &amp; Cat Groomer" class="logo-img">
-    </a>
+<div class="nav-inner">
+<a class="logo" href="index.html">
+<img alt="Dog &amp; Cat Groomer" class="logo-img" src="/images/logo-dark.png"/>
+</a>
 <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <a href="contact.html#booking-form" class="nav-cta-btn">Book an Appointment</a>
-    <button class="nav-toggle" onclick="toggleNav()" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+<li><a class="active" href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+<a class="nav-cta-btn" href="contact.html#booking-form">Book an Appointment</a>
+<button aria-label="Open menu" class="nav-toggle" onclick="toggleNav()">
+<span></span><span></span><span></span>
+</button>
+</div>
 </nav>
 <div class="nav-overlay" id="navOverlay">
-  <div class="nav-overlay-top">
-    <img src="/images/logo-dark.png" alt="Dog &amp; Cat Groomer" class="nav-overlay-logo-img">
-    <button class="nav-close" onclick="closeNav()" aria-label="Close menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18"/>
-        <line x1="6" y1="6" x2="18" y2="18"/>
-      </svg>
-    </button>
-  </div>
-  <div class="nav-overlay-rule"></div>
-  <ul class="nav-overlay-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <a href="contact.html#booking-form" class="nav-overlay-cta">Book an Appointment &rarr;</a>
-  <div class="nav-overlay-social">
-    <a href="https://instagram.com/dogandcatgroomer" target="_blank" class="nav-social-link" aria-label="Instagram">
-      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-    </a>
-    <a href="https://facebook.com" target="_blank" class="nav-social-link" aria-label="Facebook">
-      <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-    </a>
-    <a href="https://tiktok.com" target="_blank" class="nav-social-link" aria-label="TikTok">
-      <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-    </a>
-  </div>
+<div class="nav-overlay-top">
+<img alt="Dog &amp; Cat Groomer" class="nav-overlay-logo-img" src="/images/logo-dark.png"/>
+<button aria-label="Close menu" class="nav-close" onclick="closeNav()">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<line x1="18" x2="6" y1="6" y2="18"></line>
+<line x1="6" x2="18" y1="6" y2="18"></line>
+</svg>
+</button>
 </div>
-
+<div class="nav-overlay-rule"></div>
+<ul class="nav-overlay-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+<a class="nav-overlay-cta" href="contact.html#booking-form">Book an Appointment →</a>
+<div class="nav-overlay-social">
+<a aria-label="Instagram" class="nav-social-link" href="https://instagram.com/dogandcatgroomer" target="_blank">
+<svg viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a aria-label="Facebook" class="nav-social-link" href="https://facebook.com" target="_blank">
+<svg viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+<a aria-label="TikTok" class="nav-social-link" href="https://tiktok.com" target="_blank">
+<svg viewbox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg>
+</a>
+</div>
+</div>
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg">
-    <img
-      id="heroBg"
-      src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1800&q=85&fit=crop&crop=center"
-      alt="Beautifully groomed dog"
-      loading="eager">
-  </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">Professional Pet Grooming · Arizona</p>
-    <h1 class="hero-title" id="hero-title">
-      Every pet deserves<br>
+<div class="hero-bg">
+<img alt="Beautifully groomed dog" id="heroBg" loading="eager" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1800&amp;q=85&amp;fit=crop&amp;crop=center"/>
+</div>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<p class="hero-eyebrow">Professional Pet Grooming · Arizona</p>
+<h1 class="hero-title" id="hero-title">
+      Every pet deserves<br/>
       to feel <em>beautiful.</em>
-    </h1>
-    <p class="hero-subtitle" id="hero-sub">
+</h1>
+<p class="hero-subtitle" id="hero-sub">
       Caring, experienced grooming for dogs and cats.
       We treat every pet like family.
     </p>
-    <div class="hero-actions">
-      <a href="contact.html" class="btn btn-gold" id="book-btn">Book an Appointment</a>
-      <a href="services.html" class="btn btn-outline-white" id="view-btn">View Services</a>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
+<div class="hero-actions">
+<a class="btn btn-gold" href="contact.html" id="book-btn">Book an Appointment</a>
+<a class="btn btn-outline-white" href="services.html" id="view-btn">View Services</a>
+</div>
+</div>
+<div class="hero-scroll">
+<span>Scroll</span>
+<div class="scroll-line"></div>
+</div>
 </section>
-
 <!-- STATS BAR -->
 <div class="stats-bar">
-  <div class="stats-inner">
-    <div class="reveal">
-      <div class="stat-number">500+</div>
-      <div class="stat-label">Happy Pets Groomed</div>
-    </div>
-    <div class="reveal reveal-delay-1">
-      <div class="stat-number">5★</div>
-      <div class="stat-label">Client Satisfaction</div>
-    </div>
-    <div class="reveal reveal-delay-2">
-      <div class="stat-number">All</div>
-      <div class="stat-label">Breeds Welcome</div>
-    </div>
-    <div class="reveal reveal-delay-3">
-      <div class="stat-number">AZ</div>
-      <div class="stat-label">Phoenix Metro Area</div>
-    </div>
-  </div>
+<div class="stats-inner">
+<div class="reveal">
+<div class="stat-number">500+</div>
+<div class="stat-label">Happy Pets Groomed</div>
 </div>
-
+<div class="reveal reveal-delay-1">
+<div class="stat-number">5★</div>
+<div class="stat-label">Client Satisfaction</div>
+</div>
+<div class="reveal reveal-delay-2">
+<div class="stat-number">All</div>
+<div class="stat-label">Breeds Welcome</div>
+</div>
+<div class="reveal reveal-delay-3">
+<div class="stat-number">AZ</div>
+<div class="stat-label">Phoenix Metro Area</div>
+</div>
+</div>
+</div>
 <!-- ABOUT -->
 <section class="about-section">
-  <div class="about-grid">
-    <div class="about-image-col reveal-left">
-      <img
-        id="about-img"
-        src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=900&q=80&fit=crop&crop=center"
-        alt="Professional cat grooming"
-        loading="lazy">
-      <div class="about-image-overlay">
-        <p class="about-image-quote" id="about-quote">"Every pet that walks through our door gets treated with love and care."</p>
-        <span class="about-image-author">Dog &amp; Cat Groomer Team</span>
-      </div>
-    </div>
-    <div class="about-content-col reveal-right">
-      <span class="section-eyebrow" id="about-eyebrow">About Us</span>
-      <h2 class="section-title" id="about-title">Passionate about pets.<br>Professional in every detail.</h2>
-      <p class="about-body" id="about-body">
+<div class="about-grid">
+<div class="about-image-col reveal-left">
+<img alt="Professional cat grooming" id="about-img" loading="lazy" src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=900&amp;q=80&amp;fit=crop&amp;crop=center"/>
+<div class="about-image-overlay">
+<p class="about-image-quote" id="about-quote">"Every pet that walks through our door gets treated with love and care."</p>
+<span class="about-image-author">Dog &amp; Cat Groomer Team</span>
+</div>
+</div>
+<div class="about-content-col reveal-right">
+<span class="section-eyebrow" id="about-eyebrow">About Us</span>
+<h2 class="section-title" id="about-title">Passionate about pets.<br/>Professional in every detail.</h2>
+<p class="about-body" id="about-body">
         We are dedicated to providing the highest quality grooming experience
         for your dogs and cats. Every appointment is handled with patience,
         care, and a genuine love for animals of all breeds and temperaments.
       </p>
-      <div class="about-features">
-        <div class="about-feature">
-          <div class="about-feature-icon">
-            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
-          <div class="about-feature-text">
-            <strong>All Breeds Welcome</strong>
-            <span>Dogs, cats, all sizes</span>
-          </div>
-        </div>
-        <div class="about-feature">
-          <div class="about-feature-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div class="about-feature-text">
-            <strong>Flexible Scheduling</strong>
-            <span>Weekly &amp; monthly programs</span>
-          </div>
-        </div>
-        <div class="about-feature">
-          <div class="about-feature-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div class="about-feature-text">
-            <strong>Safe &amp; Gentle</strong>
-            <span>Stress-free experience</span>
-          </div>
-        </div>
-        <div class="about-feature">
-          <div class="about-feature-icon">
-            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <div class="about-feature-text">
-            <strong>5-Star Results</strong>
-            <span>Quality you can see</span>
-          </div>
-        </div>
-      </div>
-      <a href="contact.html#booking-form" class="btn btn-gold" id="contact-btn">Book an Appointment &rarr;</a>
-    </div>
-  </div>
+<div class="about-features">
+<div class="about-feature">
+<div class="about-feature-icon">
+<svg viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</div>
+<div class="about-feature-text">
+<strong>All Breeds Welcome</strong>
+<span>Dogs, cats, all sizes</span>
+</div>
+</div>
+<div class="about-feature">
+<div class="about-feature-icon">
+<svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+</div>
+<div class="about-feature-text">
+<strong>Flexible Scheduling</strong>
+<span>Weekly &amp; monthly programs</span>
+</div>
+</div>
+<div class="about-feature">
+<div class="about-feature-icon">
+<svg viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+</div>
+<div class="about-feature-text">
+<strong>Safe &amp; Gentle</strong>
+<span>Stress-free experience</span>
+</div>
+</div>
+<div class="about-feature">
+<div class="about-feature-icon">
+<svg viewbox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+</div>
+<div class="about-feature-text">
+<strong>5-Star Results</strong>
+<span>Quality you can see</span>
+</div>
+</div>
+</div>
+<a class="btn btn-gold" href="contact.html#booking-form" id="contact-btn">Book an Appointment →</a>
+</div>
+</div>
 </section>
-
 <!-- SERVICES -->
 <section class="services-section">
-  <div class="section-inner">
-    <div class="services-header">
-      <div>
-        <span class="section-eyebrow" id="services-eyebrow">Most Popular Services</span>
-        <h2 class="section-title section-title-white reveal" id="services-title">Grooming services<br>for every pet.</h2>
-      </div>
-      <a href="services.html" class="btn btn-gold reveal" id="all-services-btn">See All Services &rarr;</a>
-    </div>
-
-    <div class="services-grid-v2" id="services-grid">
-      <div class="service-card-v2 reveal">
-        <img class="service-card-img"
-          src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=75&fit=crop"
-          alt="Full groom service" loading="lazy">
-        <div class="service-num">01</div>
-        <div class="service-name-v2">Full Groom</div>
-        <p class="service-desc-v2">Bath, dry, cut, nail trim, ear cleaning — everything your pet needs in one visit.</p>
-      </div>
-      <div class="service-card-v2 reveal reveal-delay-1">
-        <img class="service-card-img"
-          src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=600&q=75&fit=crop"
-          alt="Bath and brush service" loading="lazy">
-        <div class="service-num">02</div>
-        <div class="service-name-v2">Bath &amp; Brush</div>
-        <p class="service-desc-v2">Full bath, blow dry, and thorough brush out. Perfect for regular maintenance.</p>
-      </div>
-      <div class="service-card-v2 reveal reveal-delay-2">
-        <img class="service-card-img"
-          src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=600&q=75&fit=crop"
-          alt="Cat grooming service" loading="lazy">
-        <div class="service-num">03</div>
-        <div class="service-name-v2">Cat Grooming</div>
-        <p class="service-desc-v2">Specialized gentle grooming for cats of all breeds and temperaments.</p>
-      </div>
-      <div class="service-card-v2 reveal reveal-delay-1">
-        <img class="service-card-img"
-          src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=600&q=75&fit=crop"
-          alt="Nail trim service" loading="lazy">
-        <div class="service-num">04</div>
-        <div class="service-name-v2">Nail Trim &amp; Buffing</div>
-        <p class="service-desc-v2">Quick and stress-free nail trimming for dogs and cats. Walk-ins welcome.</p>
-      </div>
-      <div class="service-card-v2 reveal reveal-delay-2">
-        <img class="service-card-img"
-          src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=600&q=75&fit=crop"
-          alt="Puppy groom service" loading="lazy">
-        <div class="service-num">05</div>
-        <div class="service-name-v2">Puppy Groom</div>
-        <p class="service-desc-v2">Gentle first-time grooming experience designed for young puppies.</p>
-      </div>
-      <div class="service-card-v2 reveal reveal-delay-3">
-        <img class="service-card-img"
-          src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=600&q=75&fit=crop"
-          alt="Deshed treatment" loading="lazy">
-        <div class="service-num">06</div>
-        <div class="service-name-v2">Deshed Treatment</div>
-        <p class="service-desc-v2">Specialized treatment to dramatically reduce shedding.</p>
-      </div>
-    </div>
-  </div>
+<div class="section-inner">
+<div class="services-header">
+<div>
+<span class="section-eyebrow" id="services-eyebrow">Most Popular Services</span>
+<h2 class="section-title section-title-white reveal" id="services-title">Grooming services<br/>for every pet.</h2>
+</div>
+<a class="btn btn-gold reveal" href="services.html" id="all-services-btn">See All Services →</a>
+</div>
+<div class="services-grid-v2" id="services-grid">
+<a aria-label="View Full Groom details" class="service-card-v2 reveal service-card-link" href="services.html#full-groom">
+<img alt="Full groom service" class="service-card-img" loading="lazy" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&amp;q=75&amp;fit=crop"/>
+<div class="service-num">01</div>
+<div class="service-name-v2">Full Groom</div>
+<p class="service-desc-v2">Bath, dry, cut, nail trim, ear cleaning — everything your pet needs in one visit.</p>
+</a>
+<a aria-label="View Bath &amp; Brush details" class="service-card-v2 reveal reveal-delay-1 service-card-link" href="services.html#bath-brush">
+<img alt="Bath and brush service" class="service-card-img" loading="lazy" src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=600&amp;q=75&amp;fit=crop"/>
+<div class="service-num">02</div>
+<div class="service-name-v2">Bath &amp; Brush</div>
+<p class="service-desc-v2">Full bath, blow dry, and thorough brush out. Perfect for regular maintenance.</p>
+</a>
+<a aria-label="View Cat Grooming details" class="service-card-v2 reveal reveal-delay-2 service-card-link" href="services.html#cat-grooming">
+<img alt="Cat grooming service" class="service-card-img" loading="lazy" src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=600&amp;q=75&amp;fit=crop"/>
+<div class="service-num">03</div>
+<div class="service-name-v2">Cat Grooming</div>
+<p class="service-desc-v2">Specialized gentle grooming for cats of all breeds and temperaments.</p>
+</a>
+<a aria-label="View Nail Trim &amp; Buffing details" class="service-card-v2 reveal reveal-delay-1 service-card-link" href="services.html#nail-trim">
+<img alt="Nail trim service" class="service-card-img" loading="lazy" src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=600&amp;q=75&amp;fit=crop"/>
+<div class="service-num">04</div>
+<div class="service-name-v2">Nail Trim &amp; Buffing</div>
+<p class="service-desc-v2">Quick and stress-free nail trimming for dogs and cats. Walk-ins welcome.</p>
+</a>
+<a aria-label="View Puppy Groom details" class="service-card-v2 reveal reveal-delay-2 service-card-link" href="services.html#puppy-groom">
+<img alt="Puppy groom service" class="service-card-img" loading="lazy" src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=600&amp;q=75&amp;fit=crop"/>
+<div class="service-num">05</div>
+<div class="service-name-v2">Puppy Groom</div>
+<p class="service-desc-v2">Gentle first-time grooming experience designed for young puppies.</p>
+</a>
+<a aria-label="View Deshed Treatment details" class="service-card-v2 reveal reveal-delay-3 service-card-link" href="services.html#de-shedding-treatment">
+<img alt="Deshed treatment" class="service-card-img" loading="lazy" src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=600&amp;q=75&amp;fit=crop"/>
+<div class="service-num">06</div>
+<div class="service-name-v2">Deshed Treatment</div>
+<p class="service-desc-v2">Specialized treatment to dramatically reduce shedding.</p>
+</a>
+</div>
+</div>
 </section>
-
 <!-- PHOTO GALLERY STRIP -->
 <div class="gallery-strip">
-  <div class="gallery-strip-item">
-    <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=500&q=75&fit=crop&crop=center" alt="Groomed dog" loading="lazy">
-  </div>
-  <div class="gallery-strip-item">
-    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=500&q=75&fit=crop&crop=center" alt="Groomed cat" loading="lazy">
-  </div>
-  <div class="gallery-strip-item">
-    <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=500&q=75&fit=crop&crop=center" alt="Happy dog" loading="lazy">
-  </div>
-  <div class="gallery-strip-item">
-    <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=500&q=75&fit=crop&crop=center" alt="Dog grooming" loading="lazy">
-  </div>
-  <div class="gallery-strip-item">
-    <img src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=500&q=75&fit=crop&crop=center" alt="Pet care" loading="lazy">
-  </div>
+<div class="gallery-strip-item">
+<img alt="Groomed dog" loading="lazy" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=500&amp;q=75&amp;fit=crop&amp;crop=center"/>
 </div>
-
+<div class="gallery-strip-item">
+<img alt="Groomed cat" loading="lazy" src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=500&amp;q=75&amp;fit=crop&amp;crop=center"/>
+</div>
+<div class="gallery-strip-item">
+<img alt="Happy dog" loading="lazy" src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=500&amp;q=75&amp;fit=crop&amp;crop=center"/>
+</div>
+<div class="gallery-strip-item">
+<img alt="Dog grooming" loading="lazy" src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=500&amp;q=75&amp;fit=crop&amp;crop=center"/>
+</div>
+<div class="gallery-strip-item">
+<img alt="Pet care" loading="lazy" src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=500&amp;q=75&amp;fit=crop&amp;crop=center"/>
+</div>
+</div>
 <!-- INSTAGRAM -->
 <section class="instagram-section">
-  <div class="reveal">
-    <span class="section-eyebrow" id="insta-eyebrow">Follow Along on Instagram</span>
-    <h2 class="section-title" id="insta-title">See our work.</h2>
-    <a href="https://instagram.com/dogandcatgroomer" target="_blank" class="instagram-handle">@dogandcatgroomer</a>
-  </div>
-  <div class="behold-container reveal">
-    <div class="behold-placeholder">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-      </svg>
-      <p>Instagram feed coming soon &mdash; follow us for daily grooming photos</p>
-    </div>
-  </div>
+<div class="reveal">
+<span class="section-eyebrow" id="insta-eyebrow">Follow Along on Instagram</span>
+<h2 class="section-title" id="insta-title">See our work.</h2>
+<a class="instagram-handle" href="https://instagram.com/dogandcatgroomer" target="_blank">@dogandcatgroomer</a>
+</div>
+<div class="behold-container reveal">
+<div class="behold-placeholder">
+<svg fill="none" height="40" stroke="#C9A96E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" width="40">
+<rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+</svg>
+<p>Instagram feed coming soon — follow us for daily grooming photos</p>
+</div>
+</div>
 </section>
-
 <!-- SERVICE AREA -->
 <div class="area-section">
-  <div class="area-image">
-    <img
-      src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=900&q=80&fit=crop"
-      alt="Phoenix Arizona skyline"
-      loading="lazy">
-    <div class="area-image-overlay"></div>
-  </div>
-  <div class="area-content reveal-right">
-    <span class="section-eyebrow" id="area-eyebrow">Where We Serve</span>
-    <h2 class="section-title" id="area-title">Proudly serving<br>the Phoenix area.</h2>
-    <p class="section-sub"><span id="area-sub">We serve clients throughout the greater Phoenix metropolitan area. Contact us to confirm availability in your neighborhood.</span></p>
-    <div class="area-tags-v2" id="area-cities">
-      <span class="area-tag-v2">Phoenix</span>
-      <span class="area-tag-v2">Scottsdale</span>
-      <span class="area-tag-v2">Tempe</span>
-      <span class="area-tag-v2">Mesa</span>
-      <span class="area-tag-v2">Chandler</span>
-      <span class="area-tag-v2">Gilbert</span>
-      <span class="area-tag-v2">Glendale</span>
-      <span class="area-tag-v2">&amp; surrounding areas</span>
-    </div>
-    <a href="contact.html#booking-form" class="btn btn-gold">Book an Appointment &rarr;</a>
-  </div>
+<div class="area-image">
+<img alt="Phoenix Arizona skyline" loading="lazy" src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=900&amp;q=80&amp;fit=crop"/>
+<div class="area-image-overlay"></div>
 </div>
-
+<div class="area-content reveal-right">
+<span class="section-eyebrow" id="area-eyebrow">Where We Serve</span>
+<h2 class="section-title" id="area-title">Proudly serving<br/>the Phoenix area.</h2>
+<p class="section-sub"><span id="area-sub">We serve clients throughout the greater Phoenix metropolitan area. Contact us to confirm availability in your neighborhood.</span></p>
+<div class="area-tags-v2" id="area-cities">
+<span class="area-tag-v2">Phoenix</span>
+<span class="area-tag-v2">Scottsdale</span>
+<span class="area-tag-v2">Tempe</span>
+<span class="area-tag-v2">Mesa</span>
+<span class="area-tag-v2">Chandler</span>
+<span class="area-tag-v2">Gilbert</span>
+<span class="area-tag-v2">Glendale</span>
+<span class="area-tag-v2">&amp; surrounding areas</span>
+</div>
+<a class="btn btn-gold" href="contact.html#booking-form">Book an Appointment →</a>
+</div>
+</div>
 <!-- CTA BANNER -->
 <div class="cta-banner">
-  <div class="cta-banner-bg">
-    <img
-      id="cta-img"
-      src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=1800&q=80&fit=crop"
-      alt="Happy groomed pet"
-      loading="lazy">
-  </div>
-  <div class="cta-banner-overlay"></div>
-  <div class="cta-banner-content reveal">
-    <span class="cta-eyebrow" id="cta-eyebrow">Ready to Book?</span>
-    <h2 class="cta-title" id="cta-title">Your pet is in<br><em>good hands.</em></h2>
-    <p class="cta-sub"><span id="cta-sub">Ready to book? Start your appointment request and we’ll take care of the rest.</span></p>
-    <a href="contact.html#booking-form" class="btn btn-gold" style="font-size:0.8rem; padding:1.1rem 2.8rem;">
+<div class="cta-banner-bg">
+<img alt="Happy groomed pet" id="cta-img" loading="lazy" src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=1800&amp;q=80&amp;fit=crop"/>
+</div>
+<div class="cta-banner-overlay"></div>
+<div class="cta-banner-content reveal">
+<span class="cta-eyebrow" id="cta-eyebrow">Ready to Book?</span>
+<h2 class="cta-title" id="cta-title">Your pet is in<br/><em>good hands.</em></h2>
+<p class="cta-sub"><span id="cta-sub">Ready to book? Start your appointment request and we’ll take care of the rest.</span></p>
+<a class="btn btn-gold" href="contact.html#booking-form" style="font-size:0.8rem; padding:1.1rem 2.8rem;">
       Book an Appointment
     </a>
-  </div>
 </div>
-
+</div>
 <!-- FOOTER -->
 <footer class="footer-v2">
-  <div class="footer-grid">
-    <div>
-      <img src="/images/logo-light.png" alt="Dog &amp; Cat Groomer" class="footer-logo-img">
-      <div class="footer-brand-name">Dog &amp; Cat Groomer</div>
-      <div class="footer-brand-tag">Professional Pet Grooming</div>
-      <p class="footer-brand-desc">Caring, professional grooming for dogs and cats throughout the Phoenix metro area. Every pet treated like family.</p>
-    </div>
-    <div>
-      <div class="footer-col-title">Navigate</div>
-      <ul class="footer-links-v2">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Services</div>
-      <ul class="footer-links-v2">
-        <li><a href="services.html">Full Groom</a></li>
-        <li><a href="services.html">Bath &amp; Brush</a></li>
-        <li><a href="services.html">Cat Grooming</a></li>
-        <li><a href="services.html">Nail Trim</a></li>
-        <li><a href="services.html">Puppy Groom</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Contact</div>
-      <ul class="footer-links-v2">
-        <li><a href="tel:6026236955" class="site-phone">(602) 623-6955</a></li>
-        <li></li>
-        <li><a href="https://instagram.com/dogandcatgroomer" target="_blank" class="site-instagram">@dogandcatgroomer</a></li>
-        <li><span style="color:rgba(255,255,255,0.2)">Phoenix Metro Area, AZ</span></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom-v2">
-    <p>&copy; 2025 Dog &amp; Cat Groomer. All rights reserved.</p>
-    <a href="https://sayitmarketing.com" target="_blank">Site by Say It Marketing</a>
-  </div>
-</footer>
+<div class="footer-grid">
+<div>
+<img alt="Dog &amp; Cat Groomer" class="footer-logo-img" src="/images/logo-light.png"/>
 
+<div class="footer-brand-tag">Professional Pet Grooming</div>
+<p class="footer-brand-desc">Caring, professional grooming for dogs and cats throughout the Phoenix metro area. Every pet treated like family.</p>
+</div>
+<div>
+<div class="footer-col-title">Navigate</div>
+<ul class="footer-links-v2">
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<div class="footer-col-title">Services</div>
+<ul class="footer-links-v2">
+<li><a href="services.html#full-groom">Full Groom</a></li>
+<li><a href="services.html#bath-brush">Bath &amp; Brush</a></li>
+<li><a href="services.html#cat-grooming">Cat Grooming</a></li>
+<li><a href="services.html#nail-trim">Nail Trim</a></li>
+<li><a href="services.html#puppy-groom">Puppy Groom</a></li>
+</ul>
+</div>
+<div>
+<div class="footer-col-title">Contact</div>
+<ul class="footer-links-v2">
+<li><a class="site-phone" href="tel:6026236955">(602) 623-6955</a></li>
+<li></li>
+<li><a class="site-instagram" href="https://instagram.com/dogandcatgroomer" target="_blank">@dogandcatgroomer</a></li>
+<li><span style="color:rgba(255,255,255,0.2)">Phoenix Metro Area, AZ</span></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom-v2">
+<p>© 2025 Dog &amp; Cat Groomer. All rights reserved.</p>
+<a href="https://sayitmarketing.com" target="_blank">Site by Say It Marketing</a>
+</div>
+</footer>
 <script src="/cms-loader.js"></script>
 <script>
 // Nav scroll effect
@@ -402,7 +364,6 @@ document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => 
   observer.observe(el);
 });
 </script>
-
 <script>
 // Load CMS content
 window.addEventListener('load', async () => {
@@ -492,7 +453,6 @@ window.addEventListener('load', async () => {
   if(currentLang === 'es') applyLang('es');
 });
 </script>
-
 <script>
 
 function toggleNav() {
@@ -511,6 +471,5 @@ document.addEventListener('keydown', (e) => {
 });
 
 </script>
-
 </body>
 </html>

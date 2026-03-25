@@ -131,10 +131,36 @@ async function loadServices() {
 
   set('page-title', data.page_title);
 
+  const slugify = (value) => value
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+
+  const anchorMap = [
+    { match: 'full groom', slug: 'full-groom' },
+    { match: 'bath & brush', slug: 'bath-brush' },
+    { match: 'bath and brush', slug: 'bath-brush' },
+    { match: 'cat grooming', slug: 'cat-grooming' },
+    { match: 'nail trimming', slug: 'nail-trim' },
+    { match: 'nail trim', slug: 'nail-trim' },
+    { match: 'de-shedding treatment', slug: 'de-shedding-treatment' },
+    { match: 'de-shedding', slug: 'de-shedding-treatment' },
+    { match: 'deshed treatment', slug: 'de-shedding-treatment' },
+    { match: 'puppy groom', slug: 'puppy-groom' }
+  ];
+
+  const getAnchorSlug = (name) => {
+    const lower = name.toLowerCase();
+    const found = anchorMap.find(item => lower.includes(item.match));
+    return found ? found.slug : slugify(name);
+  };
+
   const buildRow = (s) => {
     const imgSrc = resolveImage(s, 200, 200);
+    const rowSlug = getAnchorSlug(s.name);
     return `
-      <div class="service-row-v2 reveal">
+      <div class="service-row-v2 reveal" id="${rowSlug}" data-service-anchor="${rowSlug}">
         <img class="service-row-img" src="${imgSrc || 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&q=75&fit=crop'}" alt="${s.name}" loading="lazy">
         <div class="service-row-body">
           <div class="service-row-top">
@@ -168,6 +194,22 @@ async function loadServices() {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.05 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  const focusRequestedService = () => {
+    const hash = window.location.hash.replace('#', '');
+    if (!hash) return;
+    const target = document.querySelector(`[data-service-anchor="${hash}"]`) || document.getElementById(hash);
+    if (!target) return;
+    setTimeout(() => {
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      target.classList.add('service-row-featured');
+      setTimeout(() => target.classList.remove('service-row-featured'), 2200);
+    }, 150);
+  };
+
+  focusRequestedService();
+  window.addEventListener('hashchange', focusRequestedService);
+
 }
 
 // ── CONTACT PAGE ───────────────────────────────────────
