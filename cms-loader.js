@@ -97,11 +97,13 @@ async function loadHome() {
   if (data.services_preview) {
     const grid = document.getElementById('services-grid');
     if (grid) {
-      // Map service numbers to page anchors
       const anchorMap = {
-        '01': 'dog-services', '02': 'dog-services',
-        '03': 'cat-services', '04': 'programs',
-        '05': 'dog-services', '06': 'dog-services'
+        '01': 'full-groom',
+        '02': 'bath-brush',
+        '03': 'cat-grooming',
+        '04': 'nail-trim',
+        '05': 'dog-services',
+        '06': 'programs'
       };
       grid.innerHTML = data.services_preview.map(s => {
         const imgSrc = resolveImage(s, 600, 400);
@@ -131,37 +133,15 @@ async function loadServices() {
 
   set('page-title', data.page_title);
 
-  const slugify = (value) => value
-    .toLowerCase()
-    .replace(/&/g, 'and')
+  const slugify = (text) => text.toLowerCase()
+    .replace(/&/g, ' and ')
     .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '');
+    .replace(/^-+|-+$/g, '');
 
-  const anchorMap = [
-    { match: 'full groom', slug: 'full-groom' },
-    { match: 'bath & brush', slug: 'bath-brush' },
-    { match: 'bath and brush', slug: 'bath-brush' },
-    { match: 'cat grooming', slug: 'cat-grooming' },
-    { match: 'nail trimming', slug: 'nail-trim' },
-    { match: 'nail trim', slug: 'nail-trim' },
-    { match: 'de-shedding treatment', slug: 'de-shedding-treatment' },
-    { match: 'de-shedding', slug: 'de-shedding-treatment' },
-    { match: 'deshed treatment', slug: 'de-shedding-treatment' },
-    { match: 'puppy groom', slug: 'puppy-groom' }
-  ];
-
-  const getAnchorSlug = (name) => {
-    const lower = name.toLowerCase();
-    const found = anchorMap.find(item => lower.includes(item.match));
-    return found ? found.slug : slugify(name);
-  };
-
-  const buildRow = (s) => {
-    const imgSrc = resolveImage(s, 200, 200);
-    const rowSlug = getAnchorSlug(s.name);
+  const buildRow = (s, opts = {}) => {
+    const rowId = opts.id || slugify(s.name);
     return `
-      <div class="service-row-v2 reveal" id="${rowSlug}" data-service-anchor="${rowSlug}">
-        <img class="service-row-img" src="${imgSrc || 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&q=75&fit=crop'}" alt="${s.name}" loading="lazy">
+      <div class="service-row-v2 reveal" id="${rowId}">
         <div class="service-row-body">
           <div class="service-row-top">
             <div class="service-row-name">${s.name}</div>
@@ -175,17 +155,34 @@ async function loadServices() {
 
   const dogContainer = document.getElementById('dog-services');
   if (dogContainer && data.dog_services) {
-    dogContainer.innerHTML = data.dog_services.map(buildRow).join('');
+    dogContainer.innerHTML = data.dog_services.map((s) => {
+      let id = '';
+      if (/full groom/i.test(s.name) && !dogContainer.dataset.fullGroomSet) {
+        id = 'full-groom';
+        dogContainer.dataset.fullGroomSet = 'true';
+      } else if (/bath\s*&?\s*brush/i.test(s.name) && !dogContainer.dataset.bathBrushSet) {
+        id = 'bath-brush';
+        dogContainer.dataset.bathBrushSet = 'true';
+      }
+      return buildRow(s, { id: id || undefined });
+    }).join('');
   }
 
   const catContainer = document.getElementById('cat-services');
   if (catContainer && data.cat_services) {
-    catContainer.innerHTML = data.cat_services.map(buildRow).join('');
+    catContainer.innerHTML = data.cat_services.map((s, i) => buildRow(s, { id: i === 0 ? 'cat-grooming' : undefined })).join('');
   }
 
   const programsContainer = document.getElementById('programs');
   if (programsContainer && data.programs) {
-    programsContainer.innerHTML = data.programs.map(buildRow).join('');
+    programsContainer.innerHTML = data.programs.map((s) => {
+      let id = '';
+      if (/nail/i.test(s.name) && !programsContainer.dataset.nailTrimSet) {
+        id = 'nail-trim';
+        programsContainer.dataset.nailTrimSet = 'true';
+      }
+      return buildRow(s, { id: id || undefined });
+    }).join('');
   }
 
   set('pricing-note', data.pricing_note);
@@ -194,22 +191,6 @@ async function loadServices() {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.05 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-  const focusRequestedService = () => {
-    const hash = window.location.hash.replace('#', '');
-    if (!hash) return;
-    const target = document.querySelector(`[data-service-anchor="${hash}"]`) || document.getElementById(hash);
-    if (!target) return;
-    setTimeout(() => {
-      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      target.classList.add('service-row-featured');
-      setTimeout(() => target.classList.remove('service-row-featured'), 2200);
-    }, 150);
-  };
-
-  focusRequestedService();
-  window.addEventListener('hashchange', focusRequestedService);
-
 }
 
 // ── CONTACT PAGE ───────────────────────────────────────
