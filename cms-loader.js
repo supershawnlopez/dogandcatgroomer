@@ -107,8 +107,8 @@ async function loadHome() {
               <div class="service-name-v2">${s.name}</div>
               <p class="service-desc-v2">${s.description}</p>
               <div class="service-card-actions">
-                <button type="button" class="btn btn-outline-gold service-learn-btn" data-service="${s.name.replace(/"/g, '&quot;')}">Learn More</button>
-                <a href="contact.html?service=${encodeURIComponent((s.name || '').replace(/&amp;/g, '&'))}#booking-form" class="btn btn-gold service-book-btn" data-service="${s.name.replace(/"/g, '&quot;')}">Book Now</a>
+                <button type="button" class="btn btn-outline-gold service-learn-btn" data-service="${s.name.replace(/\"/g, '&quot;')}" onclick="openServiceModal(decodeURIComponent(this.dataset.service.replace(/&amp;/g, '&'))); return false;">Learn More</button>
+                <a href="${getBookingHref(s.name)}" class="btn btn-gold service-book-btn" data-service="${s.name.replace(/\"/g, '&quot;')}">Book Now</a>
               </div>
             </div>
           </article>
@@ -186,6 +186,73 @@ async function loadContact() {
 }
 
 
+
+function normalizeServiceName(serviceName) {
+  return (serviceName || '').replace(/&amp;/g, '&').trim();
+}
+
+function getPetForService(serviceName) {
+  const name = normalizeServiceName(serviceName).toLowerCase();
+  if (name.includes('cat')) return 'cat';
+  return 'dog';
+}
+
+function getBookingHref(serviceName) {
+  const normalized = normalizeServiceName(serviceName);
+  const pet = getPetForService(normalized);
+  return `contact.html?service=${encodeURIComponent(normalized)}&pet=${encodeURIComponent(pet)}#booking-form`;
+}
+
+function updateModalBookLink(serviceName) {
+  const btn = document.getElementById('serviceModalBookBtn');
+  if (!btn) return;
+  btn.setAttribute('href', getBookingHref(serviceName));
+}
+
+function initServicesCarouselStatus() {
+  const track = document.getElementById('services-grid');
+  const status = document.getElementById('servicesCarouselStatus');
+  if (!track || !status) return;
+  const cards = Array.from(track.querySelectorAll('.service-card-carousel'));
+  if (!cards.length) {
+    status.innerHTML = '';
+    return;
+  }
+  status.innerHTML = cards.map((_, i) => `<button type="button" class="services-carousel-dot${i === 0 ? ' active' : ''}" aria-label="Go to service ${i + 1}" data-index="${i}"></button>`).join('');
+  const dots = Array.from(status.querySelectorAll('.services-carousel-dot'));
+  const setActive = (index) => dots.forEach((dot, i) => dot.classList.toggle('active', i == index));
+  const getClosestIndex = () => {
+    const rect = track.getBoundingClientRect();
+    const center = rect.left + (rect.width / 2);
+    let activeIndex = 0;
+    let closest = Infinity;
+    cards.forEach((card, index) => {
+      const c = card.getBoundingClientRect();
+      const cardCenter = c.left + (c.width / 2);
+      const distance = Math.abs(center - cardCenter);
+      if (distance < closest) {
+        closest = distance;
+        activeIndex = index;
+      }
+    });
+    return activeIndex;
+  };
+  let rafId = null;
+  const onScroll = () => {
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(() => setActive(getClosestIndex()));
+  };
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      cards[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      setActive(index);
+    });
+  });
+  track.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  setTimeout(() => setActive(getClosestIndex()), 80);
+}
+
 // ── HOMEPAGE SERVICE MODAL ─────────────────────────
 const serviceModalContent = {
   "Full Groom": {
@@ -252,7 +319,11 @@ function closeServiceModal() {
 
 function bindServiceLearnButtons() {
   document.querySelectorAll('.service-learn-btn').forEach(btn => {
-    btn.onclick = () => openServiceModal((btn.dataset.service || 'Service').replace('&amp;', '&'));
+    btn.onclick = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openServiceModal(normalizeServiceName(btn.dataset.service || 'Service'));
+    };
   });
   const closeBtn = document.getElementById('serviceModalClose');
   if (closeBtn) closeBtn.onclick = closeServiceModal;

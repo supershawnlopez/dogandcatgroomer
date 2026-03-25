@@ -148,9 +148,10 @@
           <option value="" disabled selected>Select a service</option>
           <option>Full Groom</option>
           <option>Bath &amp; Brush</option>
-          <option>Nail Trim &amp; Buffing</option>
+          <option>Nail Trim</option>
           <option>Cat Grooming</option>
-          <option>Deshed Treatment</option>
+          <option>De-Shedding Treatment</option>
+          <option>Add-On Services</option>
           <option>Puppy Groom</option>
           <option>Senior Comfort Groom</option>
           <option>Monthly Program</option>
@@ -232,6 +233,22 @@ function selectPet(btn, value) {
 
 
 
+function normalizeServiceValue(value) {
+  const v = (value || '').trim().toLowerCase().replace(/&/g, 'and');
+  const map = {
+    'full groom': 'Full Groom',
+    'bath and brush': 'Bath & Brush',
+    'bath & brush': 'Bath & Brush',
+    'cat grooming': 'Cat Grooming',
+    'nail trim': 'Nail Trim',
+    'nail trim and buffing': 'Nail Trim',
+    'de-shedding treatment': 'De-Shedding Treatment',
+    'deshed treatment': 'De-Shedding Treatment',
+    'add-on services': 'Add-On Services'
+  };
+  return map[v] || value;
+}
+
 function applyBookingPrefillFromQuery() {
   const params = new URLSearchParams(window.location.search);
   const service = params.get('service');
@@ -239,7 +256,8 @@ function applyBookingPrefillFromQuery() {
   if (service) {
     const select = document.getElementById('service');
     if (select) {
-      const target = Array.from(select.options).find(opt => opt.text.trim().toLowerCase() === service.trim().toLowerCase());
+      const normalizedService = normalizeServiceValue(service);
+      const target = Array.from(select.options).find(opt => opt.text.trim().toLowerCase() === normalizedService.trim().toLowerCase());
       if (target) {
         select.value = target.text;
       }
@@ -251,9 +269,13 @@ function applyBookingPrefillFromQuery() {
       cat: 'pet-cat-btn',
       both: 'pet-both-btn'
     };
-    const btnId = petMap[pet.trim().toLowerCase()];
+    const petKey = pet.trim().toLowerCase();
+    const btnId = petMap[petKey];
     const btn = btnId ? document.getElementById(btnId) : null;
-    if (btn) selectPet(btn, pet.charAt(0).toUpperCase() + pet.slice(1).toLowerCase());
+    if (btn) {
+      const label = petKey.charAt(0).toUpperCase() + petKey.slice(1);
+      selectPet(btn, label);
+    }
   }
 }
 
