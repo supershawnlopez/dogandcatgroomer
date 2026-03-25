@@ -27,6 +27,16 @@ function setImg(id, src, alt) {
   if (el && src) { el.src = src; if (alt) el.alt = alt; }
 }
 
+function scrollToHashTarget() {
+  if (!window.location.hash) return;
+  const target = document.querySelector(window.location.hash);
+  if (!target) return;
+  setTimeout(() => {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 60);
+}
+
+
 // Resolve image: uploaded path takes priority over Unsplash ID
 function resolveImage(item, w, h) {
   if (item.image && item.image.startsWith('/')) return item.image;
@@ -102,8 +112,8 @@ async function loadHome() {
         '02': 'bath-brush',
         '03': 'cat-grooming',
         '04': 'nail-trim',
-        '05': 'dog-services',
-        '06': 'programs'
+        '05': 'programs',
+        '06': 'dog-services'
       };
       grid.innerHTML = data.services_preview.map(s => {
         const imgSrc = resolveImage(s, 600, 400);
@@ -191,6 +201,7 @@ async function loadServices() {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.05 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  scrollToHashTarget();
 }
 
 // ── CONTACT PAGE ───────────────────────────────────────
