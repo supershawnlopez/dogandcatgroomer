@@ -124,6 +124,7 @@ async function loadHome() {
 
 // ── SERVICES PAGE ──────────────────────────────────────
 async function loadServices() {
+  bindBookingButtons();
   const data = await loadContent('services');
   if (!data) return;
 
