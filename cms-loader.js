@@ -27,16 +27,6 @@ function setImg(id, src, alt) {
   if (el && src) { el.src = src; if (alt) el.alt = alt; }
 }
 
-function scrollToHashTarget() {
-  if (!window.location.hash) return;
-  const target = document.querySelector(window.location.hash);
-  if (!target) return;
-  setTimeout(() => {
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, 60);
-}
-
-
 // Resolve image: uploaded path takes priority over Unsplash ID
 function resolveImage(item, w, h) {
   if (item.image && item.image.startsWith('/')) return item.image;
@@ -107,13 +97,11 @@ async function loadHome() {
   if (data.services_preview) {
     const grid = document.getElementById('services-grid');
     if (grid) {
+      // Map service numbers to page anchors
       const anchorMap = {
-        '01': 'full-groom',
-        '02': 'bath-brush',
-        '03': 'cat-grooming',
-        '04': 'nail-trim',
-        '05': 'programs',
-        '06': 'dog-services'
+        '01': 'dog-services', '02': 'dog-services',
+        '03': 'cat-services', '04': 'programs',
+        '05': 'dog-services', '06': 'dog-services'
       };
       grid.innerHTML = data.services_preview.map(s => {
         const imgSrc = resolveImage(s, 600, 400);
@@ -143,15 +131,11 @@ async function loadServices() {
 
   set('page-title', data.page_title);
 
-  const slugify = (text) => text.toLowerCase()
-    .replace(/&/g, ' and ')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-
-  const buildRow = (s, opts = {}) => {
-    const rowId = opts.id || slugify(s.name);
+  const buildRow = (s) => {
+    const imgSrc = resolveImage(s, 200, 200);
     return `
-      <div class="service-row-v2 reveal" id="${rowId}">
+      <div class="service-row-v2 reveal">
+        <img class="service-row-img" src="${imgSrc || 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&q=75&fit=crop'}" alt="${s.name}" loading="lazy">
         <div class="service-row-body">
           <div class="service-row-top">
             <div class="service-row-name">${s.name}</div>
@@ -165,34 +149,17 @@ async function loadServices() {
 
   const dogContainer = document.getElementById('dog-services');
   if (dogContainer && data.dog_services) {
-    dogContainer.innerHTML = data.dog_services.map((s) => {
-      let id = '';
-      if (/full groom/i.test(s.name) && !dogContainer.dataset.fullGroomSet) {
-        id = 'full-groom';
-        dogContainer.dataset.fullGroomSet = 'true';
-      } else if (/bath\s*&?\s*brush/i.test(s.name) && !dogContainer.dataset.bathBrushSet) {
-        id = 'bath-brush';
-        dogContainer.dataset.bathBrushSet = 'true';
-      }
-      return buildRow(s, { id: id || undefined });
-    }).join('');
+    dogContainer.innerHTML = data.dog_services.map(buildRow).join('');
   }
 
   const catContainer = document.getElementById('cat-services');
   if (catContainer && data.cat_services) {
-    catContainer.innerHTML = data.cat_services.map((s, i) => buildRow(s, { id: i === 0 ? 'cat-grooming' : undefined })).join('');
+    catContainer.innerHTML = data.cat_services.map(buildRow).join('');
   }
 
   const programsContainer = document.getElementById('programs');
   if (programsContainer && data.programs) {
-    programsContainer.innerHTML = data.programs.map((s) => {
-      let id = '';
-      if (/nail/i.test(s.name) && !programsContainer.dataset.nailTrimSet) {
-        id = 'nail-trim';
-        programsContainer.dataset.nailTrimSet = 'true';
-      }
-      return buildRow(s, { id: id || undefined });
-    }).join('');
+    programsContainer.innerHTML = data.programs.map(buildRow).join('');
   }
 
   set('pricing-note', data.pricing_note);
@@ -201,6 +168,7 @@ async function loadServices() {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.05 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
   scrollToHashTarget();
 }
 
@@ -223,4 +191,15 @@ async function loadContact() {
   set('phone-note', data.phone_note);
   set('service-area', data.service_area);
   set('service-area-note', data.service_area_note);
+}
+
+
+function scrollToHashTarget() {
+  const hash = window.location.hash;
+  if (!hash) return;
+  const target = document.querySelector(hash);
+  if (!target) return;
+  setTimeout(() => {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 120);
 }

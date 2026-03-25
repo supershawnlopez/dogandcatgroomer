@@ -183,16 +183,15 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: 0.15em !important;
   font-size: 0.72rem !important;
   font-weight: 600 !important;
-  text-transform: uppercase !important;
   white-space: nowrap;
-  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+  transition: all 0.3s !important;
 }
 
 .nav-cta-btn:hover {
-  background: transparent !important;
-  border-color: var(--gold) !important;
-  color: var(--gold) !important;
-  transform: none;
+  background: var(--gold-dark) !important;
+  border-color: var(--gold-dark) !important;
+  color: var(--charcoal) !important;
+  transform: translateY(-1px);
 }
 
 
@@ -1663,11 +1662,9 @@ a.service-card-v2:focus-visible {
 /* Nav items */
 .nav-overlay-links {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1.15rem;
+  margin: 7rem 0 0 0;
+  padding: 0;
 }
-
 
 .nav-overlay-links li {
   overflow: hidden;
@@ -1676,19 +1673,17 @@ a.service-card-v2:focus-visible {
 
 .nav-overlay-links a {
   display: block;
-  font-family: 'Jost', sans-serif;
-  font-size: clamp(1rem, 2.4vw, 1.28rem);
-  font-weight: 500;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.88);
-  letter-spacing: 0.18em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.02em;
   line-height: 1.15;
   transform: translateY(100%);
   transition: color 0.3s ease, transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
   position: relative;
-  padding: 0.08em 0;
+  padding: 0.1em 0;
 }
-
 
 .nav-overlay-links a::after {
   content: '';
@@ -1714,53 +1709,30 @@ a.service-card-v2:focus-visible {
 
 /* Book Now CTA in overlay */
 .nav-overlay-cta {
-  align-self: flex-start;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  padding: 0.95rem 1.5rem;
-  border-radius: 999px;
-  border: 1px solid var(--gold);
-  background: var(--gold);
-  color: var(--charcoal);
+  display: inline-block;
+  margin-top: 1.5rem;
   font-family: 'Jost', sans-serif;
   font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  opacity: 0;
+  color: var(--charcoal);
+  background: var(--gold);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
   transform: translateY(20px);
-  transition: opacity 0.5s ease 0.38s, transform 0.5s ease 0.38s, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  opacity: 0;
+  transition: all 0.3s ease, transform 0.5s ease, opacity 0.5s ease;
+  transition-delay: 0.4s;
+  width: fit-content;
 }
-
 
 .nav-overlay.open .nav-overlay-cta {
-  align-self: flex-start;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  padding: 0.95rem 1.5rem;
-  border-radius: 999px;
-  border: 1px solid var(--gold);
-  background: var(--gold);
-  color: var(--charcoal);
-  font-family: 'Jost', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease 0.38s, transform 0.5s ease 0.38s, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transform: translateY(0);
+  opacity: 1;
 }
 
-
 .nav-overlay-cta:hover {
-  background: transparent;
-  color: var(--gold);
-  border-color: var(--gold);
+  background: var(--gold-dark);
 }
 
 /* Social icons in overlay */
@@ -2033,20 +2005,9 @@ body.nav-open {
   }
 
   .nav-overlay-links a {
-  display: block;
-  font-family: 'Jost', sans-serif;
-  font-size: clamp(1rem, 2.4vw, 1.28rem);
-  font-weight: 500;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.88);
-  letter-spacing: 0.18em;
-  line-height: 1.15;
-  transform: translateY(100%);
-  transition: color 0.3s ease, transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
-  position: relative;
-  padding: 0.08em 0;
+    font-size: clamp(2.2rem, 10vw, 3.5rem);
+  }
 }
-
 
 /* ── LOGO IMAGE ─────────────────────────────────── */
 .logo-img {
@@ -2084,139 +2045,91 @@ body.nav-open {
 }
 
 
-/* ── ROUND 3 QA FIXES ───────────────────────────── */
-.footer-brand-name { display: none; }
-
-.service-card-v2 {
-  cursor: pointer;
-}
-
-.services-jump-section {
-  padding: 2rem 3rem 0;
-  background: var(--warm-white);
-}
-
-.services-jump-nav {
-  max-width: 1200px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.services-jump-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 0.9rem 1.3rem;
-  border-radius: 999px;
-  border: 1px solid rgba(201,169,110,0.45);
-  background: transparent;
-  color: var(--gold-dark);
-  font-family: 'Jost', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-}
-
-.services-jump-pill:hover,
-.services-jump-pill:focus-visible {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--charcoal);
-  transform: translateY(-1px);
-}
-
-.services-list-v2 {
-  padding-top: 3.5rem;
-}
-
-.service-category {
-  background: #fff;
-  border: 1px solid var(--rule);
-  border-radius: 24px;
-  padding: 2rem 2rem 1rem;
-  box-shadow: 0 18px 44px rgba(26,23,20,0.04);
-}
-
-.service-category + .service-category {
-  margin-top: 2rem;
-}
-
-.service-category-heading .category-icon {
-  display: none;
-}
-
-.service-row-v2 {
-  display: block;
-  padding: 1.2rem 0;
-  border-bottom: 1px solid var(--rule);
-  transition: none;
-  scroll-margin-top: 160px;
-}
-
-.service-row-v2:hover {
-  background: transparent;
-  border-radius: 0;
-}
-
-.service-row-v2:target {
-  background: linear-gradient(90deg, rgba(201,169,110,0.14), rgba(201,169,110,0));
-  border-radius: 14px;
-  padding: 1.2rem 1rem;
-  margin: 0 -1rem;
-}
-
-.service-row-img {
-  display: none;
-}
-
-.service-row-top {
-  align-items: baseline;
-}
-
-.service-row-name {
-  padding-right: 1rem;
-}
-
-.service-row-price {
-  color: var(--gold-dark);
-}
-
-@media (max-width: 767px) {
-  .services-jump-section {
-    padding: 1.5rem 1.25rem 0;
+/* ROUND 4 MENU REAL FIX */
+@media (max-width: 768px) {
+  .nav-overlay {
+    padding: 0 1.5rem 2.5rem 1.5rem !important;
+    overflow-y: auto !important;
   }
-  .services-jump-nav {
-    gap: 0.6rem;
-  }
-  .services-jump-pill {
-    width: 100%;
-    justify-content: center;
-  }
-  .service-category {
-    padding: 1.4rem 1.15rem 0.7rem;
-    border-radius: 18px;
-  }
-}
 
+  .nav-overlay::before {
+    width: 2px !important;
+  }
 
-@media (max-width: 900px) {
+  .nav-overlay-top {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 1.4rem 0 0 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 1rem !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .nav-overlay-logo-img {
+    height: auto !important;
+    width: min(280px, calc(100vw - 150px)) !important;
+    max-width: 280px !important;
+    flex: 1 1 auto !important;
+    object-fit: contain !important;
+  }
+
+  .nav-close {
+    width: 58px !important;
+    height: 58px !important;
+    flex: 0 0 58px !important;
+    margin-left: auto !important;
+  }
+
+  .nav-overlay-rule {
+    margin-top: 1rem !important;
+  }
+
   .nav-overlay-links {
-    gap: 1.05rem;
+    margin: 1.75rem 0 0 0 !important;
+    padding: 0 !important;
+  }
+
+  .nav-overlay-links li {
+    margin-bottom: 1rem !important;
   }
 
   .nav-overlay-links a {
-    font-size: clamp(0.98rem, 4.2vw, 1.18rem);
-    letter-spacing: 0.18em;
-    font-weight: 500;
+    font-family: 'Jost', sans-serif !important;
+    font-size: clamp(1.25rem, 5vw, 1.7rem) !important;
+    font-weight: 600 !important;
+    color: rgba(255,255,255,0.92) !important;
+    letter-spacing: 0.18em !important;
+    line-height: 1 !important;
+    text-transform: uppercase !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    width: fit-content !important;
   }
 
   .nav-overlay-cta {
-    width: auto;
-    padding: 0.95rem 1.5rem;
-    font-size: 0.78rem;
+    margin-top: 1.5rem !important;
+    width: 100% !important;
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
+
+  .nav-overlay-social {
+    position: static !important;
+    margin-top: 3rem !important;
+    padding-bottom: 1rem !important;
+  }
+}
+
+/* Ensure non-clickable service rows do not imply click */
+.service-row-v2,
+.service-row-v2:hover {
+  cursor: default !important;
+  transform: none !important;
 }
