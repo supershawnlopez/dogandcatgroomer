@@ -2526,3 +2526,48 @@ button.btn.btn-gold.booking-trigger {
   border-top: 1px solid rgba(0,0,0,0.06);
   margin: 3rem 0;
 }
+
+/* FINAL BOOKING SHEET PET BUTTON FIX */
+.booking-pet-option,
+.booking-sheet .booking-pet-option,
+.booking-pet-options .booking-pet-option {
+  background: transparent !important;
+  border: 1px solid var(--gold) !important;
+  color: var(--gold) !important;
+}
+
+.booking-pet-option span,
+.booking-sheet .booking-pet-option span,
+.booking-pet-options .booking-pet-option span {
+  color: inherit !important;
+}
+
+.booking-pet-option.active,
+.booking-sheet .booking-pet-option.active,
+.booking-pet-options .booking-pet-option.active,
+.booking-pet-option[aria-pressed="true"],
+.booking-sheet .booking-pet-option[aria-pressed="true"],
+.booking-pet-options .booking-pet-option[aria-pressed="true"] {
+  background: var(--gold) !important;
+  border-color: var(--gold) !important;
+  color: var(--charcoal) !important;
+}
+
+.booking-pet-option:hover,
+.booking-sheet .booking-pet-option:hover,
+.booking-pet-options .booking-pet-option:hover {
+  background: transparent !important;
+  border-color: var(--gold) !important;
+  color: var(--gold) !important;
+}
+
+.booking-pet-option.active:hover,
+.booking-sheet .booking-pet-option.active:hover,
+.booking-pet-options .booking-pet-option.active:hover,
+.booking-pet-option[aria-pressed="true"]:hover,
+.booking-sheet .booking-pet-option[aria-pressed="true"]:hover,
+.booking-pet-options .booking-pet-option[aria-pressed="true"]:hover {
+  background: var(--gold) !important;
+  border-color: var(--gold) !important;
+  color: var(--charcoal) !important;
+}
