@@ -2142,3 +2142,112 @@ body.nav-open {
   .service-card-actions { gap:0.55rem; }
   .service-book-btn,.service-learn-btn { min-width:calc(50% - 0.3rem); flex:1 1 calc(50% - 0.3rem); padding-inline:0.8rem; }
 }
+
+
+/* ROUND 6 — final polish */
+.services-carousel-shell {
+  position: relative;
+  overflow: hidden;
+  padding-inline: clamp(0.9rem, 4vw, 1.6rem);
+}
+.services-carousel {
+  gap: 1rem;
+  padding: 0.2rem 0 1rem;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: clamp(0.9rem, 4vw, 1.6rem);
+}
+.service-card-carousel {
+  min-width: clamp(292px, 82vw, 368px);
+  width: clamp(292px, 82vw, 368px);
+  scroll-snap-align: center;
+}
+.service-card-actions,
+.service-modal-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  align-items: stretch;
+}
+.service-card-actions .btn,
+.service-modal-actions .btn,
+.service-book-btn,
+.service-learn-btn,
+.service-modal-actions .btn-gold,
+.service-modal-actions .btn-outline-gold {
+  min-height: 64px;
+  height: 64px;
+  padding: 0 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+  white-space: nowrap;
+}
+.service-book-btn,
+.service-learn-btn {
+  min-width: 0;
+  width: 100%;
+}
+.btn-gold,
+.btn-outline-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.service-modal-actions .btn {
+  width: 100%;
+}
+.services-carousel-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+.services-carousel-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.22);
+  transition: width 0.28s ease, background 0.28s ease, transform 0.28s ease;
+  border: 0;
+  padding: 0;
+}
+.services-carousel-dot.active {
+  width: 2rem;
+  background: var(--gold);
+}
+.services-carousel-dot:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 2px;
+}
+@media (min-width: 901px) {
+  .services-carousel-shell {
+    padding-inline: 1.6rem;
+  }
+  .service-card-carousel {
+    min-width: clamp(320px, 31vw, 390px);
+    width: clamp(320px, 31vw, 390px);
+  }
+}
+@media (max-width: 640px) {
+  .service-card-carousel {
+    min-width: 86vw;
+    width: 86vw;
+  }
+  .service-card-actions,
+  .service-modal-actions {
+    grid-template-columns: 1fr;
+  }
+  .service-card-actions .btn,
+  .service-modal-actions .btn,
+  .service-book-btn,
+  .service-learn-btn,
+  .service-modal-actions .btn-gold,
+  .service-modal-actions .btn-outline-gold {
+    min-height: 60px;
+    height: 60px;
+  }
+}

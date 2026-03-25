@@ -230,6 +230,33 @@ function selectPet(btn, value) {
   document.getElementById('petType').value = value;
 }
 
+
+
+function applyBookingPrefillFromQuery() {
+  const params = new URLSearchParams(window.location.search);
+  const service = params.get('service');
+  const pet = params.get('pet');
+  if (service) {
+    const select = document.getElementById('service');
+    if (select) {
+      const target = Array.from(select.options).find(opt => opt.text.trim().toLowerCase() === service.trim().toLowerCase());
+      if (target) {
+        select.value = target.text;
+      }
+    }
+  }
+  if (pet) {
+    const petMap = {
+      dog: 'pet-dog-btn',
+      cat: 'pet-cat-btn',
+      both: 'pet-both-btn'
+    };
+    const btnId = petMap[pet.trim().toLowerCase()];
+    const btn = btnId ? document.getElementById(btnId) : null;
+    if (btn) selectPet(btn, pet.charAt(0).toUpperCase() + pet.slice(1).toLowerCase());
+  }
+}
+
 function handleSubmit(e) {
   const petType = document.getElementById('petType').value;
   if (!petType) {
@@ -250,17 +277,19 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.05 });
 
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+applyBookingPrefillFromQuery();
 loadContact();
 </script>
 <script src="/cms-loader.js"></script>
 <script>
-window.addEventListener("load", function() { loadContact(); });
+window.addEventListener("load", function() { loadContact(); applyBookingPrefillFromQuery(); });
 </script>
 
 
 <script>
 window.addEventListener('load', function() {
   loadContact();
+  applyBookingPrefillFromQuery();
 });
 </script>
 <script>

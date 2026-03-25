@@ -108,13 +108,14 @@ async function loadHome() {
               <p class="service-desc-v2">${s.description}</p>
               <div class="service-card-actions">
                 <button type="button" class="btn btn-outline-gold service-learn-btn" data-service="${s.name.replace(/"/g, '&quot;')}">Learn More</button>
-                <a href="contact.html#booking-form" class="btn btn-gold service-book-btn">Book Now</a>
+                <a href="contact.html?service=${encodeURIComponent((s.name || '').replace(/&amp;/g, '&'))}#booking-form" class="btn btn-gold service-book-btn" data-service="${s.name.replace(/"/g, '&quot;')}">Book Now</a>
               </div>
             </div>
           </article>
         `;
       }).join('');
       bindServiceLearnButtons();
+      initServicesCarouselStatus();
     }
   }
 }
@@ -235,6 +236,7 @@ function openServiceModal(serviceName) {
   if (text) text.textContent = info.text;
   if (bestFor) bestFor.textContent = info.bestFor;
   if (includes) includes.innerHTML = info.includes.map(item => `<li>${item}</li>`).join('');
+  updateModalBookLink(serviceName);
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
