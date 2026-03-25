@@ -2739,118 +2739,55 @@ button.btn.btn-gold.booking-trigger {
   line-height: 1.45;
 }
 
-/* FINAL MENU WOW + SPACING FIX */
+/* SAFE FINAL MENU POLISH */
 .nav-overlay {
   background:
-    radial-gradient(1200px 520px at 12% -4%, rgba(201,169,110,0.12), rgba(201,169,110,0) 42%),
-    radial-gradient(780px 420px at 88% 110%, rgba(201,169,110,0.08), rgba(201,169,110,0) 44%),
-    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)),
+    radial-gradient(900px 420px at 12% -2%, rgba(201,169,110,0.10), rgba(201,169,110,0) 42%),
+    radial-gradient(700px 360px at 88% 108%, rgba(201,169,110,0.07), rgba(201,169,110,0) 42%),
     rgba(10,10,7,0.985) !important;
 }
 
-.nav-overlay::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0) 16%),
-    linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
-  opacity: 1;
-}
-
 .nav-overlay-top {
-  top: 1.8rem !important;
-  left: 1.5rem !important;
-  right: 1.5rem !important;
-  padding-bottom: 0.5rem !important;
+  top: 1.9rem !important;
+  left: 1.4rem !important;
+  right: 1.4rem !important;
 }
 
 .nav-overlay-logo-img {
-  height: 50px !important;
-  max-width: min(320px, calc(100vw - 150px)) !important;
-}
-
-.nav-close {
-  width: 56px !important;
-  height: 56px !important;
-  background: rgba(255,255,255,0.045) !important;
-  border-color: rgba(255,255,255,0.11) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  height: 46px !important;
+  max-width: min(285px, calc(100vw - 150px)) !important;
 }
 
 .nav-overlay-links {
-  margin-top: 7.3rem !important;
-  gap: 1.35rem !important;
+  margin-top: 7.7rem !important;
+  gap: 1.1rem !important;
 }
 
 .nav-overlay-links li {
   margin-bottom: 0 !important;
 }
 
-.nav-overlay-links a {
-  position: relative;
-  padding: 0.08rem 0 !important;
-  transform: translateY(120%) !important;
-  transition:
-    color 0.3s ease,
-    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-    letter-spacing 0.3s ease !important;
-}
-
-.nav-overlay-links a:hover {
-  letter-spacing: 0.19em !important;
-}
-
-.nav-overlay-links li:nth-child(1) a { transition-delay: 0.06s !important; }
-.nav-overlay-links li:nth-child(2) a { transition-delay: 0.12s !important; }
-.nav-overlay-links li:nth-child(3) a { transition-delay: 0.18s !important; }
-
 .nav-overlay-cta {
-  margin-top: 2.15rem !important;
-  min-width: 230px !important;
+  margin-top: 2rem !important;
 }
 
 .nav-overlay-social {
-  bottom: 2.7rem !important;
-  gap: 1.05rem !important;
-}
-
-.nav-social-link {
-  background: rgba(255,255,255,0.015);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  bottom: 2.6rem !important;
 }
 
 @media (max-width: 767px) {
   .nav-overlay-top {
-    top: 1.55rem !important;
-    left: 1.35rem !important;
-    right: 1.35rem !important;
-  }
-
-  .nav-overlay-logo-img {
-    height: 46px !important;
-    max-width: min(285px, calc(100vw - 140px)) !important;
+    top: 1.7rem !important;
+    left: 1.3rem !important;
+    right: 1.3rem !important;
   }
 
   .nav-overlay-links {
-    margin-top: 6.9rem !important;
-    gap: 1.2rem !important;
-  }
-
-  .nav-overlay-links a {
-    font-size: 1.34rem !important;
-    line-height: 1.08 !important;
+    margin-top: 7.35rem !important;
+    gap: 1.15rem !important;
   }
 
   .nav-overlay-cta {
-    margin-top: 1.9rem !important;
-    min-width: 215px !important;
-  }
-
-  .nav-overlay-social {
-    bottom: 2.35rem !important;
+    margin-top: 1.8rem !important;
   }
 }
