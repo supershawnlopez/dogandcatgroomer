@@ -1,91 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Say It Client Editor</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Say It Client Editor</title>
 
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #f4f5f7;
-    }
+<style>
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+background:#f4f5f7;
+}
 
-    #sayit-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 9999;
+/* HEADER */
+#sayit-header{
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:9999;
 
-      background: linear-gradient(180deg, #11100d 0%, #1a1813 100%);
-      color: white;
+background:#11100d;
+color:#fff;
 
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+display:flex;
+align-items:center;
+justify-content:space-between;
 
-      padding: 14px 20px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
+padding:16px 20px;
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
 
-    #sayit-header img {
-      height: 34px;
-    }
+#sayit-header img{
+height:34px;
+}
 
-    .sayit-right {
-      font-size: 13px;
-      color: #c9a96e;
-      text-align: right;
-      line-height: 1.4;
-    }
+.sayit-right{
+font-size:13px;
+color:#ffffff;
+text-align:right;
+line-height:1.4;
+}
 
-    .sayit-right a {
-      color: #c9a96e;
-      text-decoration: none;
-    }
+.sayit-right a{
+color:#ffffff;
+text-decoration:none;
+}
 
-    /* FIX: more breathing room so nothing is hidden */
-    #app {
-      margin-top: 110px;
-      padding-top: 10px;
-    }
+/* CENTER LOGIN AREA */
+#app{
+display:flex;
+align-items:center;
+justify-content:center;
+min-height:100vh;
+padding-top:120px;
+}
 
-    @media (max-width: 768px) {
-      #sayit-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-      }
+/* MOBILE */
+@media (max-width:768px){
+#sayit-header{
+flex-direction:column;
+align-items:flex-start;
+gap:6px;
+}
 
-      .sayit-right {
-        font-size: 12px;
-      }
-
-      #app {
-        margin-top: 130px;
-      }
-    }
-  </style>
+#app{
+padding-top:140px;
+}
+}
+</style>
 </head>
 
 <body>
 
-  <div id="sayit-header">
-    <img src="./sayit-client-logo.png" alt="Say It Marketing" />
+<div id="sayit-header">
+<img src="./sayit-client-logo.png" alt="Say It Marketing"/>
 
-    <div class="sayit-right">
-      <a href="https://sayitmarketing.com" target="_blank">sayitmarketing.com</a><br/>
-      <a href="mailto:hello@sayitmarketing.com">hello@sayitmarketing.com</a> · (520) 222-6308
-    </div>
-  </div>
+<div class="sayit-right">
+sayitmarketing.com<br/>
+hello@sayitmarketing.com · (520) 222-6308
+</div>
+</div>
 
-  <div id="app"></div>
+<div id="app"></div>
 
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
 </body>
 </html>
