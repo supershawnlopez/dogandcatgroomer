@@ -4,8 +4,8 @@
   "dog_services": [
     {
       "name": "Bath & Brush — Small Dog (1–30 lbs)",
-      "description": "Full bath, blow dry, and brush out.",
-      "price": "$100"
+      "description": "Full bath, blow dry, & brush out.",
+      "price": ""
     },
     {
       "name": "Bath & Brush — Medium Dog (31–50 lbs)",
