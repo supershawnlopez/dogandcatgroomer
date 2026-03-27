@@ -2,262 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Say It Client Editor</title>
+
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
   <style>
-    :root {
-      --sayit-dark: #11100d;
-      --sayit-dark-2: #1a1714;
-      --sayit-gold: #c9a96e;
-      --sayit-cream: #f6f3ee;
-      --sayit-text: #2b2926;
-      --sayit-muted: #7f7a72;
-      --sayit-offset: 116px;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #f4f5f7;
-      color: var(--sayit-text);
-    }
-
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f4f5f7;
     }
 
-    #sayit-client-shell {
+    #sayit-header {
       position: fixed;
-      inset: 0 0 auto 0;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 9999;
-      background:
-        radial-gradient(900px 260px at 10% 0%, rgba(201,169,110,.14), rgba(201,169,110,0) 42%),
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0)),
-        var(--sayit-dark);
-      color: #fff;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 8px 28px rgba(0,0,0,0.18);
-      -webkit-backdrop-filter: blur(12px);
-      backdrop-filter: blur(12px);
-    }
 
-    .sayit-shell-inner {
-      max-width: 1220px;
-      margin: 0 auto;
-      padding: 12px 16px 10px;
-    }
+      background: linear-gradient(180deg, #11100d 0%, #1a1813 100%);
+      color: white;
 
-    .sayit-shell-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
+
+      padding: 14px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .sayit-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-
-    .sayit-brand img {
-      display: block;
-      width: auto;
+    #sayit-header img {
       height: 34px;
-      flex: 0 0 auto;
     }
 
-    .sayit-brand-copy {
-      min-width: 0;
-    }
-
-    .sayit-kicker {
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--sayit-gold);
-      margin: 0 0 2px;
-    }
-
-    .sayit-title {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin: 0;
-      color: #fff;
-      line-height: 1.05;
-    }
-
-    .sayit-subtitle {
-      font-size: 12px;
-      line-height: 1.35;
-      color: rgba(255,255,255,0.72);
-      margin: 2px 0 0;
-    }
-
-    .sayit-help {
-      text-align: right;
-      flex: 0 0 auto;
-    }
-
-    .sayit-help-label {
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      margin: 0 0 4px;
-    }
-
-    .sayit-help-line {
+    .sayit-right {
       font-size: 13px;
-      line-height: 1.35;
-      color: #fff;
-      margin: 0;
-      white-space: nowrap;
+      color: #c9a96e;
+      text-align: right;
+      line-height: 1.4;
     }
 
-    .sayit-help-line a {
-      color: var(--sayit-gold);
+    .sayit-right a {
+      color: #c9a96e;
       text-decoration: none;
     }
 
-    .sayit-help-line a:hover {
-      text-decoration: underline;
+    /* FIX: more breathing room so nothing is hidden */
+    #app {
+      margin-top: 110px;
+      padding-top: 10px;
     }
 
-    .sayit-shell-note {
-      margin-top: 8px;
-      font-size: 12px;
-      line-height: 1.35;
-      color: rgba(255,255,255,0.68);
-    }
-
-    .sayit-shell-note strong {
-      color: var(--sayit-gold);
-      font-weight: 600;
-    }
-
-    /* Decap app spacing so top bar never covers controls */
-    body[data-sayit-ready="true"] > div:not(#sayit-client-shell) {
-      margin-top: var(--sayit-offset) !important;
-      min-height: calc(100vh - var(--sayit-offset));
-    }
-
-    @media (max-width: 900px) {
-      :root {
-        --sayit-offset: 134px;
-      }
-
-      .sayit-shell-top {
-        align-items: flex-start;
-      }
-
-      .sayit-help {
-        text-align: left;
-      }
-    }
-
-    @media (max-width: 680px) {
-      :root {
-        --sayit-offset: 154px;
-      }
-
-      .sayit-shell-inner {
-        padding: 12px 14px 10px;
-      }
-
-      .sayit-shell-top {
+    @media (max-width: 768px) {
+      #sayit-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 6px;
       }
 
-      .sayit-brand img {
-        height: 30px;
-      }
-
-      .sayit-title {
-        font-size: 18px;
-      }
-
-      .sayit-subtitle,
-      .sayit-shell-note,
-      .sayit-help-line {
+      .sayit-right {
         font-size: 12px;
       }
 
-      .sayit-help-line {
-        white-space: normal;
+      #app {
+        margin-top: 130px;
       }
     }
   </style>
 </head>
+
 <body>
-  <div id="sayit-client-shell" aria-label="Say It Client Editor header">
-    <div class="sayit-shell-inner">
-      <div class="sayit-shell-top">
-        <div class="sayit-brand">
-          <img src="./sayit-client-logo.png" alt="Say It Marketing" />
-          <div class="sayit-brand-copy">
-            <p class="sayit-kicker">Say It Marketing</p>
-            <h1 class="sayit-title">Client Editor</h1>
-            <p class="sayit-subtitle">Simple editor for services, pricing, and business hours.</p>
-          </div>
-        </div>
 
-        <div class="sayit-help">
-          <p class="sayit-help-label">Need help?</p>
-          <p class="sayit-help-line">
-            <a href="https://sayitmarketing.com" target="_blank" rel="noopener">sayitmarketing.com</a>
-            ·
-            <a href="mailto:hello@sayitmarketing.com">hello@sayitmarketing.com</a>
-            ·
-            <a href="tel:+15202226308">(520) 222-6308</a>
-          </p>
-        </div>
-      </div>
+  <div id="sayit-header">
+    <img src="./sayit-client-logo.png" alt="Say It Marketing" />
 
-      <div class="sayit-shell-note">
-        Need something else changed? Reach out to <strong>Super Shawn</strong> and he can handle the rest.
-      </div>
+    <div class="sayit-right">
+      <a href="https://sayitmarketing.com" target="_blank">sayitmarketing.com</a><br/>
+      <a href="mailto:hello@sayitmarketing.com">hello@sayitmarketing.com</a> · (520) 222-6308
     </div>
   </div>
 
-  <script>
-    (function() {
-      function applyOffset() {
-        var shell = document.getElementById('sayit-client-shell');
-        if (!shell) return;
-        var offset = shell.offsetHeight + 8;
-        document.documentElement.style.setProperty('--sayit-offset', offset + 'px');
-
-        var children = Array.prototype.slice.call(document.body.children);
-        children.forEach(function(el) {
-          if (el.id !== 'sayit-client-shell') {
-            el.style.marginTop = offset + 'px';
-            el.style.minHeight = 'calc(100vh - ' + offset + 'px)';
-          }
-        });
-
-        document.body.setAttribute('data-sayit-ready', 'true');
-      }
-
-      var observer = new MutationObserver(function() {
-        applyOffset();
-      });
-
-      observer.observe(document.body, { childList: true, subtree: false });
-      window.addEventListener('load', applyOffset);
-      window.addEventListener('resize', applyOffset);
-      document.addEventListener('DOMContentLoaded', applyOffset);
-    })();
-  </script>
+  <div id="app"></div>
 
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
 </body>
 </html>
