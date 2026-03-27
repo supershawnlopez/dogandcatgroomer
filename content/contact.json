@@ -3,7 +3,11 @@
   "page_eyebrow": "Get In Touch",
   "intro_title": "We'd love to<br>hear from you.",
   "phone": "(602) 623-6955",
-  "phone_note": "Tuesday to Saturday · 8 AM–5 PM",
+  "phone_note": "Tuesday to Saturday \u00b7 8 AM\u20135 PM",
   "service_area": "Phoenix Metro, Arizona",
-  "service_area_note": "Scottsdale, Tempe, Mesa, Chandler & more"
+  "service_area_note": "Scottsdale, Tempe, Mesa, Chandler & more",
+  "business_days_from": "Tuesday",
+  "business_days_to": "Saturday",
+  "business_open": "8:00 AM",
+  "business_close": "5:00 PM"
 }
