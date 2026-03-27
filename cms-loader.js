@@ -131,12 +131,13 @@ async function loadServices() {
   set('page-title', data.page_title);
 
   const buildRow = (s) => {
+    const priceHtml = s.price ? `<div class="service-row-price">${s.price}</div>` : '';
     return `
       <div class="service-row-v2 reveal">
         <div class="service-row-body">
           <div class="service-row-top">
             <div class="service-row-name">${s.name}</div>
-            <div class="service-row-price">${s.price}</div>
+            ${priceHtml}
           </div>
           <p class="service-row-desc">${s.description}</p>
         </div>
@@ -159,7 +160,15 @@ async function loadServices() {
     programsContainer.innerHTML = data.programs.map(buildRow).join('');
   }
 
-  set('pricing-note', data.pricing_note);
+  const pricingNote = document.getElementById('pricing-note');
+  if (pricingNote) {
+    if (data.pricing_note) {
+      pricingNote.textContent = data.pricing_note;
+      pricingNote.style.display = '';
+    } else {
+      pricingNote.style.display = 'none';
+    }
+  }
 
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
