@@ -6,234 +6,124 @@ media_folder: "images"
 public_folder: "/images"
 
 collections:
-  - name: "site"
-    label: "Website Content"
+  - name: "business_controls"
+    label: "Business Controls"
     files:
-
-      - label: "Home Page"
-        name: "home"
-        file: "content/home.json"
-        fields:
-
-          - label: "── HERO SECTION ──"
-            name: "hero_divider"
-            widget: "hidden"
-            default: ""
-
-          - label: "Main Headline"
-            name: "hero_title"
-            widget: "string"
-            hint: "The big text visitors see first. Example: Every pet deserves to feel beautiful."
-
-          - label: "Tagline Under Headline"
-            name: "hero_subtitle"
-            widget: "text"
-            hint: "One or two sentences under the main headline."
-
-          - label: "Hero Background Photo"
-            name: "hero_image"
-            widget: "image"
-            required: false
-            hint: "Full-screen background photo. Best size: 1800x1200px."
-
-          - label: "── ABOUT SECTION ──"
-            name: "about_divider"
-            widget: "hidden"
-            default: ""
-
-          - label: "About Headline"
-            name: "about_title"
-            widget: "string"
-
-          - label: "About Description"
-            name: "about_body"
-            widget: "text"
-            hint: "A few sentences describing your business."
-
-          - label: "Quote on Photo"
-            name: "about_quote"
-            widget: "string"
-            hint: "Short quote that appears on top of the about photo."
-
-          - label: "About Photo"
-            name: "about_image"
-            widget: "image"
-            required: false
-            hint: "Large photo in the About section. Best size: 900x700px."
-
-          - label: "── CONTACT INFO ──"
-            name: "contact_divider"
-            widget: "hidden"
-            default: ""
-
-          - label: "Phone Number"
-            name: "phone"
-            widget: "string"
-            hint: "Example: (602) 623-6955"
-
-          - label: "Instagram Profile Link"
-            name: "instagram_url"
-            widget: "string"
-            hint: "Full URL. Example: https://instagram.com/dogandcatgroomer"
-
-          - label: "── SERVICE AREA ──"
-            name: "area_divider"
-            widget: "hidden"
-            default: ""
-
-          - label: "Service Area Headline"
-            name: "area_title"
-            widget: "string"
-
-          - label: "Service Area Description"
-            name: "area_subtitle"
-            widget: "text"
-
-          - label: "Cities You Serve"
-            name: "area_cities"
-            widget: "list"
-            hint: "Add or remove cities. Each city appears as a tag on the site."
-            field: { label: "City Name", name: "city", widget: "string" }
-
-          - label: "── BOTTOM BANNER ──"
-            name: "cta_divider"
-            widget: "hidden"
-            default: ""
-
-          - label: "Banner Headline"
-            name: "cta_title"
-            widget: "string"
-
-          - label: "Banner Subtext"
-            name: "cta_subtitle"
-            widget: "string"
-
-          - label: "Banner Background Photo"
-            name: "cta_image"
-            widget: "image"
-            required: false
-            hint: "Background photo for the bottom CTA banner. Best size: 1800x900px."
-
-          - label: "── HOME PAGE SERVICES ──"
-            name: "services_divider"
-            widget: "hidden"
-            default: ""
-
-          - label: "Services on Home Page"
-            name: "services_preview"
-            widget: "list"
-            hint: "Up to 6 services shown on the home page."
-            fields:
-              - { label: "Number", name: "num", widget: "string", hint: "Example: 01" }
-              - { label: "Service Name", name: "name", widget: "string" }
-              - { label: "Short Description", name: "description", widget: "text" }
-              - label: "Service Photo"
-                name: "image"
-                widget: "image"
-                required: false
-                hint: "Upload a photo for this service."
-              - { label: "Unsplash Photo ID (if no upload)", name: "image_id", widget: "string", required: false }
-
-      - label: "Services Page"
+      - label: "Services & Pricing"
         name: "services"
         file: "content/services.json"
         fields:
-
           - label: "Page Headline"
             name: "page_title"
             widget: "string"
-
-          - label: "Pricing Disclaimer"
-            name: "pricing_note"
-            widget: "text"
-            hint: "Note shown at bottom of services list about pricing."
-
-          - label: "── DOG SERVICES ──"
-            name: "dog_divider"
-            widget: "hidden"
-            default: ""
+            hint: "Main headline shown at the top of the services page."
 
           - label: "Dog Services"
             name: "dog_services"
             widget: "list"
-            hint: "Add, edit or remove dog grooming services."
+            summary: "{{fields.name}}"
+            hint: "Edit dog services and pricing only."
             fields:
               - { label: "Service Name", name: "name", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
-              - { label: "Price", name: "price", widget: "string", default: "Call for pricing" }
-              - label: "Service Photo"
-                name: "image"
-                widget: "image"
-                required: false
-                hint: "Small photo for this service. Best size: 200x200px."
-
-          - label: "── CAT SERVICES ──"
-            name: "cat_divider"
-            widget: "hidden"
-            default: ""
+              - { label: "Price", name: "price", widget: "string", required: false, hint: "Leave blank if you do not want pricing to show yet." }
 
           - label: "Cat Services"
             name: "cat_services"
             widget: "list"
-            hint: "Add, edit or remove cat grooming services."
+            summary: "{{fields.name}}"
+            hint: "Edit cat services and pricing only."
             fields:
               - { label: "Service Name", name: "name", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
-              - { label: "Price", name: "price", widget: "string", default: "Call for pricing" }
-              - label: "Service Photo"
-                name: "image"
-                widget: "image"
-                required: false
+              - { label: "Price", name: "price", widget: "string", required: false, hint: "Leave blank if you do not want pricing to show yet." }
 
-          - label: "── PROGRAMS ──"
-            name: "programs_divider"
-            widget: "hidden"
-            default: ""
-
-          - label: "Monthly & Weekly Programs"
+          - label: "Add-On Services"
             name: "programs"
             widget: "list"
-            hint: "Add, edit or remove grooming programs."
+            summary: "{{fields.name}}"
+            hint: "Edit add-on services and pricing only."
             fields:
-              - { label: "Program Name", name: "name", widget: "string" }
+              - { label: "Service Name", name: "name", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
-              - { label: "Price", name: "price", widget: "string", default: "Call for pricing" }
-              - label: "Program Photo"
-                name: "image"
-                widget: "image"
-                required: false
+              - { label: "Price", name: "price", widget: "string", required: false, hint: "Leave blank if you do not want pricing to show yet." }
 
-      - label: "Contact Page"
-        name: "contact"
+      - label: "Business Hours"
+        name: "hours"
         file: "content/contact.json"
         fields:
+          - label: "Open From Day"
+            name: "business_days_from"
+            widget: "select"
+            options: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
-          - label: "Page Headline"
-            name: "page_title"
-            widget: "string"
-            hint: "Big headline at top of contact page."
+          - label: "Open To Day"
+            name: "business_days_to"
+            widget: "select"
+            options: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
-          - label: "Intro Title"
-            name: "intro_title"
-            widget: "string"
-            hint: "Headline on the left panel."
+          - label: "Opening Time"
+            name: "business_open"
+            widget: "select"
+            options:
+              - "6:00 AM"
+              - "6:30 AM"
+              - "7:00 AM"
+              - "7:30 AM"
+              - "8:00 AM"
+              - "8:30 AM"
+              - "9:00 AM"
+              - "9:30 AM"
+              - "10:00 AM"
+              - "10:30 AM"
+              - "11:00 AM"
+              - "11:30 AM"
+              - "12:00 PM"
+              - "12:30 PM"
+              - "1:00 PM"
+              - "1:30 PM"
+              - "2:00 PM"
+              - "2:30 PM"
+              - "3:00 PM"
+              - "3:30 PM"
+              - "4:00 PM"
+              - "4:30 PM"
+              - "5:00 PM"
+              - "5:30 PM"
+              - "6:00 PM"
 
-          - label: "Phone Number"
-            name: "phone"
-            widget: "string"
-            hint: "Example: (602) 623-6955"
+          - label: "Closing Time"
+            name: "business_close"
+            widget: "select"
+            options:
+              - "6:00 AM"
+              - "6:30 AM"
+              - "7:00 AM"
+              - "7:30 AM"
+              - "8:00 AM"
+              - "8:30 AM"
+              - "9:00 AM"
+              - "9:30 AM"
+              - "10:00 AM"
+              - "10:30 AM"
+              - "11:00 AM"
+              - "11:30 AM"
+              - "12:00 PM"
+              - "12:30 PM"
+              - "1:00 PM"
+              - "1:30 PM"
+              - "2:00 PM"
+              - "2:30 PM"
+              - "3:00 PM"
+              - "3:30 PM"
+              - "4:00 PM"
+              - "4:30 PM"
+              - "5:00 PM"
+              - "5:30 PM"
+              - "6:00 PM"
 
-          - label: "Phone Note"
+          - label: "Hours Preview"
             name: "phone_note"
             widget: "string"
-            hint: "Short note under phone. Example: Call or text anytime"
-
-          - label: "Service Area"
-            name: "service_area"
-            widget: "string"
-            hint: "Example: Phoenix Metro, Arizona"
-
-          - label: "Service Area Note"
-            name: "service_area_note"
-            widget: "string"
-            hint: "Cities listed under service area."
+            required: false
+            hint: "This will update automatically when the day and time fields are filled in."

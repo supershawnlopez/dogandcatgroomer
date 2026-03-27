@@ -2,11 +2,32 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Manager | Dog & Cat Groomer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
+  <title>Client Editor | Dog & Cat Groomer</title>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; background: #f4f5f7; }
+    .client-help-bar {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      padding: 10px 12px;
+      background: #11100d;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: .02em;
+    }
+    .client-help-bar span { opacity: .9; }
+    .client-help-bar strong { color: #d2b171; }
+  </style>
 </head>
 <body>
+  <div class="client-help-bar">
+    <span>Simple editor only — services, pricing, and hours. Need help? <strong>Super Shawn · Say It Marketing</strong></span>
+  </div>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
