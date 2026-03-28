@@ -128,7 +128,8 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 90px;
+  height: 100px;
+  padding: 0.5rem 0;
 }
 
 .logo {
@@ -175,7 +176,7 @@ a { text-decoration: none; color: inherit; }
   color: white !important;
   border: 1px solid rgba(201,169,110,0.6) !important;
   padding: 0.55rem 1.4rem !important;
-  border-radius: 2px !important;
+  border-radius: 50px !important;
   letter-spacing: 0.15em !important;
   font-size: 0.72rem !important;
   transition: all 0.3s !important;
@@ -361,7 +362,7 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: 0.2em;
   text-transform: uppercase;
   padding: 1rem 2.2rem;
-  border-radius: 2px;
+  border-radius: 50px;
   transition: all 0.3s ease;
   cursor: pointer;
   border: none;
@@ -634,6 +635,19 @@ section { padding: 7rem 3rem; }
   background: rgba(255,255,255,0.06);
 }
 
+/* Service cards are links */
+a.service-card-v2 {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+a.service-card-v2:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
 .service-card-v2 {
   background: var(--charcoal);
   padding: 2.8rem 2.2rem;
@@ -816,7 +830,7 @@ section { padding: 7rem 3rem; }
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   color: var(--charcoal);
-  border-radius: 2px;
+  border-radius: 50px;
 }
 
 /* ── CTA BANNER ──────────────────────────────────── */
@@ -1014,7 +1028,7 @@ section { padding: 7rem 3rem; }
   cursor: pointer;
   text-align: center;
   transition: all 0.2s;
-  border-radius: 4px;
+  border-radius: 50px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
@@ -1035,7 +1049,7 @@ section { padding: 7rem 3rem; }
   cursor: pointer;
   transition: all 0.3s;
   margin-top: 1rem;
-  border-radius: 2px;
+  border-radius: 50px;
 }
 
 .form-submit-v2:hover {
@@ -1226,23 +1240,7 @@ section { padding: 7rem 3rem; }
   margin-bottom: 0;
 }
 
-.service-row-v2 {
-  display: grid;
-  grid-template-columns: 80px 1fr auto;
-  gap: 2rem;
-  align-items: center;
-  padding: 2rem 0;
-  border-bottom: 1px solid var(--rule);
-  transition: background 0.2s;
-}
-
-.service-row-v2:hover {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-left: -1rem;
-  margin-right: -1rem;
-  background: var(--cream);
-}
+/* service-row-v2 defined below in services section */
 
 .service-row-img {
   width: 80px;
@@ -1281,6 +1279,207 @@ section { padding: 7rem 3rem; }
   text-align: right;
 }
 
+
+/* ── SERVICE CATEGORIES ─────────────────────────────── */
+.service-category {
+  margin-bottom: 3.5rem;
+}
+
+.service-category-heading {
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(1.3rem, 4vw, 1.6rem);
+  font-weight: 800;
+  color: var(--charcoal);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 2px solid var(--gold);
+}
+
+.service-category-heading .category-icon {
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.service-category-heading .category-icon i {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.category-icon {
+  font-size: 1.4rem;
+}
+
+/* ── SERVICE ROWS — restaurant menu style ────────────── */
+.service-row-v2 {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--rule);
+  transition: background 0.2s ease, padding 0.2s ease;
+}
+
+.service-row-v2:last-child {
+  border-bottom: none;
+}
+
+.service-row-v2:hover {
+  background: var(--cream);
+  border-radius: 8px;
+}
+
+.service-row-img {
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  filter: grayscale(10%);
+}
+
+/* Text + price wrapper — takes remaining space */
+.service-row-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.service-row-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.service-row-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.25;
+  flex: 1;
+  min-width: 0;
+}
+
+.service-row-price {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--charcoal);
+  white-space: nowrap;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.service-row-desc {
+  font-size: 0.83rem;
+  color: var(--gray);
+  line-height: 1.6;
+  margin-top: 3px;
+}
+
+/* ── SERVICES CTA BANNER ─────────────────────────────── */
+.services-cta-banner {
+  margin-top: 3rem;
+  background: var(--charcoal);
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-cta-banner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: var(--gold);
+}
+
+.services-cta-banner h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  font-weight: 400;
+  color: white;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.services-cta-banner p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.btn-gold {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--charcoal);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 1.1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-gold:hover {
+  background: #b8943f;
+  transform: translateY(-2px);
+}
+
+.btn-gold:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 3px;
+}
+
+/* ── MOBILE ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .service-row-v2 {
+    gap: 0.85rem;
+    padding: 1rem 0;
+  }
+
+  .service-row-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .service-row-name {
+    font-size: 1.1rem;
+  }
+
+  .service-row-price {
+    font-size: 1rem;
+  }
+
+  .service-row-img {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .services-cta-banner {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
 .services-note-v2 {
   background: var(--cream);
   border-left: 3px solid var(--gold);
@@ -1297,7 +1496,7 @@ section { padding: 7rem 3rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   section { padding: 5rem 1.5rem; }
   .nav { padding: 0 1.5rem; }
   .nav.scrolled { padding: 0 1.5rem; }
@@ -1344,7 +1543,6 @@ section { padding: 7rem 3rem; }
 
   .page-hero-content { padding: 0 1.5rem; }
   .service-row-v2 { grid-template-columns: 60px 1fr; }
-  .service-row-price { display: none; }
 
   .cta-banner { padding: 7rem 1.5rem; }
 }
@@ -1496,7 +1694,7 @@ section { padding: 7rem 3rem; }
   color: var(--charcoal);
   background: var(--gold);
   padding: 1rem 2.5rem;
-  border-radius: 2px;
+  border-radius: 50px;
   transform: translateY(20px);
   opacity: 0;
   transition: all 0.3s ease, transform 0.5s ease, opacity 0.5s ease;
@@ -1762,6 +1960,15 @@ body.nav-open {
     min-height: auto;
   }
 
+@media (max-width: 1024px) {
+  .contact-split {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .contact-info-panel { padding: 4rem 2.5rem; }
+  .contact-form-panel { padding: 4rem 2.5rem; }
+}
+
   .contact-info-panel {
     padding: 4rem 2rem;
   }
@@ -1799,4 +2006,36 @@ body.nav-open {
 
 @media (max-width: 768px) {
   .logo-img { height: auto; width: calc(100vw - 110px); max-width: 100%; }
+}
+
+
+/* Glendale footer service area styling */
+.footer-contact-block li { overflow-wrap: anywhere; }
+.footer-service-label {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  margin-top: 0.35rem;
+}
+.footer-service-value {
+  color: var(--white);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.55rem;
+  line-height: 1.1;
+}
+.footer-service-note {
+  color: rgba(255,255,255,0.72);
+  line-height: 1.5;
+}
+
+/* Mobile menu links must match clean desktop sans-serif look */
+.nav-overlay-links a {
+  font-family: 'Jost', sans-serif !important;
+  font-size: 1.32rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.16em !important;
+  line-height: 1.12 !important;
+  color: rgba(255,255,255,0.92) !important;
 }

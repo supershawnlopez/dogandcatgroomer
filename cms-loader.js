@@ -97,15 +97,22 @@ async function loadHome() {
   if (data.services_preview) {
     const grid = document.getElementById('services-grid');
     if (grid) {
+      // Map service numbers to page anchors
+      const anchorMap = {
+        '01': 'dog-services', '02': 'dog-services',
+        '03': 'cat-services', '04': 'programs',
+        '05': 'dog-services', '06': 'dog-services'
+      };
       grid.innerHTML = data.services_preview.map(s => {
         const imgSrc = resolveImage(s, 600, 400);
+        const anchor = anchorMap[s.num] || 'dog-services';
         return `
-          <div class="service-card-v2 reveal">
+          <a href="services.html#${anchor}" class="service-card-v2 reveal" aria-label="View ${s.name} services">
             ${imgSrc ? `<img class="service-card-img" src="${imgSrc}" alt="${s.name}" loading="lazy">` : ''}
             <div class="service-num">${s.num}</div>
             <div class="service-name-v2">${s.name}</div>
             <p class="service-desc-v2">${s.description}</p>
-          </div>
+          </a>
         `;
       }).join('');
 
@@ -128,12 +135,14 @@ async function loadServices() {
     const imgSrc = resolveImage(s, 200, 200);
     return `
       <div class="service-row-v2 reveal">
-        ${imgSrc ? `<img class="service-row-img" src="${imgSrc}" alt="${s.name}" loading="lazy">` : ''}
-        <div>
-          <div class="service-row-name">${s.name}</div>
+        <img class="service-row-img" src="${imgSrc || 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&q=75&fit=crop'}" alt="${s.name}" loading="lazy">
+        <div class="service-row-body">
+          <div class="service-row-top">
+            <div class="service-row-name">${s.name}</div>
+            <div class="service-row-price">${s.price}</div>
+          </div>
           <p class="service-row-desc">${s.description}</p>
         </div>
-        <div class="service-row-price">${s.price}</div>
       </div>
     `;
   };
@@ -153,7 +162,16 @@ async function loadServices() {
     programsContainer.innerHTML = data.programs.map(buildRow).join('');
   }
 
-  set('pricing-note', data.pricing_note);
+  const pricingNoteEl = document.getElementById('pricing-note');
+  if (pricingNoteEl) {
+    if (data.pricing_note && String(data.pricing_note).trim()) {
+      pricingNoteEl.innerHTML = data.pricing_note;
+      pricingNoteEl.style.display = '';
+    } else {
+      pricingNoteEl.innerHTML = '';
+      pricingNoteEl.style.display = 'none';
+    }
+  }
 
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
