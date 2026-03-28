@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dog & Cat Groomer | Professional Pet Grooming in Glendale</title>
-<meta name="description" content="Professional dog and cat grooming services in Glendale, Arizona. Caring, experienced grooming for dogs and cats in the West Valley.">
+<title>Dog & Cat Groomer | Professional Pet Grooming in Arizona</title>
+<meta name="description" content="Professional dog and cat grooming services in Arizona. Caring, experienced grooming for dogs and cats. Serving the Phoenix metro area.">
 <meta property="og:title" content="Dog & Cat Groomer | Professional Pet Grooming">
-<meta property="og:description" content="Professional dog and cat grooming services in Glendale, Arizona.">
+<meta property="og:description" content="Professional dog and cat grooming services in Arizona.">
 <meta property="og:url" content="https://www.dogandcatgroomer.com">
 <link rel="canonical" href="https://www.dogandcatgroomer.com">
 <link rel="stylesheet" href="style.css">
@@ -21,6 +21,12 @@
     <a href="index.html" class="logo">
       <img src="/images/logo-dark.png" alt="Dog &amp; Cat Groomer" class="logo-img">
     </a>
+<ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button type="button" class="nav-cta-btn booking-trigger" data-service="">Book Now</button>
     <button class="nav-toggle" onclick="toggleNav()" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -42,7 +48,7 @@
     <li><a href="services.html">Services</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="contact.html" class="nav-overlay-cta">Book an Appointment &rarr;</a>
+  <button type="button" class="nav-overlay-cta booking-trigger" data-service="">Book Now</button>
   <div class="nav-overlay-social">
     <a href="https://instagram.com/dogandcatgroomer" target="_blank" class="nav-social-link" aria-label="Instagram">
       <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -77,7 +83,7 @@
       We treat every pet like family.
     </p>
     <div class="hero-actions">
-      <a href="contact.html" class="btn btn-gold" id="book-btn">Book an Appointment</a>
+      <button type="button" class="btn btn-gold booking-trigger" id="book-btn" data-service="">Book Now</button>
       <a href="services.html" class="btn btn-outline-white" id="view-btn">View Services</a>
     </div>
   </div>
@@ -104,7 +110,7 @@
     </div>
     <div class="reveal reveal-delay-3">
       <div class="stat-number">AZ</div>
-      <div class="stat-label">Glendale / West Valley</div>
+      <div class="stat-label">Phoenix Metro Area</div>
     </div>
   </div>
 </div>
@@ -169,7 +175,7 @@
           </div>
         </div>
       </div>
-      <a href="contact.html" class="btn btn-dark" id="contact-btn">Get in Touch &rarr;</a>
+      <button type="button" class="btn btn-gold booking-trigger" id="contact-btn" data-service="">Book Now</button>
     </div>
   </div>
 </section>
@@ -177,66 +183,204 @@
 <!-- SERVICES -->
 <section class="services-section">
   <div class="section-inner">
-    <div class="services-header">
+    <div class="services-header services-header-carousel">
       <div>
-        <span class="section-eyebrow" id="services-eyebrow">What We Offer</span>
-        <h2 class="section-title section-title-white reveal" id="services-title">Grooming services<br>for every pet.</h2>
+        <span class="section-eyebrow" id="services-eyebrow">Most Popular Services</span>
+        <h2 class="section-title section-title-white reveal" id="services-title">Explore the lineup.</h2>
+        <p class="services-kicker reveal">A curated look at the services pet parents ask for most — designed to help clients browse first, then decide.</p>
       </div>
-      <a href="services.html" class="btn btn-outline-white reveal" id="all-services-btn">See All Services &rarr;</a>
     </div>
 
-    <div class="services-grid-v2" id="services-grid">
-      <div class="service-card-v2 reveal">
-        <img class="service-card-img"
-          src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=75&fit=crop"
-          alt="Full groom service" loading="lazy">
-        <div class="service-num">01</div>
-        <div class="service-name-v2">Full Groom</div>
-        <p class="service-desc-v2">Bath, dry, cut, nail trim, ear cleaning — everything your pet needs in one visit.</p>
+    <div class="services-carousel-shell reveal">
+      <div class="services-carousel" id="services-grid">
+        <article class="service-card-v2 service-card-carousel">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=900&q=80&fit=crop" alt="Full groom service" loading="lazy">
+          <div class="service-card-body">
+            <div class="service-num">01</div>
+            <div class="service-name-v2">Full Groom</div>
+            <p class="service-desc-v2">Bath, dry, cut, nail trim, ear cleaning — everything your pet needs in one visit.</p>
+            <div class="service-card-actions">
+              <button type="button" class="btn btn-outline-gold service-learn-btn" data-service="Full Groom">Learn More</button>
+              <button type="button" class="btn btn-gold service-book-btn booking-trigger" data-service="Full Groom">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card-v2 service-card-carousel">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=900&q=80&fit=crop" alt="Bath and brush service" loading="lazy">
+          <div class="service-card-body">
+            <div class="service-num">02</div>
+            <div class="service-name-v2">Bath &amp; Brush</div>
+            <p class="service-desc-v2">Full bath, blow dry, and thorough brush out. Perfect for regular maintenance.</p>
+            <div class="service-card-actions">
+              <button type="button" class="btn btn-outline-gold service-learn-btn" data-service="Bath &amp; Brush">Learn More</button>
+              <button type="button" class="btn btn-gold service-book-btn booking-trigger" data-service="Bath &amp; Brush">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card-v2 service-card-carousel">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=900&q=80&fit=crop" alt="Cat grooming service" loading="lazy">
+          <div class="service-card-body">
+            <div class="service-num">03</div>
+            <div class="service-name-v2">Cat Grooming</div>
+            <p class="service-desc-v2">Specialized gentle grooming for cats with comfort-first handling.</p>
+            <div class="service-card-actions">
+              <button type="button" class="btn btn-outline-gold service-learn-btn" data-service="Cat Grooming">Learn More</button>
+              <button type="button" class="btn btn-gold service-book-btn booking-trigger" data-service="Cat Grooming">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card-v2 service-card-carousel">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=900&q=80&fit=crop" alt="Nail trim service" loading="lazy">
+          <div class="service-card-body">
+            <div class="service-num">04</div>
+            <div class="service-name-v2">Nail Trim</div>
+            <p class="service-desc-v2">Quick, stress-light maintenance for dogs and cats who just need the essentials.</p>
+            <div class="service-card-actions">
+              <button type="button" class="btn btn-outline-gold service-learn-btn" data-service="Nail Trim">Learn More</button>
+              <button type="button" class="btn btn-gold service-book-btn booking-trigger" data-service="Nail Trim">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card-v2 service-card-carousel">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=900&q=80&fit=crop" alt="De-shedding treatment service" loading="lazy">
+          <div class="service-card-body">
+            <div class="service-num">05</div>
+            <div class="service-name-v2">De-Shedding Treatment</div>
+            <p class="service-desc-v2">A coat-focused upgrade designed to reduce loose hair and leave pets feeling fresh.</p>
+            <div class="service-card-actions">
+              <button type="button" class="btn btn-outline-gold service-learn-btn" data-service="De-Shedding Treatment">Learn More</button>
+              <button type="button" class="btn btn-gold service-book-btn booking-trigger" data-service="De-Shedding Treatment">Book Now</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card-v2 service-card-carousel">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=900&q=80&fit=crop" alt="Add-on services" loading="lazy">
+          <div class="service-card-body">
+            <div class="service-num">06</div>
+            <div class="service-name-v2">Add-On Services</div>
+            <p class="service-desc-v2">Helpful extras like teeth brushing, specialty shampoo, and finishing touches.</p>
+            <div class="service-card-actions">
+              <button type="button" class="btn btn-outline-gold service-learn-btn" data-service="Add-On Services">Learn More</button>
+              <button type="button" class="btn btn-gold service-book-btn booking-trigger" data-service="Add-On Services">Book Now</button>
+            </div>
+          </div>
+        </article>
       </div>
-      <div class="service-card-v2 reveal reveal-delay-1">
-        <img class="service-card-img"
-          src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=600&q=75&fit=crop"
-          alt="Bath and brush service" loading="lazy">
-        <div class="service-num">02</div>
-        <div class="service-name-v2">Bath &amp; Brush</div>
-        <p class="service-desc-v2">Full bath, blow dry, and thorough brush out. Perfect for regular maintenance.</p>
-      </div>
-      <div class="service-card-v2 reveal reveal-delay-2">
-        <img class="service-card-img"
-          src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=600&q=75&fit=crop"
-          alt="Cat grooming service" loading="lazy">
-        <div class="service-num">03</div>
-        <div class="service-name-v2">Cat Grooming</div>
-        <p class="service-desc-v2">Specialized gentle grooming for cats of all breeds and temperaments.</p>
-      </div>
-      <div class="service-card-v2 reveal reveal-delay-1">
-        <img class="service-card-img"
-          src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=600&q=75&fit=crop"
-          alt="Nail trim service" loading="lazy">
-        <div class="service-num">04</div>
-        <div class="service-name-v2">Nail Trim &amp; Buffing</div>
-        <p class="service-desc-v2">Quick and stress-free nail trimming for dogs and cats. Walk-ins welcome.</p>
-      </div>
-      <div class="service-card-v2 reveal reveal-delay-2">
-        <img class="service-card-img"
-          src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=600&q=75&fit=crop"
-          alt="Puppy groom service" loading="lazy">
-        <div class="service-num">05</div>
-        <div class="service-name-v2">Puppy Groom</div>
-        <p class="service-desc-v2">Gentle first-time grooming experience designed for young puppies.</p>
-      </div>
-      <div class="service-card-v2 reveal reveal-delay-3">
-        <img class="service-card-img"
-          src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=600&q=75&fit=crop"
-          alt="Deshed treatment" loading="lazy">
-        <div class="service-num">06</div>
-        <div class="service-name-v2">Deshed Treatment</div>
-        <p class="service-desc-v2">Specialized treatment to dramatically reduce shedding.</p>
-      </div>
+    </div>
+
+    <div class="services-carousel-status" id="servicesCarouselStatus" aria-label="Carousel position"></div>
+
+    <div class="services-section-cta reveal">
+      <a href="services.html" class="btn btn-outline-gold services-more-btn">Explore All Services</a>
     </div>
   </div>
 </section>
+
+<div class="service-modal" id="serviceModal" aria-hidden="true">
+  <div class="service-modal-backdrop" data-close-modal></div>
+  <div class="service-modal-panel" role="dialog" aria-modal="true" aria-labelledby="serviceModalTitle">
+    <button type="button" class="service-modal-close" id="serviceModalClose" aria-label="Close service details">
+      <span></span><span></span>
+    </button>
+    <p class="service-modal-eyebrow">Service Overview</p>
+    <h3 id="serviceModalTitle" class="service-modal-title">Service Name</h3>
+    <p id="serviceModalText" class="service-modal-text">Service description.</p>
+    <div class="service-modal-meta">
+      <div>
+        <span class="service-modal-label">Best for</span>
+        <p id="serviceModalBestFor">Routine care and polished results.</p>
+      </div>
+      <div>
+        <span class="service-modal-label">Typical visit includes</span>
+        <ul id="serviceModalIncludes" class="service-modal-includes"></ul>
+      </div>
+    </div>
+    <div class="service-modal-actions">
+      <button type="button" class="btn btn-gold" id="serviceModalBookBtn">Book This Service</button>
+      <a href="services.html" class="btn btn-outline-gold">View Full Services</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="booking-sheet" id="bookingSheet" aria-hidden="true">
+  <div class="booking-sheet-backdrop" data-close-booking></div>
+  <div class="booking-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="bookingSheetTitle">
+    <button type="button" class="booking-sheet-close" id="bookingSheetClose" aria-label="Close booking sheet">
+      <span></span><span></span>
+    </button>
+    <p class="service-modal-eyebrow">Book Appointment</p>
+    <h3 id="bookingSheetTitle" class="service-modal-title">Request a grooming visit</h3>
+    <p class="service-modal-text booking-sheet-sub">Fast request form. We’ll follow up to confirm details and timing.</p>
+
+    <form name="booking-sheet" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="booking-sheet-form">
+      <input type="hidden" name="form-name" value="booking-sheet">
+      <p hidden><input name="bot-field"></p>
+
+      <div class="form-row-v2 booking-sheet-row">
+        <div class="form-field">
+          <label for="bookingName">Your Name *</label>
+          <input type="text" id="bookingName" name="name" placeholder="Full name" required>
+        </div>
+        <div class="form-field">
+          <label for="bookingPhone">Phone *</label>
+          <input type="tel" id="bookingPhone" name="phone" placeholder="(602) 000-0000" required>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="bookingEmail">Email *</label>
+        <input type="email" id="bookingEmail" name="email" placeholder="your@email.com" required>
+      </div>
+
+      <div class="form-field">
+        <label>Type of Pet *</label>
+        <div class="pet-options booking-pet-options">
+          <button type="button" class="pet-option booking-pet-option" data-pet="Dog" id="booking-pet-dog">Dog</button>
+          <button type="button" class="pet-option booking-pet-option" data-pet="Cat" id="booking-pet-cat">Cat</button>
+          <button type="button" class="pet-option booking-pet-option" data-pet="Both" id="booking-pet-both">Both</button>
+        </div>
+        <input type="hidden" id="bookingPetType" name="pet_type">
+      </div>
+
+      <div class="form-field">
+        <label for="bookingService">Service *</label>
+        <select id="bookingService" name="service" required>
+          <option value="" disabled selected>Select a service</option>
+          <option>Full Groom</option>
+          <option>Bath &amp; Brush</option>
+          <option>Nail Trim</option>
+          <option>Cat Grooming</option>
+          <option>De-Shedding Treatment</option>
+          <option>Add-On Services</option>
+          <option>Puppy Groom</option>
+          <option>Senior Comfort Groom</option>
+          <option>Monthly Program</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="bookingPetName">Pet Name</label>
+        <input type="text" id="bookingPetName" name="pet_name" placeholder="What’s their name?">
+      </div>
+
+      <div class="form-field">
+        <label for="bookingMessage">Message</label>
+        <textarea id="bookingMessage" name="message" placeholder="Tell us about your pet or preferred timing..."></textarea>
+      </div>
+
+      <button type="submit" class="form-submit-v2">Request Appointment &rarr;</button>
+      <p class="form-note-v2">We typically respond within a few hours.</p>
+    </form>
+  </div>
+</div>
+
 
 <!-- PHOTO GALLERY STRIP -->
 <div class="gallery-strip">
@@ -262,7 +406,7 @@
   <div class="reveal">
     <span class="section-eyebrow" id="insta-eyebrow">Follow Along on Instagram</span>
     <h2 class="section-title" id="insta-title">See our work.</h2>
-    <a href="https://instagram.com" target="_blank" class="instagram-handle">@dogandcatgroomer</a>
+    <a href="https://instagram.com/dogandcatgroomer" target="_blank" class="instagram-handle">@dogandcatgroomer</a>
   </div>
   <div class="behold-container reveal">
     <div class="behold-placeholder">
@@ -297,7 +441,7 @@
       <span class="area-tag-v2">Glendale</span>
       <span class="area-tag-v2">&amp; surrounding areas</span>
     </div>
-    <a href="contact.html" class="btn btn-dark">Contact Us &rarr;</a>
+    <button type="button" class="btn btn-gold booking-trigger" data-service="">Book Now</button>
   </div>
 </div>
 
@@ -314,10 +458,8 @@
   <div class="cta-banner-content reveal">
     <span class="cta-eyebrow" id="cta-eyebrow">Ready to Book?</span>
     <h2 class="cta-title" id="cta-title">Your pet is in<br><em>good hands.</em></h2>
-    <p class="cta-sub"><span id="cta-sub">Contact us today and we'll take care of everything.</span></p>
-    <a href="contact.html" class="btn btn-gold" style="font-size:0.8rem; padding:1.1rem 2.8rem;">
-      Get in Touch
-    </a>
+    <p class="cta-sub"><span id="cta-sub">Ready to book? Start your appointment request and we’ll take care of the rest.</span></p>
+    <button type="button" class="btn btn-gold booking-trigger" data-service="" style="font-size:0.8rem; padding:1.1rem 2.8rem;">Book Now</button>
   </div>
 </div>
 
@@ -325,9 +467,9 @@
 <footer class="footer-v2">
   <div class="footer-grid">
     <div>
-      <div class="footer-brand-name">Dog &amp; Cat Groomer</div>
+      <img src="/images/logo-dark.png" alt="Dog &amp; Cat Groomer" class="footer-logo-img">
       <div class="footer-brand-tag">Professional Pet Grooming</div>
-      <p class="footer-brand-desc">Caring, professional grooming for dogs and cats in Glendale and the nearby West Valley. Every pet treated like family.</p>
+      <p class="footer-brand-desc">Caring, professional grooming for dogs and cats throughout the Phoenix metro area. Every pet treated like family.</p>
     </div>
     <div>
       <div class="footer-col-title">Navigate</div>
@@ -351,9 +493,9 @@
       <div class="footer-col-title">Contact</div>
       <ul class="footer-links-v2">
         <li><a href="tel:6026236955" class="site-phone">(602) 623-6955</a></li>
-        <li></li>
-        <li><a href="https://instagram.com" target="_blank" class="site-instagram">@dogandcatgroomer</a></li>
-        <li><span style="color:rgba(255,255,255,0.2)">Glendale / West Valley, AZ</span></li>
+        <li><span style="color:rgba(255,255,255,0.72)">Tue–Sat · 8 AM–5 PM</span></li>
+        <li><a href="https://instagram.com/dogandcatgroomer" target="_blank" class="site-instagram">@dogandcatgroomer</a></li>
+        <li><span style="color:rgba(255,255,255,0.2)">Phoenix Metro Area, AZ</span></li>
       </ul>
     </div>
   </div>
@@ -397,92 +539,9 @@ document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => 
 </script>
 
 <script>
-// Load CMS content
-window.addEventListener('load', async () => {
-  try {
-    const res = await fetch('/content/home.json?v=' + Date.now());
-    const data = await res.json();
-
-    const set = (id, html) => {
-      const el = document.getElementById(id);
-      if (el && html) el.innerHTML = html;
-    };
-
-    // Text content
-    set('hero-title', data.hero_title);
-    set('hero-sub', data.hero_subtitle);
-    set('about-title', data.about_title);
-    set('about-body', data.about_body);
-    set('about-quote', data.about_quote);
-    set('area-title', data.area_title);
-    set('area-sub', data.area_subtitle);
-    set('cta-title', data.cta_title);
-    set('cta-sub', data.cta_subtitle);
-
-    // Phone, email, instagram
-    document.querySelectorAll('.site-phone').forEach(el => {
-      el.textContent = data.phone;
-      el.href = 'tel:' + data.phone.replace(/\D/g,'');
-    });
-    document.querySelectorAll('.site-email').forEach(el => {
-      el.textContent = data.email;
-      el.href = 'mailto:' + data.email;
-    });
-    document.querySelectorAll('.site-instagram').forEach(el => {
-      el.textContent = data.instagram_handle;
-      el.href = data.instagram_url;
-    });
-
-    // Hero background photo
-    if (data.hero_image) {
-      const heroBg = document.getElementById('heroBg');
-      if (heroBg) heroBg.src = data.hero_image;
-    }
-
-    // About section photo
-    if (data.about_image) {
-      const aboutImg = document.getElementById('about-img');
-      if (aboutImg) aboutImg.src = data.about_image;
-    }
-
-    // CTA banner background photo
-    if (data.cta_image) {
-      const ctaImg = document.getElementById('cta-img');
-      if (ctaImg) ctaImg.src = data.cta_image;
-    }
-
-    // Area cities
-    if (data.area_cities) {
-      const container = document.getElementById('area-cities');
-      if (container) {
-        container.innerHTML = data.area_cities
-          .map(c => '<span class="area-tag-v2">' + c + '</span>')
-          .join('');
-      }
-    }
-
-    // Services grid — supports both uploaded images and Unsplash IDs
-    if (data.services_preview) {
-      const grid = document.getElementById('services-grid');
-      if (grid) {
-        grid.innerHTML = data.services_preview.map(s => {
-          const imgSrc = s.image && s.image.startsWith('/images/')
-            ? s.image
-            : 'https://images.unsplash.com/' + (s.image_id || s.image) + '?w=600&q=75&fit=crop';
-          return '<div class="service-card-v2 visible">' +
-            '<img class="service-card-img" src="' + imgSrc + '" alt="' + s.name + '" loading="lazy">' +
-            '<div class="service-num">' + s.num + '</div>' +
-            '<div class="service-name-v2">' + s.name + '</div>' +
-            '<p class="service-desc-v2">' + s.description + '</p>' +
-            '</div>';
-        }).join('');
-      }
-    }
-
-  } catch(e) {
-    console.log('CMS error:', e);
-  }
-  if(currentLang === 'es') applyLang('es');
+window.addEventListener('load', () => {
+  loadHome();
+  bindServiceLearnButtons();
 });
 </script>
 
@@ -504,6 +563,6 @@ document.addEventListener('keydown', (e) => {
 });
 
 </script>
-</div><!-- end site-wrapper -->
+
 </body>
 </html>

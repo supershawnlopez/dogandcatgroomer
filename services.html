@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services | Dog & Cat Groomer Glendale</title>
-<meta name="description" content="Professional dog and cat grooming services in Glendale, Arizona. Full groom, bath and brush, nail trim, cat grooming, puppy groom and more.">
+<title>Services & Pricing | Dog & Cat Groomer Arizona</title>
+<meta name="description" content="Professional dog and cat grooming services in Arizona. Full groom, bath and brush, nail trim, cat grooming, puppy groom and more.">
 <link rel="canonical" href="https://www.dogandcatgroomer.com/services.html">
 <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -18,6 +18,12 @@
     <a href="index.html" class="logo">
       <img src="/images/logo-dark.png" alt="Dog &amp; Cat Groomer" class="logo-img">
     </a>
+<ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button type="button" class="nav-cta-btn booking-trigger" data-service="">Book Now</button>
     <button class="nav-toggle" onclick="toggleNav()" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -38,7 +44,7 @@
     <li><a href="services.html">Services</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="contact.html" class="nav-overlay-cta">Book an Appointment &rarr;</a>
+  <button type="button" class="nav-overlay-cta booking-trigger" data-service="">Book Now &rarr;</button>
   <div class="nav-overlay-social">
     <a href="https://instagram.com/dogandcatgroomer" target="_blank" class="nav-social-link" aria-label="Instagram">
       <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -71,30 +77,43 @@
 <section class="services-list-v2" aria-label="Services and Pricing">
   <div class="section-inner">
 
+    <div class="services-editorial-intro reveal">
+      <span class="section-eyebrow">Curated Service Menu</span>
+      <h2 class="services-editorial-title">Designed for comfort, care, and beautiful results.</h2>
+      <p class="services-editorial-copy">Browse the lineup the way a client actually thinks about it: dog grooming, cat grooming, then the extras that round out the appointment.</p>
+    </div>
+
     <!-- DOG SERVICES -->
-    <div class="service-category">
+    <div class="service-category reveal">
       <h2 class="service-category-heading">
         <span class="category-icon" aria-hidden="true"><i class="ph-fill ph-paw-print"></i></span>
         For Your Dog
       </h2>
+      <p class="service-category-intro">From full grooms to routine maintenance, built around coat care, comfort, and presentation.</p>
+      
       <div id="dog-services"></div>
+<div class="service-category-cta bottom-cta"><p class="service-cta-text">Ready to book grooming for your dog?</p><button type="button" class="btn btn-gold booking-trigger" data-service="" data-pet="dog">Book Now</button></div>
     </div>
 
     <!-- CAT SERVICES -->
-    <div class="service-category">
+    <div class="service-category reveal">
       <h2 class="service-category-heading">
         <span class="category-icon" aria-hidden="true"><i class="ph-fill ph-cat"></i></span>
         For Your Cat
       </h2>
+      <p class="service-category-intro">Gentle cat-focused options for pet parents who want a calmer, cleaner, easier experience.</p>
+      
       <div id="cat-services"></div>
+<div class="service-category-cta bottom-cta"><p class="service-cta-text">Ready to book grooming for your cat?</p><button type="button" class="btn btn-gold booking-trigger" data-service="Cat Grooming" data-pet="cat">Book Now</button></div>
     </div>
 
     <!-- ADD-ONS -->
-    <div class="service-category">
+    <div class="service-category reveal">
       <h2 class="service-category-heading">
         <span class="category-icon" aria-hidden="true"><i class="ph-fill ph-scissors"></i></span>
         Add-On Services
       </h2>
+      <p class="service-category-intro">Small upgrades and finishing touches that make an appointment feel complete.</p>
       <div id="programs"></div>
     </div>
 
@@ -105,7 +124,7 @@
     <div class="services-cta-banner">
       <h3>Ready to book your pet&apos;s appointment?</h3>
       <p>Every pet gets our full attention. Reach out and we&apos;ll take care of everything from there.</p>
-      <a href="contact.html" class="btn-gold" aria-label="Book a grooming appointment">Book an Appointment &rarr;</a>
+      <button type="button" class="btn-gold booking-trigger" data-service="" aria-label="Book a grooming appointment">Book Now &rarr;</button>
     </div>
 
   </div>
@@ -113,13 +132,91 @@
 
 
 
+
+<div class="booking-sheet" id="bookingSheet" aria-hidden="true">
+  <div class="booking-sheet-backdrop" data-close-booking></div>
+  <div class="booking-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="bookingSheetTitle">
+    <button type="button" class="booking-sheet-close" id="bookingSheetClose" aria-label="Close booking sheet">
+      <span></span><span></span>
+    </button>
+    <p class="service-modal-eyebrow">Book Appointment</p>
+    <h3 id="bookingSheetTitle" class="service-modal-title">Request a grooming visit</h3>
+    <p class="service-modal-text booking-sheet-sub">Fast request form. We’ll follow up to confirm details and timing.</p>
+
+    <form name="booking-sheet" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="booking-sheet-form">
+      <input type="hidden" name="form-name" value="booking-sheet">
+      <p hidden><input name="bot-field"></p>
+
+      <div class="form-row-v2 booking-sheet-row">
+        <div class="form-field">
+          <label for="bookingName">Your Name *</label>
+          <input type="text" id="bookingName" name="name" placeholder="Full name" required>
+        </div>
+        <div class="form-field">
+          <label for="bookingPhone">Phone *</label>
+          <input type="tel" id="bookingPhone" name="phone" placeholder="(602) 000-0000" required>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="bookingEmail">Email *</label>
+        <input type="email" id="bookingEmail" name="email" placeholder="your@email.com" required>
+      </div>
+
+      <div class="form-field">
+        <label>Type of Pet *</label>
+        <div class="pet-options booking-pet-options">
+          <button type="button" class="pet-option booking-pet-option" data-pet="Dog" id="booking-pet-dog">Dog</button>
+          <button type="button" class="pet-option booking-pet-option" data-pet="Cat" id="booking-pet-cat">Cat</button>
+          <button type="button" class="pet-option booking-pet-option" data-pet="Both" id="booking-pet-both">Both</button>
+        </div>
+        <input type="hidden" id="bookingPetType" name="pet_type">
+      </div>
+
+      <div class="form-field">
+        <label for="bookingService">Service *</label>
+        <select id="bookingService" name="service" required>
+          <option value="" disabled selected>Select a service</option>
+          <option>Full Groom</option>
+          <option>Bath &amp; Brush</option>
+          <option>Nail Trim</option>
+          <option>Cat Grooming</option>
+          <option>De-Shedding Treatment</option>
+          <option>Add-On Services</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+
+      <div class="form-row-v2 booking-sheet-row">
+        <div class="form-field">
+          <label for="bookingPetName">Pet Name</label>
+          <input type="text" id="bookingPetName" name="pet_name" placeholder="What's their name?">
+        </div>
+        <div class="form-field">
+          <label for="bookingWhen">Preferred Time</label>
+          <input type="text" id="bookingWhen" name="preferred_time" placeholder="Morning, afternoon, etc.">
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="bookingMessage">Notes</label>
+        <textarea id="bookingMessage" name="message" rows="4" placeholder="Tell us about your pet or anything we should know."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-gold booking-submit-btn">Send Booking Request</button>
+      <p class="form-note-v2">We typically respond within a few hours.</p>
+    </form>
+  </div>
+</div>
+
+
 <!-- FOOTER -->
 <footer class="footer-v2">
   <div class="footer-grid">
     <div>
-      <div class="footer-brand-name">Dog &amp; Cat Groomer</div>
+      <img src="/images/logo-dark.png" alt="Dog &amp; Cat Groomer" class="footer-logo-img">
       <div class="footer-brand-tag">Professional Pet Grooming</div>
-      <p class="footer-brand-desc">Caring, professional grooming for dogs and cats in Glendale and the nearby West Valley.</p>
+      <p class="footer-brand-desc">Caring, professional grooming for dogs and cats throughout the Phoenix metro area.</p>
     </div>
     <div>
       <div class="footer-col-title">Navigate</div>
@@ -143,8 +240,8 @@
       <div class="footer-col-title">Contact</div>
       <ul class="footer-links-v2">
         <li><a href="tel:6026236955" class="site-phone">(602) 623-6955</a></li>
-        <li></li>
-        <li><a href="https://instagram.com" target="_blank">@dogandcatgroomer</a></li>
+        <li><span style="color:rgba(255,255,255,0.72)">Tue–Sat · 8 AM–5 PM</span></li>
+        <li><a href="https://instagram.com/dogandcatgroomer" target="_blank">@dogandcatgroomer</a></li>
       </ul>
     </div>
   </div>
@@ -190,6 +287,6 @@ document.addEventListener('keydown', (e) => {
 });
 
 </script>
-</div><!-- end site-wrapper -->
+
 </body>
 </html>
