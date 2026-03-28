@@ -1,110 +1,105 @@
 {
   "page_title": "Our Services",
-  "pricing_note": "",
+  "pricing_note": "Prices start at the amounts listed and may increase based on coat condition, temperament, or time required.",
   "dog_services": [
     {
       "name": "Bath & Brush — Small Dog (1–30 lbs)",
       "description": "Full bath, blow dry, and brush out.",
-      "price": ""
+      "price": "$65"
     },
     {
       "name": "Bath & Brush — Medium Dog (31–50 lbs)",
       "description": "Full bath, blow dry, and brush out.",
-      "price": ""
+      "price": "$75"
     },
     {
       "name": "Bath & Brush — Large Dog (51–70 lbs)",
       "description": "Full bath, blow dry, and brush out.",
-      "price": ""
+      "price": "$95"
     },
     {
       "name": "Bath & Brush — X-Large Dog (71–110 lbs)",
       "description": "Full bath, blow dry, and brush out.",
-      "price": ""
+      "price": "$125"
     },
     {
       "name": "Full Groom — Small Dog",
       "description": "Bath, brush, haircut, nail trim, ear cleaning, anal gland expression, finishing fragrance and accessory.",
-      "price": ""
+      "price": "$75"
     },
     {
       "name": "Full Groom — Medium Dog",
       "description": "Bath, brush, haircut, nail trim, ear cleaning, anal gland expression, finishing fragrance and accessory.",
-      "price": ""
+      "price": "$120"
     },
     {
       "name": "Full Groom — Large Dog",
       "description": "Bath, brush, haircut, nail trim, ear cleaning, anal gland expression, finishing fragrance and accessory.",
-      "price": ""
+      "price": "$130"
     },
     {
       "name": "Full Groom — X-Large Dog",
       "description": "Bath, brush, haircut, nail trim, ear cleaning, anal gland expression, finishing fragrance and accessory.",
-      "price": ""
+      "price": "$145"
     }
   ],
   "cat_services": [
     {
       "name": "Bath & Brush",
       "description": "Bath and brush, nail trimming, ear cleaning.",
-      "price": ""
+      "price": "$85"
     },
     {
       "name": "Full Groom",
       "description": "Haircut, bath and brush, nail trimming, ear cleaning.",
-      "price": ""
+      "price": "$95"
     }
   ],
   "programs": [
     {
       "name": "Nail Trimming",
       "description": "Quick and stress-free nail trim.",
-      "price": ""
+      "price": "$10"
     },
     {
       "name": "Paw Pads",
       "description": "Paw pad trim and cleanup.",
-      "price": ""
+      "price": "$5"
     },
     {
       "name": "Teeth Brushing",
       "description": "Gentle teeth brushing service.",
-      "price": ""
+      "price": "$10"
     },
     {
       "name": "Anal Glands (External Only)",
       "description": "External anal gland expression.",
-      "price": ""
+      "price": "$10"
     },
     {
       "name": "Flea & Tick Treatment",
       "description": "Flea and tick treatment shampoo.",
-      "price": ""
+      "price": "$20"
     },
     {
       "name": "De-Shedding Treatment",
       "description": "Specialized treatment to dramatically reduce shedding.",
-      "price": ""
+      "price": "$25"
     },
     {
       "name": "Doodle / Poodle Fee",
       "description": "Additional fee for doodle and poodle coat types.",
-      "price": ""
+      "price": "$10"
     },
     {
       "name": "Hypoallergenic Shampoo",
       "description": "Gentle hypoallergenic shampoo upgrade.",
-      "price": ""
+      "price": "$10"
     },
     {
       "name": "Whitening Shampoo",
       "description": "Brightening whitening shampoo upgrade.",
-      "price": ""
-    },
-    {
-      "name": "Hydrating Mud Bath Treatment",
-      "description": "A nourishing mud bath add-on to help hydrate the coat and skin.",
-      "price": ""
+      "price": "$10"
     }
   ]
 }
