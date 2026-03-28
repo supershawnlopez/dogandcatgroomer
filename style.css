@@ -2008,4 +2008,16 @@ body.nav-open {
   .logo-img { height: auto; width: calc(100vw - 110px); max-width: 100%; }
 }
 
-.footer-links-v2 li { overflow-wrap:anywhere; }
+
+.footer-contact-block li { overflow-wrap:anywhere; }
+.footer-location-title {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+.footer-location-address { color: rgba(255,255,255,0.82); }
+.footer-location-note {
+  color: rgba(255,255,255,0.62);
+  line-height: 1.5;
+}
