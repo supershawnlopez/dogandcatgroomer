@@ -100,6 +100,11 @@
       "name": "Whitening Shampoo",
       "description": "Brightening whitening shampoo upgrade.",
       "price": ""
+    },
+    {
+      "name": "Hydrating Bath Treatment",
+      "description": "A nourishing treatment designed to hydrate the coat and support healthy skin.",
+      "price": ""
     }
   ]
 }
