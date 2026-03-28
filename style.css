@@ -2845,3 +2845,23 @@ button.btn.btn-gold.booking-trigger {
     max-width: 250px !important;
   }
 }
+
+
+.footer-location-label {
+  color: var(--gold);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.footer-location-title {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.footer-location-note {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+}
