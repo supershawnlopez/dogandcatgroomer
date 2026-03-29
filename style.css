@@ -2952,3 +2952,16 @@ button.btn.btn-gold.booking-trigger {
     font-size: 0.88rem !important;
   }
 }
+
+
+/* FINAL APPROVED FIX: smaller menu location title */
+.nav-overlay-location-title {
+  font-size: clamp(1rem, 2.6vw, 1.25rem) !important;
+  line-height: 1.08 !important;
+}
+@media (max-width: 640px) {
+  .nav-overlay-location-title {
+    font-size: 0.98rem !important;
+    line-height: 1.08 !important;
+  }
+}
