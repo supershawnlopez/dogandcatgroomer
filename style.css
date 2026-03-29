@@ -3296,3 +3296,133 @@ button.btn.btn-gold.booking-trigger {
 .contact-split {
   margin-top: 0 !important;
 }
+
+
+/* ===== FINAL NAV DESKTOP-MATCH PASS ===== */
+.nav-overlay-top .nav-overlay-logo-img {
+  height: 50px !important;
+  max-width: 300px !important;
+}
+
+.nav-overlay-links {
+  margin-bottom: 0.85rem !important;
+}
+
+.nav-overlay-links li {
+  margin-bottom: 0.38rem !important;
+}
+
+.nav-overlay-links a {
+  font-family: 'Jost', sans-serif !important;
+  font-size: clamp(1.18rem, 2.2vw, 1.34rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  line-height: 1.06 !important;
+}
+
+.nav-overlay-cta {
+  font-family: 'Jost', sans-serif !important;
+  font-size: clamp(1.18rem, 2.2vw, 1.34rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  line-height: 1.06 !important;
+  padding: 0.82rem 1.45rem !important;
+  border-radius: 999px !important;
+  margin-top: 0.08rem !important;
+  margin-bottom: 3.05rem !important;
+  align-self: flex-start !important;
+}
+
+.nav-overlay-location {
+  margin-top: 0 !important;
+  margin-bottom: 2.15rem !important;
+}
+
+.nav-overlay-location-label {
+  margin-bottom: 0.42rem !important;
+}
+
+.nav-overlay-location-title {
+  font-size: 1.02rem !important;
+  line-height: 1.08 !important;
+  margin-bottom: 0.28rem !important;
+}
+
+.nav-overlay-location-note {
+  font-size: 0.87rem !important;
+  line-height: 1.36 !important;
+}
+
+.nav-overlay-social {
+  bottom: 2.45rem !important;
+}
+
+@media (max-width: 900px) {
+  .nav-overlay {
+    padding: 0 2.5rem 2.5rem 2.5rem !important;
+  }
+
+  .nav-overlay-top {
+    top: 1.5rem !important;
+    left: 2.5rem !important;
+    right: 1.5rem !important;
+  }
+
+  .nav-overlay-top .nav-overlay-logo-img {
+    height: 48px !important;
+  }
+
+  .nav-overlay-links {
+    margin-top: 8rem !important;
+  }
+
+  .nav-overlay-links a,
+  .nav-overlay-cta {
+    font-size: 1.28rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-overlay {
+    padding: 0 2.25rem 2.35rem 2.25rem !important;
+  }
+
+  .nav-overlay-top {
+    top: 1.45rem !important;
+    left: 2.25rem !important;
+    right: 1.45rem !important;
+  }
+
+  .nav-overlay-top .nav-overlay-logo-img {
+    height: 46px !important;
+  }
+
+  .nav-overlay-links {
+    margin-top: 7.75rem !important;
+  }
+
+  .nav-overlay-links a,
+  .nav-overlay-cta {
+    font-size: 1.22rem !important;
+  }
+
+  .nav-overlay-cta {
+    padding: 0.78rem 1.35rem !important;
+    margin-bottom: 2.9rem !important;
+  }
+
+  .nav-overlay-location-title {
+    font-size: 0.98rem !important;
+  }
+
+  .nav-overlay-location-note {
+    font-size: 0.84rem !important;
+  }
+
+  .nav-social-link {
+    width: 58px !important;
+    height: 58px !important;
+  }
+}
