@@ -189,13 +189,89 @@
 
 </div>
 
+<div class="booking-sheet" id="bookingSheet" aria-hidden="true">
+  <div class="booking-sheet-backdrop" data-close-booking></div>
+  <div class="booking-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="bookingSheetTitle">
+    <button type="button" class="booking-sheet-close" id="bookingSheetClose" aria-label="Close booking sheet">
+      <span></span><span></span>
+    </button>
+    <p class="service-modal-eyebrow">Book Appointment</p>
+    <h3 id="bookingSheetTitle" class="service-modal-title">Request a grooming visit</h3>
+    <p class="service-modal-text booking-sheet-sub">Fast request form. We’ll follow up to confirm details and timing.</p>
+
+    <form name="booking-sheet" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="booking-sheet-form">
+      <input type="hidden" name="form-name" value="booking-sheet">
+      <p hidden><input name="bot-field"></p>
+
+      <div class="form-row-v2 booking-sheet-row">
+        <div class="form-field">
+          <label for="bookingName">Your Name *</label>
+          <input type="text" id="bookingName" name="name" placeholder="Full name" required>
+        </div>
+        <div class="form-field">
+          <label for="bookingPhone">Phone *</label>
+          <input type="tel" id="bookingPhone" name="phone" placeholder="(602) 000-0000" required>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="bookingEmail">Email *</label>
+        <input type="email" id="bookingEmail" name="email" placeholder="your@email.com" required>
+      </div>
+
+      <div class="form-field">
+        <label>Type of Pet *</label>
+        <div class="pet-options booking-pet-options">
+          <button type="button" class="pet-option booking-pet-option" data-pet="Dog" id="booking-pet-dog">Dog</button>
+          <button type="button" class="pet-option booking-pet-option" data-pet="Cat" id="booking-pet-cat">Cat</button>
+          <button type="button" class="pet-option booking-pet-option" data-pet="Both" id="booking-pet-both">Both</button>
+        </div>
+        <input type="hidden" id="bookingPetType" name="pet_type">
+      </div>
+
+      <div class="form-field">
+        <label for="bookingService">Service *</label>
+        <select id="bookingService" name="service" required>
+          <option value="" disabled selected>Select a service</option>
+          <option>Full Groom</option>
+          <option>Bath &amp; Brush</option>
+          <option>Nail Trim</option>
+          <option>Cat Grooming</option>
+          <option>De-Shedding Treatment</option>
+          <option>Add-On Services</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+
+      <div class="form-row-v2 booking-sheet-row">
+        <div class="form-field">
+          <label for="bookingPetName">Pet Name</label>
+          <input type="text" id="bookingPetName" name="pet_name" placeholder="What's their name?">
+        </div>
+        <div class="form-field">
+          <label for="bookingWhen">Preferred Time</label>
+          <input type="text" id="bookingWhen" name="preferred_time" placeholder="Morning, afternoon, etc.">
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="bookingMessage">Notes</label>
+        <textarea id="bookingMessage" name="message" rows="4" placeholder="Tell us about your pet or anything we should know."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-gold booking-submit-btn">Send Booking Request</button>
+      <p class="form-note-v2">We typically respond within a few hours.</p>
+    </form>
+  </div>
+</div>
+
 <!-- FOOTER
 
 <!-- FOOTER -->
 <footer class="footer-v2">
   <div class="footer-grid">
     <div>
-      <img src="/images/logo-dark.png" alt="Dog &amp; Cat Groomer" class="footer-logo-img">
+      <div class="footer-brand-name">Dog &amp; Cat Groomer</div>
       <div class="footer-brand-tag">Professional Pet Grooming</div>
       <p class="footer-brand-desc">Caring, professional grooming for dogs and cats in Glendale and the nearby West Valley.</p>
     </div>
@@ -221,7 +297,7 @@
       <div class="footer-col-title">Contact</div>
       <ul class="footer-links-v2 footer-contact-block">
         <li><a href="tel:6026236955" class="site-phone">(602) 623-6955</a></li>
-        <li><span style="color:rgba(255,255,255,0.72)">Tue–Sat · 8 AM–5 PM</span></li>
+        <li>Tue–Sat · 8 AM–5 PM</li>
         <li><a href="https://instagram.com/dogandcatgroomer" target="_blank" class="site-instagram">@dogandcatgroomer</a></li>
         <li class="footer-location-label">Location</li>
         <li class="footer-location-title">Glendale, Arizona</li>
@@ -347,16 +423,59 @@ document.addEventListener('keydown', (e) => {
 
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.booking-trigger').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      const modal = document.querySelector('.booking-modal, #bookingModal');
-      if(modal){
-        modal.classList.add('active');
-      }
+(function () {
+  const bookingSheet = document.getElementById('bookingSheet');
+  if (!bookingSheet) return;
+
+  const bookingService = document.getElementById('bookingService');
+  const bookingSheetTitle = document.getElementById('bookingSheetTitle');
+  const bookingPetType = document.getElementById('bookingPetType');
+
+  function openBookingSheet(serviceValue) {
+    if (serviceValue && bookingService) {
+      const match = Array.from(bookingService.options).find(opt => opt.text.trim().toLowerCase() === String(serviceValue).trim().toLowerCase());
+      if (match) bookingService.value = match.text;
+    }
+    if (bookingSheetTitle) bookingSheetTitle.textContent = 'Request a grooming visit';
+    bookingSheet.classList.add('open');
+    bookingSheet.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('nav-open');
+  }
+
+  function closeBookingSheet() {
+    bookingSheet.classList.remove('open');
+    bookingSheet.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('nav-open');
+  }
+
+  document.querySelectorAll('.booking-trigger').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      closeNav();
+      const serviceValue = this.getAttribute('data-service') || '';
+      openBookingSheet(serviceValue);
     });
   });
-});
+
+  const closeBtn = document.getElementById('bookingSheetClose');
+  if (closeBtn) closeBtn.addEventListener('click', closeBookingSheet);
+  bookingSheet.querySelectorAll('[data-close-booking]').forEach(el => el.addEventListener('click', closeBookingSheet));
+
+  document.querySelectorAll('.booking-pet-option').forEach(btn => {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.booking-pet-option').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      if (bookingPetType) bookingPetType.value = this.getAttribute('data-pet') || '';
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && bookingSheet.classList.contains('open')) {
+      closeBookingSheet();
+    }
+  });
+})();
 </script>
 
 </body>
