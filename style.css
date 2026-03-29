@@ -2945,3 +2945,41 @@ button.btn.btn-gold.booking-trigger {
     gap: 1.15rem !important;
   }
 }
+
+
+/* ===== MENU REFINEMENT FIX ===== */
+
+/* tighten nav links */
+.nav-overlay-links li {
+  margin-bottom: 0.4rem !important;
+}
+
+/* spacing between nav and location */
+.nav-overlay-links {
+  margin-bottom: 2.2rem !important;
+}
+
+/* tighten location block */
+.nav-overlay .location-block,
+.nav-overlay .nav-location {
+  margin-top: 0.5rem !important;
+}
+
+.nav-overlay .nav-location h3,
+.nav-overlay .nav-location p {
+  margin: 0.2rem 0 !important;
+}
+
+/* spacing before CTA */
+.nav-overlay-cta {
+  margin-top: 2rem !important;
+}
+
+/* ===== FIX BOOKING BUTTON ===== */
+
+/* ensure button clickable */
+.booking-trigger {
+  cursor: pointer;
+}
+
+/* attach click via JS if missing */

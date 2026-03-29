@@ -348,5 +348,19 @@ document.addEventListener('keydown', (e) => {
 
 </script>
 
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.booking-trigger').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      const modal = document.querySelector('.booking-modal, #bookingModal');
+      if(modal){
+        modal.classList.add('active');
+      }
+    });
+  });
+});
+</script>
+
 </body>
 </html>
