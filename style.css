@@ -2865,3 +2865,83 @@ button.btn.btn-gold.booking-trigger {
   color: rgba(255,255,255,0.7);
   font-size: 0.9rem;
 }
+
+
+/* MENU SPACING + CTA FIX */
+.nav-overlay-links {
+  margin: 7rem 0 0 0;
+}
+
+.nav-overlay-cta {
+  margin-top: 3rem !important;
+  margin-bottom: 3.25rem !important;
+}
+
+.nav-overlay-social {
+  bottom: 2.5rem !important;
+}
+
+@media (max-width: 900px) {
+  .nav-overlay-top {
+    top: 1.75rem !important;
+    left: 3rem !important;
+    right: 2rem !important;
+  }
+
+  .nav-overlay-links {
+    margin-top: 8.5rem !important;
+  }
+
+  .nav-overlay-links li {
+    margin-bottom: 0.9rem !important;
+  }
+
+  .nav-overlay-cta {
+    margin-top: 3rem !important;
+    margin-bottom: 3.5rem !important;
+    padding: 1.2rem 2.8rem !important;
+  }
+
+  .nav-overlay-social {
+    position: static !important;
+    margin-top: 0 !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .nav-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 3rem 2.5rem 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-overlay {
+    padding: 0 2.8rem 2.5rem 2.8rem;
+  }
+
+  .nav-overlay-top {
+    top: 1.6rem !important;
+    left: 2.8rem !important;
+    right: 1.6rem !important;
+  }
+
+  .nav-overlay-links {
+    margin-top: 9rem !important;
+  }
+
+  .nav-overlay-links li {
+    margin-bottom: 1rem !important;
+  }
+
+  .nav-overlay-cta {
+    margin-top: 3.2rem !important;
+    margin-bottom: 3.2rem !important;
+    width: fit-content;
+  }
+
+  .nav-overlay-social {
+    gap: 1.15rem !important;
+  }
+}
