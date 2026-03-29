@@ -3088,3 +3088,14 @@ button.btn.btn-gold.booking-trigger {
     line-height: 1.4;
   }
 }
+
+
+/* ===== MENU LOCATION SIZE REFINEMENT ===== */
+.nav-overlay-location-title {
+  font-size: clamp(1.55rem, 4vw, 2rem) !important;
+  line-height: 1.08 !important;
+}
+.nav-overlay-location-note {
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+}
