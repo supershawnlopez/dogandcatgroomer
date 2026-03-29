@@ -3020,3 +3020,25 @@ button.btn.btn-gold.booking-trigger {
     margin-top: 0 !important;
   }
 }
+
+
+/* ===== FINAL MENU SPACING TARGET FIX ===== */
+
+/* Keep nav as-is, but separate nav section from location section */
+.nav-overlay-links {
+  margin-bottom: 5rem !important;
+}
+
+/* Tighten the location block text grouping */
+.nav-overlay p,
+.nav-overlay h3,
+.nav-overlay span {
+  line-height: 1.28 !important;
+  margin-top: 0.2rem !important;
+  margin-bottom: 0.2rem !important;
+}
+
+/* Keep CTA separated but do not push it too far */
+.nav-overlay-cta {
+  margin-top: 2rem !important;
+}
