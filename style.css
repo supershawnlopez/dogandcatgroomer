@@ -3160,3 +3160,139 @@ button.btn.btn-gold.booking-trigger {
     font-size: 1rem !important;
   }
 }
+
+
+/* ===== FINAL GLOBAL MENU ORDER + TYPOGRAPHY BALANCE ===== */
+.nav-overlay-top .nav-overlay-logo-img {
+  height: 58px !important;
+  max-width: 320px !important;
+}
+
+.nav-overlay-links {
+  margin-bottom: 1.1rem !important;
+}
+
+.nav-overlay-links li {
+  margin-bottom: 0.55rem !important;
+}
+
+.nav-overlay-links a {
+  font-family: 'Jost', sans-serif !important;
+  font-size: clamp(2.05rem, 5.6vw, 2.55rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  line-height: 1.06 !important;
+}
+
+.nav-overlay-cta {
+  font-family: 'Jost', sans-serif !important;
+  font-size: clamp(2.05rem, 5.6vw, 2.55rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  padding: 0.72rem 1.55rem !important;
+  border-radius: 999px !important;
+  margin-top: 0.2rem !important;
+  margin-bottom: 3.6rem !important;
+  line-height: 1.06 !important;
+  align-self: flex-start !important;
+}
+
+.nav-overlay-location {
+  margin-top: 0 !important;
+  margin-bottom: 2.4rem !important;
+}
+
+.nav-overlay-location-label {
+  margin-bottom: 0.45rem !important;
+}
+
+.nav-overlay-location-title {
+  font-size: clamp(1.08rem, 2.7vw, 1.3rem) !important;
+  line-height: 1.08 !important;
+  margin-bottom: 0.35rem !important;
+}
+
+.nav-overlay-location-note {
+  font-size: 0.9rem !important;
+  line-height: 1.38 !important;
+}
+
+.nav-overlay-social {
+  position: absolute !important;
+  left: 8vw !important;
+  bottom: 2.5rem !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .nav-overlay {
+    padding: 0 2.8rem 2.6rem 2.8rem !important;
+  }
+  .nav-overlay-top {
+    top: 1.55rem !important;
+    left: 2.8rem !important;
+    right: 1.6rem !important;
+  }
+  .nav-overlay-top .nav-overlay-logo-img {
+    height: 52px !important;
+  }
+  .nav-overlay-links {
+    margin-top: 8.4rem !important;
+  }
+  .nav-overlay-links a,
+  .nav-overlay-cta {
+    font-size: 2rem !important;
+  }
+  .nav-overlay-cta {
+    padding: 0.72rem 1.45rem !important;
+    margin-bottom: 3.9rem !important;
+  }
+  .nav-overlay-location {
+    margin-bottom: 2.5rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-overlay-top .nav-overlay-logo-img {
+    height: 50px !important;
+  }
+  .nav-overlay-links {
+    margin-top: 8.5rem !important;
+  }
+  .nav-overlay-links a,
+  .nav-overlay-cta {
+    font-size: 1.9rem !important;
+  }
+  .nav-overlay-cta {
+    padding: 0.68rem 1.35rem !important;
+    margin-bottom: 3.7rem !important;
+  }
+  .nav-overlay-location-title {
+    font-size: 1.02rem !important;
+  }
+}
+
+/* ===== REMOVE WHITE BLANK STRIP UNDER HEADER ===== */
+.hero,
+.page-hero {
+  margin-top: 0 !important;
+  background: #111 !important;
+}
+
+.hero-bg img {
+  object-position: center center !important;
+}
+
+.page-hero-bg img {
+  object-position: center 22% !important;
+}
+
+.page-hero-overlay {
+  background: linear-gradient(to top, rgba(17,16,9,0.88) 0%, rgba(17,16,9,0.58) 55%, rgba(17,16,9,0.5) 100%) !important;
+}
+
+.contact-split {
+  margin-top: 0 !important;
+}
