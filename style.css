@@ -2867,7 +2867,241 @@ button.btn.btn-gold.booking-trigger {
 }
 
 
-/* ===== Footer location styles ===== */
+/* MENU SPACING + CTA FIX */
+.nav-overlay-links {
+  margin: 7rem 0 0 0;
+}
+
+.nav-overlay-cta {
+  margin-top: 3rem !important;
+  margin-bottom: 3.25rem !important;
+}
+
+.nav-overlay-social {
+  bottom: 2.5rem !important;
+}
+
+@media (max-width: 900px) {
+  .nav-overlay-top {
+    top: 1.75rem !important;
+    left: 3rem !important;
+    right: 2rem !important;
+  }
+
+  .nav-overlay-links {
+    margin-top: 8.5rem !important;
+  }
+
+  .nav-overlay-links li {
+    margin-bottom: 0.9rem !important;
+  }
+
+  .nav-overlay-cta {
+    margin-top: 3rem !important;
+    margin-bottom: 3.5rem !important;
+    padding: 1.2rem 2.8rem !important;
+  }
+
+  .nav-overlay-social {
+    position: static !important;
+    margin-top: 0 !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .nav-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 3rem 2.5rem 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-overlay {
+    padding: 0 2.8rem 2.5rem 2.8rem;
+  }
+
+  .nav-overlay-top {
+    top: 1.6rem !important;
+    left: 2.8rem !important;
+    right: 1.6rem !important;
+  }
+
+  .nav-overlay-links {
+    margin-top: 9rem !important;
+  }
+
+  .nav-overlay-links li {
+    margin-bottom: 1rem !important;
+  }
+
+  .nav-overlay-cta {
+    margin-top: 3.2rem !important;
+    margin-bottom: 3.2rem !important;
+    width: fit-content;
+  }
+
+  .nav-overlay-social {
+    gap: 1.15rem !important;
+  }
+}
+
+
+/* ===== MENU REFINEMENT FIX ===== */
+
+/* tighten nav links */
+.nav-overlay-links li {
+  margin-bottom: 0.4rem !important;
+}
+
+/* spacing between nav and location */
+.nav-overlay-links {
+  margin-bottom: 2.2rem !important;
+}
+
+/* tighten location block */
+.nav-overlay .location-block,
+.nav-overlay .nav-location {
+  margin-top: 0.5rem !important;
+}
+
+.nav-overlay .nav-location h3,
+.nav-overlay .nav-location p {
+  margin: 0.2rem 0 !important;
+}
+
+/* spacing before CTA */
+.nav-overlay-cta {
+  margin-top: 2rem !important;
+}
+
+/* ===== FIX BOOKING BUTTON ===== */
+
+/* ensure button clickable */
+.booking-trigger {
+  cursor: pointer;
+}
+
+/* attach click via JS if missing */
+
+
+/* ===== MENU SECTION SEPARATION REFINEMENT ===== */
+/* leave nav links as-is, but create clearer separation before location */
+@media (max-width: 900px) {
+  .nav-overlay-links {
+    margin-bottom: 4rem !important;
+  }
+
+  .nav-overlay .location-block,
+  .nav-overlay .nav-location {
+    margin-top: 0 !important;
+  }
+
+  .nav-overlay .nav-location h3,
+  .nav-overlay .nav-location p,
+  .nav-overlay .location-block h3,
+  .nav-overlay .location-block p {
+    margin: 0.15rem 0 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-overlay-links {
+    margin-bottom: 4.25rem !important;
+  }
+
+  .nav-overlay .nav-location h3,
+  .nav-overlay .location-block h3 {
+    margin-bottom: 0.35rem !important;
+  }
+
+  .nav-overlay .nav-location p,
+  .nav-overlay .location-block p {
+    margin-top: 0 !important;
+  }
+}
+
+
+/* ===== FINAL MENU SPACING TARGET FIX ===== */
+
+/* Keep nav as-is, but separate nav section from location section */
+.nav-overlay-links {
+  margin-bottom: 5rem !important;
+}
+
+/* Tighten the location block text grouping */
+.nav-overlay p,
+.nav-overlay h3,
+.nav-overlay span {
+  line-height: 1.28 !important;
+  margin-top: 0.2rem !important;
+  margin-bottom: 0.2rem !important;
+}
+
+/* Keep CTA separated but do not push it too far */
+.nav-overlay-cta {
+  margin-top: 2rem !important;
+}
+
+
+/* ===== STRUCTURAL MENU LOCATION FIX ===== */
+.nav-overlay-location {
+  margin-top: 4.6rem;
+  margin-bottom: 2.1rem;
+}
+.nav-overlay-location-label {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  margin-bottom: 0.65rem;
+}
+.nav-overlay-location-title {
+  color: var(--white);
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.06;
+  margin-bottom: 0.55rem;
+}
+.nav-overlay-location-note {
+  color: rgba(255,255,255,0.78);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  max-width: 32rem;
+}
+
+@media (max-width: 640px) {
+  .nav-overlay-location {
+    margin-top: 4.2rem;
+    margin-bottom: 2rem;
+  }
+  .nav-overlay-location-label {
+    margin-bottom: 0.55rem;
+  }
+  .nav-overlay-location-title {
+    margin-bottom: 0.45rem;
+  }
+  .nav-overlay-location-note {
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+}
+
+
+/* ===== MENU LOCATION SIZE REFINEMENT ===== */
+.nav-overlay-location-title {
+  font-size: clamp(1.55rem, 4vw, 2rem) !important;
+  line-height: 1.08 !important;
+}
+.nav-overlay-location-note {
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+}
+
+
+/* ===== GLOBAL PATCHED FOOTER LOCATION STYLES ===== */
 .footer-location-label {
   color: var(--gold);
   font-size: 0.7rem;
@@ -2886,9 +3120,9 @@ button.btn.btn-gold.booking-trigger {
   line-height: 1.45;
 }
 
-/* ===== Mobile menu location block ===== */
+/* ===== GLOBAL PATCHED MENU STRUCTURE ===== */
 .nav-overlay-location {
-  margin-top: 4.4rem;
+  margin-top: 4.2rem;
   margin-bottom: 2rem;
 }
 .nav-overlay-location-label {
@@ -2901,7 +3135,7 @@ button.btn.btn-gold.booking-trigger {
 .nav-overlay-location-title {
   color: var(--white);
   font-family: 'Jost', sans-serif;
-  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+  font-size: clamp(1.1rem, 2.8vw, 1.35rem) !important;
   font-weight: 700;
   line-height: 1.08;
   margin-bottom: 0.35rem;
@@ -2909,59 +3143,20 @@ button.btn.btn-gold.booking-trigger {
 .nav-overlay-location-note {
   color: rgba(255,255,255,0.78);
   font-family: 'Jost', sans-serif;
-  font-size: 0.92rem;
+  font-size: 0.9rem !important;
   line-height: 1.4;
   max-width: 32rem;
 }
-
-/* ===== Menu CTA ===== */
+.nav-overlay-links {
+  margin-bottom: 4.2rem !important;
+}
 .nav-overlay-cta,
 .nav-cta-btn {
   border: none;
   cursor: pointer;
 }
-.nav-overlay-cta {
-  margin-top: 2rem !important;
-}
-
-/* ===== Menu nav links stay dominant ===== */
-.nav-overlay-links {
-  margin-bottom: 4.4rem !important;
-}
-.nav-overlay-links a {
-  font-family: 'Jost', sans-serif !important;
-  font-size: 2.3rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.12em !important;
-  text-transform: uppercase !important;
-  line-height: 1.1 !important;
-}
-.nav-overlay-links li {
-  margin-bottom: 0.8rem !important;
-}
-
-@media (max-width: 640px) {
-  .nav-overlay-location {
-    margin-top: 4rem;
-    margin-bottom: 1.85rem;
-  }
-  .nav-overlay-location-title {
-    font-size: 1.15rem !important;
-  }
-  .nav-overlay-location-note {
-    font-size: 0.88rem !important;
-  }
-}
-
-
-/* FINAL APPROVED FIX: smaller menu location title */
-.nav-overlay-location-title {
-  font-size: clamp(1rem, 2.6vw, 1.25rem) !important;
-  line-height: 1.08 !important;
-}
 @media (max-width: 640px) {
   .nav-overlay-location-title {
-    font-size: 0.98rem !important;
-    line-height: 1.08 !important;
+    font-size: 1rem !important;
   }
 }

@@ -131,7 +131,7 @@ async function loadServices() {
   set('page-title', data.page_title);
 
   const buildRow = (s) => {
-    const priceHtml = s.price ? `<div class="service-row-price">${s.price}</div>` : '';
+    const priceHtml = (s.price && String(s.price).trim()) ? `<div class="service-row-price">${s.price}</div>` : '';
     return `
       <div class="service-row-v2 reveal">
         <div class="service-row-body">
