@@ -3558,3 +3558,36 @@ button.btn.btn-gold.booking-trigger {
     margin-bottom: 1.35rem !important;
   }
 }
+
+
+/* ===== FINAL LANDSCAPE MENU HEADER FIX ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+  .nav-overlay-top {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 1rem 2rem 0.75rem 2rem !important;
+    background: rgba(17,16,9,0.98) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    z-index: 40 !important;
+  }
+
+  .nav-overlay {
+    padding-top: 5.9rem !important;
+  }
+
+  .nav-overlay::before {
+    z-index: 1 !important;
+  }
+
+  .nav-overlay-top .nav-overlay-logo-img,
+  .nav-close {
+    position: relative !important;
+    z-index: 41 !important;
+  }
+}
