@@ -3042,3 +3042,49 @@ button.btn.btn-gold.booking-trigger {
 .nav-overlay-cta {
   margin-top: 2rem !important;
 }
+
+
+/* ===== STRUCTURAL MENU LOCATION FIX ===== */
+.nav-overlay-location {
+  margin-top: 4.6rem;
+  margin-bottom: 2.1rem;
+}
+.nav-overlay-location-label {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  margin-bottom: 0.65rem;
+}
+.nav-overlay-location-title {
+  color: var(--white);
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.06;
+  margin-bottom: 0.55rem;
+}
+.nav-overlay-location-note {
+  color: rgba(255,255,255,0.78);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  max-width: 32rem;
+}
+
+@media (max-width: 640px) {
+  .nav-overlay-location {
+    margin-top: 4.2rem;
+    margin-bottom: 2rem;
+  }
+  .nav-overlay-location-label {
+    margin-bottom: 0.55rem;
+  }
+  .nav-overlay-location-title {
+    margin-bottom: 0.45rem;
+  }
+  .nav-overlay-location-note {
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+}
