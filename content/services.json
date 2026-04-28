@@ -1,110 +1,110 @@
 {
   "page_title": "Our Services",
-  "pricing_note": "",
+  "pricing_note": "Prices start at the amounts listed and may increase based on coat condition, temperament, or time required.",
   "dog_services": [
     {
-      "name": "Bath & Brush — Small Dog (1–30 lbs)",
+      "name": "Bath & Brush \u2014 Small Dog (1\u201330 lbs)",
       "description": "Full bath, blow dry, and brush out.",
-      "price": ""
+      "price": "$65"
     },
     {
-      "name": "Bath & Brush — Medium Dog (31–50 lbs)",
+      "name": "Bath & Brush \u2014 Medium Dog (31\u201350 lbs)",
       "description": "Full bath, blow dry, and brush out.",
-      "price": ""
+      "price": "$75"
     },
     {
-      "name": "Bath & Brush — Large Dog (51–70 lbs)",
+      "name": "Bath & Brush \u2014 Large Dog (51\u201370 lbs)",
       "description": "Full bath, blow dry, and brush out.",
-      "price": ""
+      "price": "$95"
     },
     {
-      "name": "Bath & Brush — X-Large Dog (71–110 lbs)",
+      "name": "Bath & Brush \u2014 X-Large Dog (71\u2013110 lbs)",
       "description": "Full bath, blow dry, and brush out.",
-      "price": ""
+      "price": "$125"
     },
     {
-      "name": "Full Groom — Small Dog",
+      "name": "Full Groom \u2014 Small Dog",
       "description": "Bath, brush, haircut, nail trim, ear cleaning, anal gland expression, finishing fragrance and accessory.",
-      "price": ""
+      "price": "$75"
     },
     {
-      "name": "Full Groom — Medium Dog",
+      "name": "Full Groom \u2014 Medium Dog",
       "description": "Bath, brush, haircut, nail trim, ear cleaning, anal gland expression, finishing fragrance and accessory.",
-      "price": ""
+      "price": "$85"
     },
     {
-      "name": "Full Groom — Large Dog",
+      "name": "Full Groom \u2014 Large Dog",
       "description": "Bath, brush, haircut, nail trim, ear cleaning, anal gland expression, finishing fragrance and accessory.",
-      "price": ""
+      "price": "$120"
     },
     {
-      "name": "Full Groom — X-Large Dog",
+      "name": "Full Groom \u2014 X-Large Dog",
       "description": "Bath, brush, haircut, nail trim, ear cleaning, anal gland expression, finishing fragrance and accessory.",
-      "price": ""
+      "price": "$145"
     }
   ],
   "cat_services": [
     {
       "name": "Bath & Brush",
       "description": "Bath and brush, nail trimming, ear cleaning.",
-      "price": ""
+      "price": "$85"
     },
     {
       "name": "Full Groom",
       "description": "Haircut, bath and brush, nail trimming, ear cleaning.",
-      "price": ""
+      "price": "$95"
     }
   ],
   "programs": [
     {
       "name": "Nail Trimming",
       "description": "Quick and stress-free nail trim.",
-      "price": ""
+      "price": "$10"
     },
     {
       "name": "Paw Pads",
       "description": "Paw pad trim and cleanup.",
-      "price": ""
+      "price": "$5"
     },
     {
       "name": "Teeth Brushing",
       "description": "Gentle teeth brushing service.",
-      "price": ""
+      "price": "$10"
     },
     {
       "name": "Anal Glands (External Only)",
       "description": "External anal gland expression.",
-      "price": ""
+      "price": "$10"
     },
     {
       "name": "Flea & Tick Treatment",
       "description": "Flea and tick treatment shampoo.",
-      "price": ""
+      "price": "$20"
     },
     {
       "name": "De-Shedding Treatment",
       "description": "Specialized treatment to dramatically reduce shedding.",
-      "price": ""
+      "price": "$25"
     },
     {
       "name": "Doodle / Poodle Fee",
       "description": "Additional fee for doodle and poodle coat types.",
-      "price": ""
+      "price": "$140"
     },
     {
       "name": "Hypoallergenic Shampoo",
       "description": "Gentle hypoallergenic shampoo upgrade.",
-      "price": ""
+      "price": "$10"
     },
     {
       "name": "Whitening Shampoo",
       "description": "Brightening whitening shampoo upgrade.",
-      "price": ""
+      "price": "$10"
     },
     {
-      "name": "Hydrating Bath Treatment",
-      "description": "A nourishing treatment designed to hydrate the coat and support healthy skin.",
-      "price": ""
+      "name": "Detangling & Knot Removal",
+      "description": "Extra charge for detangling and knot removal.",
+      "price": "$10\u2013$30"
     }
   ]
 }
