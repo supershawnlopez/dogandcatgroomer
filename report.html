@@ -82,26 +82,16 @@
     }
     .warn-title { font-size:.82rem; font-weight:700; color:#c4832a; margin-bottom:6px; }
     .warn-body  { font-size:.85rem; color:var(--charcoal); line-height:1.62; margin:0; }
+  .report-footer-simple {
+      background:var(--dark); padding:20px 24px; text-align:center;
+      border-top:1px solid rgba(201,169,110,0.15);
+      font-size:0.75rem; color:var(--gray);
+    }
+    .report-footer-simple a { color:var(--gold); text-decoration:none; }
   </style>
 </head>
 <body>
 
-<nav class="nav" id="mainNav">
-  <div class="nav-inner">
-    <a href="index.html" class="logo">
-      <img src="/images/logo-dark.png" alt="Dog &amp; Cat Groomer" class="logo-img">
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button type="button" class="nav-cta-btn booking-trigger" data-service="">Book Now</button>
-    <button class="nav-toggle" onclick="toggleNav()" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
 
 <div class="report-hero">
   <div class="report-lang-row">
@@ -251,48 +241,9 @@
 
 </div>
 
-<footer class="footer-v2">
-  <div class="footer-grid">
-    <div>
-      <img src="/images/logo-dark.png" alt="Dog &amp; Cat Groomer" class="footer-logo-img">
-      <div class="footer-brand-tag">Professional Pet Grooming</div>
-      <p class="footer-brand-desc">Caring, professional grooming for dogs and cats in Glendale and the nearby West Valley.</p>
-    </div>
-    <div>
-      <div class="footer-col-title">Navigate</div>
-      <ul class="footer-links-v2">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Services</div>
-      <ul class="footer-links-v2">
-        <li><a href="services.html">Full Groom</a></li>
-        <li><a href="services.html">Bath &amp; Brush</a></li>
-        <li><a href="services.html">Cat Grooming</a></li>
-        <li><a href="services.html">Nail Trim</a></li>
-        <li><a href="services.html">Puppy Groom</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Contact</div>
-      <ul class="footer-links-v2 footer-contact-block">
-        <li><a href="tel:6026236955">(602) 623-6955</a></li>
-        <li><span style="color:rgba(255,255,255,0.72)">Tue–Sat · 8 AM–5 PM</span></li>
-        <li><a href="https://instagram.com/groomerdogandcat" target="_blank">@groomerdogandcat</a></li>
-        <li class="footer-location-label">Location</li>
-        <li class="footer-location-title">Glendale, Arizona</li>
-        <li class="footer-location-note">10222 N 43rd Ave, Suite #8, Glendale, AZ 85302</li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom-v2">
-    <p>&copy; 2026 Dog &amp; Cat Groomer. All rights reserved.</p>
-    <a href="https://sayitmarketing.com" target="_blank">Site by Say It Marketing</a>
-  </div>
-</footer>
+<div class="report-footer-simple">
+  <p>&copy; 2026 Dog &amp; Cat Groomer. All rights reserved. &nbsp;·&nbsp; <a href="https://sayitmarketing.com" target="_blank">Site by Say It Marketing</a></p>
+</div>
 
 <script>
 window.addEventListener('scroll', () => {
