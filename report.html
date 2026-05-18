@@ -5,453 +5,317 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <title>Dog & Cat Groomer — Reporte Mensual</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="/images/logo-icon.png">
   <style>
-    :root {
-      --gold:       #C9A96E;
-      --gold-light: #F5EDD9;
-      --gold-dark:  #9B7A42;
-      --charcoal:   #1A1714;
-      --dark:       #111009;
-      --warm-white: #FAF7F2;
-      --cream:      #F0EAE0;
-      --gray:       #777068;
-      --light-gray: #B8B0A4;
-      --rule:       #E8E0D4;
-      --white:      #FFFFFF;
-      --green:      #4a9e6b;
-      --orange:     #c4832a;
-      --red:        #b54a3a;
+    .report-hero {
+      background: var(--charcoal);
+      padding: clamp(48px,8vw,80px) clamp(20px,5vw,60px) clamp(40px,6vw,64px);
+      position: relative; overflow: hidden;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: var(--warm-white);
-      color: var(--charcoal);
-      font-family: 'Jost', sans-serif;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
+    .report-hero::after {
+      content:''; position:absolute; bottom:0; left:0; right:0;
+      height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent);
     }
-
-    /* ── HEADER ── */
-    .header {
-      background: var(--dark);
-      padding: 36px 24px 40px;
-      position: relative;
-      overflow: hidden;
-    }
-    .header::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    }
-    .header-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 28px;
-    }
-    .logo-area {
-      display: flex; align-items: center; gap: 12px;
-    }
-    .logo-paw {
-      width: 44px; height: 44px;
-      background: rgba(201,169,110,0.15);
-      border: 1.5px solid rgba(201,169,110,0.4);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem;
-    }
-    .logo-text {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem; font-weight: 600;
-      color: var(--white); letter-spacing: 0.02em;
-      line-height: 1.2;
-    }
-    .logo-sub {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.62rem; font-weight: 500;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--gold); display: block;
-    }
+    .report-lang-row { display:flex; justify-content:flex-end; margin-bottom:28px; }
     .lang-btn {
-      background: rgba(201,169,110,0.1);
-      border: 1px solid rgba(201,169,110,0.3);
-      border-radius: 999px; padding: 6px 14px;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.72rem; font-weight: 600;
-      color: var(--gold); cursor: pointer;
-      transition: background 0.2s;
+      background:rgba(201,169,110,0.1); border:1px solid rgba(201,169,110,0.3);
+      border-radius:999px; padding:7px 18px;
+      font-family:'Jost',sans-serif; font-size:0.72rem; font-weight:600;
+      color:var(--gold); cursor:pointer; transition:background .2s;
     }
-    .lang-btn:hover { background: rgba(201,169,110,0.2); }
-
+    .lang-btn:hover { background:rgba(201,169,110,0.2); }
     .report-eyebrow {
-      font-size: 0.62rem; font-weight: 700;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 10px;
+      font-size:0.62rem; font-weight:600; letter-spacing:0.22em;
+      text-transform:uppercase; color:var(--gold); margin-bottom:10px;
     }
     .report-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 7vw, 3.5rem);
-      font-weight: 600; color: var(--white);
-      line-height: 1.05; letter-spacing: -0.01em;
-      margin-bottom: 10px;
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(2.4rem,6vw,4rem); font-weight:600;
+      color:var(--white); line-height:1.05; margin-bottom:12px;
     }
     .report-sub {
-      font-size: 0.95rem; color: var(--light-gray);
-      line-height: 1.65; max-width: 50ch;
+      font-size:1rem; color:var(--light-gray);
+      max-width:48ch; line-height:1.65; margin-bottom:20px;
     }
     .report-date {
-      display: inline-block;
-      margin-top: 16px;
-      background: rgba(201,169,110,0.12);
-      border: 1px solid rgba(201,169,110,0.25);
-      border-radius: 999px; padding: 5px 14px;
-      font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.08em; color: var(--gold);
+      display:inline-block;
+      background:rgba(201,169,110,0.1); border:1px solid rgba(201,169,110,0.25);
+      border-radius:999px; padding:5px 16px;
+      font-size:0.72rem; font-weight:600; letter-spacing:0.08em; color:var(--gold);
     }
-
-    /* ── PAGE ── */
-    .page { max-width: 640px; margin: 0 auto; padding: 36px 20px 60px; }
-
-    /* ── SECTION ── */
-    .sec-rule {
-      display: flex; align-items: center; gap: 12px;
-      margin: 36px 0 20px;
+    .report-body {
+      max-width:760px; margin:0 auto;
+      padding:clamp(32px,5vw,56px) clamp(20px,5vw,40px) 64px;
     }
-    .sec-rule::before, .sec-rule::after {
-      content: ''; flex: 1; height: 1px; background: var(--rule);
+    .r-sec {
+      display:flex; align-items:center; gap:14px; margin:40px 0 20px;
     }
-    .sec-rule span {
-      font-size: 0.6rem; font-weight: 700;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold-dark); white-space: nowrap;
+    .r-sec::before,.r-sec::after { content:''; flex:1; height:1px; background:var(--rule); }
+    .r-sec span {
+      font-size:0.6rem; font-weight:700; letter-spacing:0.22em;
+      text-transform:uppercase; color:var(--gold-dark); white-space:nowrap;
     }
-
-    /* ── STATUS CARDS ── */
-    .status-list { display: flex; flex-direction: column; gap: 8px; }
-    .status-item {
-      background: var(--white);
-      border: 1px solid var(--rule);
-      border-radius: 14px;
-      padding: 14px 16px;
-      display: flex; align-items: flex-start; gap: 14px;
-      box-shadow: 0 1px 4px rgba(26,23,20,0.05);
+    .s-list { display:flex; flex-direction:column; gap:8px; }
+    .s-item {
+      background:var(--white); border:1px solid var(--rule);
+      border-radius:14px; padding:14px 18px;
+      display:flex; align-items:center; gap:14px;
+      box-shadow:0 1px 3px rgba(26,23,20,0.04);
     }
-    .status-icon {
-      width: 36px; height: 36px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; font-size: 0.75rem; font-weight: 800;
+    .s-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+    .dg { background:#4a9e6b; }
+    .do { background:#c4832a; }
+    .dw { background:#b8b0a4; }
+    .s-name { font-size:.95rem; font-weight:600; color:var(--charcoal); flex:1; }
+    .s-note { font-size:.8rem; color:var(--gray); margin-top:2px; }
+    .s-badge {
+      font-size:.58rem; font-weight:800; letter-spacing:.1em;
+      text-transform:uppercase; padding:3px 10px; border-radius:999px; flex-shrink:0;
     }
-    .icon-done    { background: rgba(74,158,107,0.1);  color: var(--green); }
-    .icon-pending { background: rgba(196,131,42,0.1);  color: var(--orange); }
-    .icon-needed  { background: rgba(181,74,58,0.1);   color: var(--red); }
-    .status-name { font-size: 0.95rem; font-weight: 600; color: var(--charcoal); margin-bottom: 2px; }
-    .status-note { font-size: 0.82rem; color: var(--gray); line-height: 1.45; margin: 0; max-width: 100%; }
-    .status-badge {
-      display: inline-block; margin-left: auto; flex-shrink: 0;
-      font-size: 0.58rem; font-weight: 800;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      padding: 3px 10px; border-radius: 999px;
+    .bl { background:rgba(74,158,107,0.1);  color:#4a9e6b; }
+    .bo { background:rgba(196,131,42,0.1);  color:#c4832a; }
+    .bw { background:rgba(184,176,164,0.2); color:var(--gray); }
+    .warn-box {
+      background:#fffaf4; border:1px solid rgba(196,131,42,0.3);
+      border-radius:14px; padding:18px 20px; margin-top:8px;
     }
-    .badge-done    { background: rgba(74,158,107,0.12);  color: var(--green); }
-    .badge-pending { background: rgba(196,131,42,0.12);  color: var(--orange); }
-    .badge-needed  { background: rgba(181,74,58,0.12);   color: var(--red); }
-
-    /* ── WARNING BOX ── */
-    .warning-box {
-      background: rgba(196,131,42,0.07);
-      border: 1px solid rgba(196,131,42,0.25);
-      border-radius: 14px; padding: 18px 20px;
-      margin-top: 8px;
-    }
-    .warning-title {
-      font-size: 0.82rem; font-weight: 700;
-      color: var(--orange); margin-bottom: 6px;
-    }
-    .warning-body {
-      font-size: 0.85rem; color: var(--charcoal);
-      line-height: 1.6; margin: 0; max-width: 100%;
-    }
-
-    /* ── ACTION ITEMS ── */
-    .action-list { display: flex; flex-direction: column; gap: 10px; }
-    .action-item {
-      background: var(--white);
-      border: 1px solid var(--rule);
-      border-radius: 14px; padding: 16px 18px;
-      display: flex; gap: 14px; align-items: flex-start;
-      box-shadow: 0 1px 4px rgba(26,23,20,0.05);
-    }
-    .action-num {
-      width: 28px; height: 28px; border-radius: 50%;
-      background: rgba(201,169,110,0.15);
-      border: 1.5px solid rgba(201,169,110,0.4);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.75rem; font-weight: 800;
-      color: var(--gold-dark); flex-shrink: 0;
-    }
-    .action-title { font-size: 0.92rem; font-weight: 700; color: var(--charcoal); margin-bottom: 3px; }
-    .action-body  { font-size: 0.82rem; color: var(--gray); line-height: 1.5; margin: 0; max-width: 100%; }
-
-    /* ── VIDEO BOX ── */
-    .video-box {
-      background: linear-gradient(135deg, var(--dark) 0%, #2a2220 100%);
-      border-radius: 16px; padding: 24px 20px;
-      margin-top: 8px;
-    }
-    .video-eyebrow {
-      font-size: 0.6rem; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 8px;
-    }
-    .video-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem; color: var(--white);
-      margin-bottom: 10px;
-    }
-    .video-body { font-size: 0.88rem; color: var(--light-gray); line-height: 1.65; margin: 0; max-width: 100%; }
-
-    /* ── FOOTER ── */
-    .footer {
-      background: var(--dark);
-      padding: 24px 20px;
-      text-align: center;
-      border-top: 1px solid rgba(201,169,110,0.15);
-    }
-    .footer-credit {
-      font-size: 0.72rem; color: var(--gray);
-      line-height: 1.6;
-    }
-    .footer-credit a { color: var(--gold); text-decoration: none; }
-
-    @media (max-width: 480px) {
-      .header-top { flex-direction: column; align-items: flex-start; gap: 14px; }
-    }
+    .warn-title { font-size:.82rem; font-weight:700; color:#c4832a; margin-bottom:6px; }
+    .warn-body  { font-size:.85rem; color:var(--charcoal); line-height:1.62; margin:0; }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="header-top">
-      <div class="logo-area">
-        <div class="logo-paw">🐾</div>
-        <div class="logo-text">
-          Dog &amp; Cat Groomer
-          <span class="logo-sub">Glendale, Arizona</span>
-        </div>
-      </div>
-      <button class="lang-btn" onclick="toggleLang()" id="langBtn">View in English</button>
-    </div>
-    <div class="report-eyebrow t" data-es="Reporte Mensual · Mayo 2026" data-en="Monthly Report · May 2026">Reporte Mensual · Mayo 2026</div>
-    <div class="report-title t" data-es="Tu Presencia<br>en Internet." data-en="Your Online<br>Presence.">Tu Presencia<br>en Internet.</div>
-    <p class="report-sub t" data-en="Here is a full update on every place your business appears online — what is live, what is pending, and what we need from you." data-es="Aquí está la actualización completa de todos los lugares donde aparece tu negocio en internet — qué está listo, qué está pendiente, y qué necesitamos de tu parte.">Aquí está la actualización completa de todos los lugares donde aparece tu negocio en internet — qué está listo, qué está pendiente, y qué necesitamos de tu parte.</p>
-    <div class="report-date t" data-es="Actualizado: Mayo 18, 2026" data-en="Updated: May 18, 2026">Actualizado: Mayo 18, 2026</div>
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="/images/logo-dark.png" alt="Dog &amp; Cat Groomer" class="logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button type="button" class="nav-cta-btn booking-trigger" data-service="">Book Now</button>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+</nav>
 
-  <div class="page">
+<div class="report-hero">
+  <div class="report-lang-row">
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">View in English</button>
+  </div>
+  <div class="report-eyebrow t" data-es="Reporte Mensual · Mayo 2026" data-en="Monthly Report · May 2026">Reporte Mensual · Mayo 2026</div>
+  <div class="report-title t" data-es="Tu Presencia en Internet." data-en="Your Online Presence.">Tu Presencia en Internet.</div>
+  <p class="report-sub t" data-es="Aquí está todo lo que hemos trabajado este mes para que tu negocio aparezca en Google y en toda la internet." data-en="Here is everything we worked on this month to get your business showing up on Google and across the internet.">Aquí está todo lo que hemos trabajado este mes para que tu negocio aparezca en Google y en toda la internet.</p>
+  <div class="report-date t" data-es="Actualizado: Mayo 18, 2026" data-en="Updated: May 18, 2026">Actualizado: Mayo 18, 2026</div>
+</div>
 
-    <!-- COMPLETED -->
-    <div class="sec-rule"><span class="t" data-es="✓ Completado" data-en="✓ Completed">✓ Completado</span></div>
-    <div class="status-list">
+<div class="report-body">
 
-      <div class="status-item">
-        <div class="status-icon icon-done">✓</div>
-        <div>
-          <div class="status-name">Google Business Profile</div>
-          <p class="status-note t" data-es="Horas, dirección, teléfono y sitio web confirmados y correctos. Tus fotos ya están subidas." data-en="Hours, address, phone and website confirmed correct. Your photos are uploaded.">Horas, dirección, teléfono y sitio web confirmados y correctos. Tus fotos ya están subidas.</p>
-        </div>
-        <span class="status-badge badge-done t" data-es="Activo" data-en="Live">Activo</span>
+  <!-- SEO -->
+  <div class="r-sec"><span class="t" data-es="SEO — Posicionamiento en Google" data-en="SEO — Google Rankings">SEO — Posicionamiento en Google</span></div>
+  <div class="s-list">
+
+    <div class="s-item">
+      <div class="s-dot dg"></div>
+      <div style="flex:1">
+        <div class="s-name">Google Business Profile</div>
+        <div class="s-note t" data-es="Horas, dirección, teléfono y sitio web verificados. Fotos subidas." data-en="Hours, address, phone and website verified. Photos uploaded.">Horas, dirección, teléfono y sitio web verificados. Fotos subidas.</div>
       </div>
-
-      <div class="status-item">
-        <div class="status-icon icon-done">✓</div>
-        <div>
-          <div class="status-name">Bing Places</div>
-          <p class="status-note t" data-es="Sincronizado automáticamente con tu perfil de Google. Todo correcto." data-en="Automatically synced with your Google profile. All correct.">Sincronizado automáticamente con tu perfil de Google. Todo correcto.</p>
-        </div>
-        <span class="status-badge badge-done t" data-es="Activo" data-en="Live">Activo</span>
-      </div>
-
-      <div class="status-item">
-        <div class="status-icon icon-done">✓</div>
-        <div>
-          <div class="status-name">Nextdoor</div>
-          <p class="status-note t" data-es="Tu negocio aparece para los vecinos del área de Glendale cerca de tu local." data-en="Your business shows for neighbors in the Glendale area near your location.">Tu negocio aparece para los vecinos del área de Glendale cerca de tu local.</p>
-        </div>
-        <span class="status-badge badge-done t" data-es="Activo" data-en="Live">Activo</span>
-      </div>
-
-      <div class="status-item">
-        <div class="status-icon icon-done">✓</div>
-        <div>
-          <div class="status-name">Yellow Pages</div>
-          <p class="status-note t" data-es="Listado enviado con toda la información correcta." data-en="Listing submitted with all correct information.">Listado enviado con toda la información correcta.</p>
-        </div>
-        <span class="status-badge badge-done t" data-es="Activo" data-en="Live">Activo</span>
-      </div>
-
-      <div class="status-item">
-        <div class="status-icon icon-done">✓</div>
-        <div>
-          <div class="status-name">Hotfrog</div>
-          <p class="status-note t" data-es="Enviado y activo." data-en="Submitted and live.">Enviado y activo.</p>
-        </div>
-        <span class="status-badge badge-done t" data-es="Activo" data-en="Live">Activo</span>
-      </div>
-
-      <div class="status-item">
-        <div class="status-icon icon-pending">⏳</div>
-        <div>
-          <div class="status-name">Foursquare</div>
-          <p class="status-note t" data-es="Enviado — esperando aprobación. Alimenta aplicaciones de GPS y otros directorios." data-en="Submitted — waiting on approval. Feeds GPS apps and other directories.">Enviado — esperando aprobación. Alimenta aplicaciones de GPS y otros directorios.</p>
-        </div>
-        <span class="status-badge badge-pending t" data-es="Pendiente" data-en="Pending">Pendiente</span>
-      </div>
-
-      <div class="status-item">
-        <div class="status-icon icon-pending">⏳</div>
-        <div>
-          <div class="status-name">Chamber of Commerce</div>
-          <p class="status-note t" data-es="Enviado — en proceso de validación del negocio." data-en="Submitted — business validation in progress.">Enviado — en proceso de validación del negocio.</p>
-        </div>
-        <span class="status-badge badge-pending t" data-es="Pendiente" data-en="Pending">Pendiente</span>
-      </div>
-
+      <span class="s-badge bl t" data-es="Activo" data-en="Live">Activo</span>
     </div>
 
-    <!-- NEEDS ACCESS -->
-    <div class="sec-rule"><span class="t" data-es="⚠ Necesita Tu Ayuda" data-en="⚠ Needs Your Help">⚠ Necesita Tu Ayuda</span></div>
-    <div class="status-list">
-
-      <div class="status-item">
-        <div class="status-icon icon-needed">!</div>
-        <div>
-          <div class="status-name">Apple Maps</div>
-          <p class="status-note t" data-es="Ya tienes una cuenta pero el nombre está mal. Necesitamos tu Apple ID para corregirlo." data-en="You already have an account but the name is wrong. We need your Apple ID to fix it.">Ya tienes una cuenta pero el nombre está mal. Necesitamos tu Apple ID para corregirlo.</p>
-        </div>
-        <span class="status-badge badge-needed t" data-es="Acción requerida" data-en="Action needed">Acción requerida</span>
+    <div class="s-item">
+      <div class="s-dot dg"></div>
+      <div style="flex:1">
+        <div class="s-name">Bing Places</div>
+        <div class="s-note t" data-es="Sincronizado automáticamente con Google Business Profile." data-en="Automatically synced with Google Business Profile.">Sincronizado automáticamente con Google Business Profile.</div>
       </div>
-
-      <div class="status-item">
-        <div class="status-icon icon-needed">!</div>
-        <div>
-          <div class="status-name">Yelp</div>
-          <p class="status-note t" data-es="Ya tienes un perfil pero el nombre está mal. Necesitamos acceso a Dogandcatgrooming8@gmail.com para corregirlo." data-en="You already have a profile but the name is wrong. We need access to Dogandcatgrooming8@gmail.com to fix it.">Ya tienes un perfil pero el nombre está mal. Necesitamos acceso a Dogandcatgrooming8@gmail.com para corregirlo.</p>
-        </div>
-        <span class="status-badge badge-needed t" data-es="Acción requerida" data-en="Action needed">Acción requerida</span>
-      </div>
-
-      <div class="status-item">
-        <div class="status-icon icon-needed">!</div>
-        <div>
-          <div class="status-name">Mapquest</div>
-          <p class="status-note t" data-es="Ya tienes un perfil pero el nombre está mal. Necesitamos acceso a tu correo para corregirlo." data-en="You already have a profile but the name is wrong. We need access to your email to fix it.">Ya tienes un perfil pero el nombre está mal. Necesitamos acceso a tu correo para corregirlo.</p>
-        </div>
-        <span class="status-badge badge-needed t" data-es="Acción requerida" data-en="Action needed">Acción requerida</span>
-      </div>
-
-      <div class="status-item">
-        <div class="status-icon icon-needed">!</div>
-        <div>
-          <div class="status-name">Instagram · @groomerdogandcat</div>
-          <p class="status-note t" data-es="Necesitamos acceso para optimizar tu perfil, actualizar el bio y publicar tus primeros posts." data-en="We need access to optimize your profile, update the bio, and publish your first posts.">Necesitamos acceso para optimizar tu perfil, actualizar el bio y publicar tus primeros posts.</p>
-        </div>
-        <span class="status-badge badge-needed t" data-es="Acción requerida" data-en="Action needed">Acción requerida</span>
-      </div>
-
-      <div class="status-item">
-        <div class="status-icon icon-needed">!</div>
-        <div>
-          <div class="status-name">Facebook · Dogancat Groomer</div>
-          <p class="status-note t" data-es="Necesitamos acceso a tu página para optimizarla y publicar tu contenido de lanzamiento." data-en="We need access to your page to optimize it and publish your launch content.">Necesitamos acceso a tu página para optimizarla y publicar tu contenido de lanzamiento.</p>
-        </div>
-        <span class="status-badge badge-needed t" data-es="Acción requerida" data-en="Action needed">Acción requerida</span>
-      </div>
-
-      <div class="status-item">
-        <div class="status-icon icon-needed">!</div>
-        <div>
-          <div class="status-name">TikTok · @Dogandcatgroomer</div>
-          <p class="status-note t" data-es="Necesitamos acceso para optimizar tu perfil y subir tus primeros Reels." data-en="We need access to optimize your profile and upload your first Reels.">Necesitamos acceso para optimizar tu perfil y subir tus primeros Reels.</p>
-        </div>
-        <span class="status-badge badge-needed t" data-es="Acción requerida" data-en="Action needed">Acción requerida</span>
-      </div>
-
+      <span class="s-badge bl t" data-es="Activo" data-en="Live">Activo</span>
     </div>
 
-    <!-- WARNING -->
-    <div class="warning-box" style="margin-top:16px;">
-      <div class="warning-title t" data-es="⚠ Problema con el Nombre del Negocio" data-en="⚠ Business Name Inconsistency">⚠ Problema con el Nombre del Negocio</div>
-      <p class="warning-body t" data-es="Varios de tus perfiles en internet muestran el nombre como 'Dog And Cat Grooming' en vez de 'Dog & Cat Groomer'. Esto le causa confusión a Google y puede afectar tus resultados de búsqueda. En cuanto tengamos acceso a esos correos, lo corregimos todos de una vez." data-en="Several of your online profiles show the name as 'Dog And Cat Grooming' instead of 'Dog & Cat Groomer'. This confuses Google and can hurt your search rankings. Once we have access to those accounts, we will fix them all at once.">Varios de tus perfiles en internet muestran el nombre como 'Dog And Cat Grooming' en vez de 'Dog & Cat Groomer'. Esto le causa confusión a Google y puede afectar tus resultados de búsqueda. En cuanto tengamos acceso a esos correos, lo corregimos todos de una vez.</p>
+    <div class="s-item">
+      <div class="s-dot dg"></div>
+      <div style="flex:1">
+        <div class="s-name">Nextdoor</div>
+        <div class="s-note t" data-es="Apareces para vecinos del área de Glendale cerca de tu local." data-en="Visible to neighbors in the Glendale area near your location.">Apareces para vecinos del área de Glendale cerca de tu local.</div>
+      </div>
+      <span class="s-badge bl t" data-es="Activo" data-en="Live">Activo</span>
     </div>
 
-    <!-- ACTION ITEMS -->
-    <div class="sec-rule"><span class="t" data-es="Lo Que Necesitamos de Ti" data-en="What We Need From You">Lo Que Necesitamos de Ti</span></div>
-    <div class="action-list">
-
-      <div class="action-item">
-        <div class="action-num">1</div>
-        <div>
-          <div class="action-title t" data-es="Acceso a tu correo Dogandcatgrooming8@gmail.com" data-en="Access to Dogandcatgrooming8@gmail.com">Acceso a tu correo Dogandcatgrooming8@gmail.com</div>
-          <p class="action-body t" data-es="Para poder corregir el nombre en Yelp, Mapquest y otras plataformas que lo tienen mal." data-en="So we can fix the name on Yelp, Mapquest and other platforms that have it wrong.">Para poder corregir el nombre en Yelp, Mapquest y otras plataformas que lo tienen mal.</p>
-        </div>
+    <div class="s-item">
+      <div class="s-dot dg"></div>
+      <div style="flex:1">
+        <div class="s-name">Yellow Pages</div>
+        <div class="s-note t" data-es="Listado activo con información correcta." data-en="Listing live with correct information.">Listado activo con información correcta.</div>
       </div>
-
-      <div class="action-item">
-        <div class="action-num">2</div>
-        <div>
-          <div class="action-title t" data-es="Tu Apple ID para corregir Apple Maps" data-en="Your Apple ID to fix Apple Maps">Tu Apple ID para corregir Apple Maps</div>
-          <p class="action-body t" data-es="El nombre en Apple Maps está mal. Solo necesitamos el login una vez para corregirlo." data-en="The name on Apple Maps is wrong. We only need the login once to fix it.">El nombre en Apple Maps está mal. Solo necesitamos el login una vez para corregirlo.</p>
-        </div>
-      </div>
-
-      <div class="action-item">
-        <div class="action-num">3</div>
-        <div>
-          <div class="action-title t" data-es="Acceso a Instagram, Facebook y TikTok" data-en="Access to Instagram, Facebook and TikTok">Acceso a Instagram, Facebook y TikTok</div>
-          <p class="action-body t" data-es="Para optimizar tus perfiles, actualizar el bio con tu sitio web y número, y publicar tu contenido de lanzamiento." data-en="To optimize your profiles, update the bio with your website and phone, and publish your launch content.">Para optimizar tus perfiles, actualizar el bio con tu sitio web y número, y publicar tu contenido de lanzamiento.</p>
-        </div>
-      </div>
-
+      <span class="s-badge bl t" data-es="Activo" data-en="Live">Activo</span>
     </div>
 
-    <!-- VIDEO QUESTION -->
-    <div class="sec-rule"><span class="t" data-es="Sobre Tu Video de Publicidad" data-en="About Your Promo Video">Sobre Tu Video de Publicidad</span></div>
-    <div class="video-box">
-      <div class="video-eyebrow t" data-es="¡Buenas noticias!" data-en="Good news!">¡Buenas noticias!</div>
-      <div class="video-title t" data-es="Tu paquete ya incluye 2 Reels." data-en="Your package already includes 2 Reels.">Tu paquete ya incluye 2 Reels.</div>
-      <p class="video-body t" data-es="No necesitas nada complicado ni caro. Lo más efectivo ahorita es algo simple y auténtico grabado en tu salón — muéstrate trabajando, muestra a los perritos y gatitos antes y después del baño, y dile a la gente quién eres y qué ofreces. Ese tipo de contenido real conecta mucho más con los dueños de mascotas que cualquier video producción. Hablamos esta noche y te digo exactamente qué grabar." data-en="You do not need anything complicated or expensive. The most effective approach right now is something simple and authentic filmed in your salon — show yourself working, show happy pets before and after their groom, and tell people who you are and what you offer. That kind of real genuine content connects with pet owners way more than anything fancy. We will talk tonight and I will tell you exactly what to film.">No necesitas nada complicado ni caro. Lo más efectivo ahorita es algo simple y auténtico grabado en tu salón — muéstrate trabajando, muestra a los perritos y gatitos antes y después del baño, y dile a la gente quién eres y qué ofreces. Ese tipo de contenido real conecta mucho más con los dueños de mascotas que cualquier video producción. Hablamos esta noche y te digo exactamente qué grabar.</p>
+    <div class="s-item">
+      <div class="s-dot dg"></div>
+      <div style="flex:1">
+        <div class="s-name">Hotfrog</div>
+        <div class="s-note t" data-es="Enviado y activo." data-en="Submitted and live.">Enviado y activo.</div>
+      </div>
+      <span class="s-badge bl t" data-es="Activo" data-en="Live">Activo</span>
+    </div>
+
+    <div class="s-item">
+      <div class="s-dot do"></div>
+      <div style="flex:1">
+        <div class="s-name">Foursquare</div>
+        <div class="s-note t" data-es="Enviado — esperando aprobación. Alimenta apps de GPS y otros directorios." data-en="Submitted — awaiting approval. Feeds GPS apps and other directories.">Enviado — esperando aprobación. Alimenta apps de GPS y otros directorios.</div>
+      </div>
+      <span class="s-badge bo t" data-es="Pendiente" data-en="Pending">Pendiente</span>
+    </div>
+
+    <div class="s-item">
+      <div class="s-dot do"></div>
+      <div style="flex:1">
+        <div class="s-name">Chamber of Commerce</div>
+        <div class="s-note t" data-es="Enviado — en proceso de validación." data-en="Submitted — validation in progress.">Enviado — en proceso de validación.</div>
+      </div>
+      <span class="s-badge bo t" data-es="Pendiente" data-en="Pending">Pendiente</span>
+    </div>
+
+    <div class="s-item">
+      <div class="s-dot dw"></div>
+      <div style="flex:1">
+        <div class="s-name">Yelp</div>
+        <div class="s-note t" data-es="Ya existe una cuenta — corrigiendo el nombre del negocio." data-en="Account already exists — correcting the business name.">Ya existe una cuenta — corrigiendo el nombre del negocio.</div>
+      </div>
+      <span class="s-badge bw t" data-es="En proceso" data-en="In progress">En proceso</span>
+    </div>
+
+    <div class="s-item">
+      <div class="s-dot dw"></div>
+      <div style="flex:1">
+        <div class="s-name">Mapquest</div>
+        <div class="s-note t" data-es="Ya existe una cuenta — corrigiendo el nombre del negocio." data-en="Account already exists — correcting the business name.">Ya existe una cuenta — corrigiendo el nombre del negocio.</div>
+      </div>
+      <span class="s-badge bw t" data-es="En proceso" data-en="In progress">En proceso</span>
+    </div>
+
+    <div class="s-item">
+      <div class="s-dot dw"></div>
+      <div style="flex:1">
+        <div class="s-name">Apple Maps</div>
+        <div class="s-note t" data-es="Ya existe una cuenta con el nombre incorrecto — coordinando acceso para corregirlo." data-en="Account exists with wrong name — coordinating access to fix it.">Ya existe una cuenta con el nombre incorrecto — coordinando acceso para corregirlo.</div>
+      </div>
+      <span class="s-badge bw t" data-es="En proceso" data-en="In progress">En proceso</span>
     </div>
 
   </div>
 
-  <!-- FOOTER -->
-  <div class="footer">
-    <p class="footer-credit">
-      dogandcatgroomer.com · (602) 623-6955 · Glendale, AZ<br>
-      <span class="t" data-es="Reporte preparado por" data-en="Report prepared by">Reporte preparado por</span>
-      <a href="https://sayitmarketing.com" target="_blank">Say It Marketing</a>
-      · sayitmarketing.com · (520) 222-6308
-    </p>
+  <div class="warn-box">
+    <div class="warn-title t" data-es="⚠ Nota sobre el nombre del negocio" data-en="⚠ About your business name">⚠ Nota sobre el nombre del negocio</div>
+    <p class="warn-body t" data-es="Varios perfiles tienen el nombre como 'Dog And Cat Grooming' en vez de 'Dog &amp; Cat Groomer'. Estamos corrigiendo esto — Google prefiere que el nombre sea igual en todas partes para darte mejor posición en búsquedas." data-en="Several profiles show the name as 'Dog And Cat Grooming' instead of 'Dog &amp; Cat Groomer'. We are fixing this — Google prefers your name to be consistent everywhere for better search rankings.">Varios perfiles tienen el nombre como 'Dog And Cat Grooming' en vez de 'Dog &amp; Cat Groomer'. Estamos corrigiendo esto — Google prefiere que el nombre sea igual en todas partes para darte mejor posición en búsquedas.</p>
   </div>
 
-  <script>
-    var isEs = true;
-    function toggleLang() {
-      isEs = !isEs;
-      var lang = isEs ? 'es' : 'en';
-      document.querySelectorAll('.t').forEach(function(el) {
-        var val = el.getAttribute('data-' + lang);
-        if (!val) return;
-        el.innerHTML = val;
-      });
-      document.getElementById('langBtn').textContent = isEs ? 'View in English' : 'Ver en Español';
-      document.documentElement.lang = isEs ? 'es' : 'en';
-    }
-  </script>
+  <!-- SOCIAL MEDIA -->
+  <div class="r-sec"><span class="t" data-es="Redes Sociales" data-en="Social Media">Redes Sociales</span></div>
+  <div class="s-list">
 
+    <div class="s-item">
+      <div class="s-dot dw"></div>
+      <div style="flex:1">
+        <div class="s-name">Instagram · @groomerdogandcat</div>
+        <div class="s-note t" data-es="Perfil existe — optimización y diseño de contenido en proceso." data-en="Profile exists — optimization and content design in progress.">Perfil existe — optimización y diseño de contenido en proceso.</div>
+      </div>
+      <span class="s-badge bw t" data-es="En proceso" data-en="In progress">En proceso</span>
+    </div>
+
+    <div class="s-item">
+      <div class="s-dot dw"></div>
+      <div style="flex:1">
+        <div class="s-name">Facebook · Dogancat Groomer</div>
+        <div class="s-note t" data-es="Página existe — optimización y contenido de lanzamiento en proceso." data-en="Page exists — optimization and launch content in progress.">Página existe — optimización y contenido de lanzamiento en proceso.</div>
+      </div>
+      <span class="s-badge bw t" data-es="En proceso" data-en="In progress">En proceso</span>
+    </div>
+
+    <div class="s-item">
+      <div class="s-dot dw"></div>
+      <div style="flex:1">
+        <div class="s-name">TikTok · @Dogandcatgroomer</div>
+        <div class="s-note t" data-es="Perfil existe — optimización y contenido en proceso." data-en="Profile exists — optimization and content in progress.">Perfil existe — optimización y contenido en proceso.</div>
+      </div>
+      <span class="s-badge bw t" data-es="En proceso" data-en="In progress">En proceso</span>
+    </div>
+
+  </div>
+
+</div>
+
+<footer class="footer-v2">
+  <div class="footer-grid">
+    <div>
+      <img src="/images/logo-dark.png" alt="Dog &amp; Cat Groomer" class="footer-logo-img">
+      <div class="footer-brand-tag">Professional Pet Grooming</div>
+      <p class="footer-brand-desc">Caring, professional grooming for dogs and cats in Glendale and the nearby West Valley.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links-v2">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links-v2">
+        <li><a href="services.html">Full Groom</a></li>
+        <li><a href="services.html">Bath &amp; Brush</a></li>
+        <li><a href="services.html">Cat Grooming</a></li>
+        <li><a href="services.html">Nail Trim</a></li>
+        <li><a href="services.html">Puppy Groom</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links-v2 footer-contact-block">
+        <li><a href="tel:6026236955">(602) 623-6955</a></li>
+        <li><span style="color:rgba(255,255,255,0.72)">Tue–Sat · 8 AM–5 PM</span></li>
+        <li><a href="https://instagram.com/groomerdogandcat" target="_blank">@groomerdogandcat</a></li>
+        <li class="footer-location-label">Location</li>
+        <li class="footer-location-title">Glendale, Arizona</li>
+        <li class="footer-location-note">10222 N 43rd Ave, Suite #8, Glendale, AZ 85302</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom-v2">
+    <p>&copy; 2026 Dog &amp; Cat Groomer. All rights reserved.</p>
+    <a href="https://sayitmarketing.com" target="_blank">Site by Say It Marketing</a>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('mainNav');
+  if (window.scrollY > 80) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+function toggleNav() {
+  const o = document.getElementById('navOverlay');
+  if (o) o.classList.add('open');
+  document.body.classList.add('nav-open');
+}
+var isEs = true;
+function toggleLang() {
+  isEs = !isEs;
+  var lang = isEs ? 'es' : 'en';
+  document.querySelectorAll('.t').forEach(function(el) {
+    var val = el.getAttribute('data-' + lang);
+    if (val) el.innerHTML = val;
+  });
+  document.getElementById('langBtn').textContent = isEs ? 'View in English' : 'Ver en Español';
+  document.documentElement.lang = isEs ? 'es' : 'en';
+}
+</script>
 </body>
 </html>
